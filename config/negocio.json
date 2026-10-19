@@ -20,15 +20,15 @@
   "productos": [
     {
       "nombre": "Macareño",
-      "foto": "fotos/catalogo/macareno-10lb.jpg",
+      "foto": "fotos/catalogo/macareno-25lb.jpg",
       "presentaciones": [
-        { "nombre": "Arroba", "detalle": "25 lb", "precio": 15.0 },
+        { "nombre": "Arroba", "detalle": "25 lb", "precio": 15.0, "foto": "fotos/catalogo/macareno-25lb.jpg", "nota": "Marca Cuchara Brava (Macareño original)" },
         { "nombre": "10 libras", "detalle": "10 lb", "precio": 6.0, "foto": "fotos/catalogo/macareno-10lb.jpg" }
       ]
     },
     {
       "nombre": "Conejo",
-      "foto": "fotos/catalogo/conejo-45kg.jpg",
+      "foto": "fotos/catalogo/conejo-20lb.jpg",
       "presentaciones": [
         { "nombre": "Quintal", "detalle": "45 kg", "precio": 55.0, "foto": "fotos/catalogo/conejo-45kg.jpg" },
         { "nombre": "Arroba", "detalle": "25 lb", "precio": 13.75, "foto": "fotos/catalogo/conejo-25lb.jpg" },
@@ -47,7 +47,7 @@
     },
     {
       "nombre": "Gloria",
-      "foto": "fotos/catalogo/gloria-45kg.jpg",
+      "foto": "fotos/catalogo/gloria-25lb.jpg",
       "presentaciones": [
         { "nombre": "Quintal", "detalle": "45 kg", "precio": 65.0, "foto": "fotos/catalogo/gloria-45kg.jpg" },
         { "nombre": "Arroba", "detalle": "25 lb", "precio": 16.25, "foto": "fotos/catalogo/gloria-25lb.jpg" },

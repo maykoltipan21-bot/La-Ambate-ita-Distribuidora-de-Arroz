@@ -226,14 +226,14 @@ function marca(d, negocio) {
   const n = producto.presentaciones.length;
   const altoFila = Math.min(104, Math.floor(400 / n) - 14);
   const imagen = tieneFoto(producto)
-    ? tarjetaFoto(producto, { alto: 360, giro: 4 })
+    ? tarjetaFoto(producto, { alto: 430, giro: 4 })
     : saco({ ancho: 360, detalle: esc(producto.presentaciones[0]?.detalle || '') });
   const cuerpo = `
     <div class="capa" style="left:60px;top:50px">${encabezado()}</div>
     <div class="capa" style="left:60px;top:220px">${etiqueta(d.etiqueta || 'MARCA DE LA SEMANA', 'var(--rojo)')}</div>
     <div class="capa" data-ajustar="54" style="left:60px;top:300px;width:560px;height:250px;font-weight:900;font-size:110px;line-height:1;color:var(--verde);text-transform:uppercase">Arroz ${esc(producto.nombre)}</div>
     <div class="capa" data-ajustar="24" style="left:60px;top:570px;width:540px;height:150px;font-weight:700;font-size:38px;line-height:1.25">${esc(d.subtitulo || 'Al por mayor y menor en ' + ciudadesTexto(negocio))}</div>
-    <div class="capa" style="left:${tieneFoto(producto) ? 660 : 640}px;top:230px">${imagen}</div>
+    <div class="capa" style="left:${tieneFoto(producto) ? 680 : 640}px;top:215px">${imagen}</div>
     <div class="capa" style="left:60px;top:${1180 - n * (altoFila + Math.round(altoFila * 0.16))}px;width:960px">${filasPrecios(producto, { altoFila, tamNombre: 42, tamPrecio: 54 })}</div>
     ${pie(negocio, ancho, alto)}`;
   return { ancho, alto, html: pagina(ancho, alto, '', cuerpo, 47) };
