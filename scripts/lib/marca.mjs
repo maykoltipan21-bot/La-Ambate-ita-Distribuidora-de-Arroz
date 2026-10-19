@@ -104,7 +104,15 @@ export function espiga({ color = COLORES.dorado, tallo = COLORES.verde, tam = 12
   </svg>`;
 }
 
-// Saco de arroz abierto con la etiqueta de la marca.
+// Espiguita para la etiqueta del saco (sin nombre de marca: el saco es genérico).
+function espigaMini(cx, cy) {
+  const g = [[-6, -14], [6, -8], [-6, -2], [6, 4], [-6, 10]]
+    .map(([dx, dy]) => `<ellipse cx="${cx + dx}" cy="${cy + dy}" rx="6" ry="3" transform="rotate(${dx < 0 ? -35 : 35} ${cx + dx} ${cy + dy})" fill="${COLORES.dorado}"/>`)
+    .join('');
+  return `<path d="M${cx} ${cy - 20} V${cy + 22}" stroke="${COLORES.dorado}" stroke-width="2"/>${g}`;
+}
+
+// Saco de arroz genérico abierto (la foto real de cada marca se usa cuando existe).
 export function saco({ ancho = 420, etiqueta = 'ARROZ', detalle = '100 lb', semilla = 11 } = {}) {
   const c = COLORES;
   const alto = ancho * 1.18;
@@ -126,9 +134,9 @@ export function saco({ ancho = 420, etiqueta = 'ARROZ', detalle = '100 lb', semi
     ${monticulo({ cx: 200, base: 124, ancho: 268, alto: 78, cantidad: 230, semilla })}
     <rect x="104" y="226" width="192" height="150" rx="18" fill="${c.verde}"/>
     <rect x="112" y="234" width="176" height="134" rx="12" fill="none" stroke="${c.dorado}" stroke-width="3"/>
-    <text x="200" y="278" text-anchor="middle" font-family="Pacifico" font-size="27" fill="${c.dorado}">La Ambateñita</text>
-    <text x="200" y="322" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="${tamEtiqueta}" fill="#FFF">${etiqueta}</text>
-    <text x="200" y="354" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="20" fill="${c.dorado}">${detalle}</text>
+    ${espigaMini(200, 252)}
+    <text x="200" y="${detalle ? 322 : 334}" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="${tamEtiqueta}" fill="#FFF">${etiqueta}</text>
+    ${detalle ? `<text x="200" y="354" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="20" fill="${c.dorado}">${detalle}</text>` : ''}
   </svg>`;
 }
 

@@ -11,7 +11,7 @@ fotos/ (tus fotos reales) ─┘        imagen.png o reel.mp4                   
                                                          Metricool publica en Facebook a la hora
 ```
 
-1. **`config/negocio.json`**: tus datos (WhatsApp, precios, direcciones, horario). Si cambias un precio aquí, todas las imágenes nuevas salen con el precio nuevo. También puedes simplemente decírselo a Claude por chat.
+1. **`config/negocio.json`**: tus datos (WhatsApp, direcciones, horario) y las **marcas con sus precios** (Macareño, Conejo, Amazonas y Gloria, cada una por presentación). Si cambias un precio aquí, todas las imágenes nuevas salen con el precio nuevo. También puedes simplemente decírselo a Claude por chat, o enviarle la foto del catálogo actualizado.
 2. **`contenido/calendario.json`**: 28 días de contenido (textos, recetas, consejos y reels) que se repiten en ciclo.
 3. **`scripts/generar.mjs`**: crea las imágenes (1080×1350) y los reels (1080×1920, unos 16 segundos) con la marca de La Ambateñita.
 4. **`media/`**: aquí quedan las fotos y videos. Como el repositorio es público, Metricool las descarga desde GitHub.
@@ -22,6 +22,10 @@ fotos/ (tus fotos reales) ─┘        imagen.png o reel.mp4                   
 Cada `publicacion.json` indica si está **`"listo": true`** o qué le falta (`"faltantes"`). Claude **no programa** publicaciones sin número de WhatsApp o con datos sin completar. Si un precio está en `null`, la imagen dice "Consulta el precio" en vez de inventar un número.
 
 Los reels de entregas a domicilio solo salen si confirmas `"entrega_a_domicilio": true`. Si pones `false`, se reemplazan por una versión sin entregas.
+
+## Fotos de los sacos
+
+Las fotos de cada saco están en `fotos/catalogo/` y salieron de la página de arroz de tu catálogo. Son pequeñas, así que se ven algo borrosas en grande. Si tomas una foto nítida de cada saco (de frente, con buena luz y fondo limpio) y la guardas con el mismo nombre (por ejemplo `conejo-25lb.jpg`), todas las publicaciones nuevas la usan automáticamente.
 
 ## Tus fotos reales
 

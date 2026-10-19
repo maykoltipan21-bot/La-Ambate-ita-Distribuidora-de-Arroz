@@ -10,7 +10,9 @@ Este paso lo tienes que hacer tú desde tu cuenta de Facebook (Claude no puede i
 3. **Categoría:** escribe "mayorista" o "alimentos" y elige la más parecida (por ejemplo *Mayorista de alimentos* o *Tienda de comestibles*). Puedes poner hasta 3 categorías.
 4. **Presentación (bio)**, copia y pega:
 
-   > Arroz al por mayor y menor en Ambato y Macas 🌾 Quintal, arroba y funda. Pedidos por WhatsApp 📲
+   > Arroz al por mayor y menor en Ambato y Macas 🌾 Conejo, Gloria, Amazonas y Macareño 📲
+
+   Si Facebook dice que es muy largo, usa: *Arroz al por mayor y menor 🌾 Ambato y Macas 📲*
 
 5. **Foto de perfil:** sube [`media/marca/foto-perfil.png`](../media/marca/foto-perfil.png)
 6. **Foto de portada:** sube [`media/marca/portada-facebook.png`](../media/marca/portada-facebook.png)

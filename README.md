@@ -1,24 +1,23 @@
 # La Ambateñita 🌾 Distribuidora de arroz
 
-Página de Facebook y contenido automático para **La Ambateñita**: arroz al por mayor y menor en **Ambato** y **Macas**.
+Página de Facebook y contenido automático para **La Ambateñita**: distribuidora de arroz al por mayor y menor en **Ambato** y **Macas**. Marcas: **Macareño, Conejo, Amazonas y Gloria**.
 
 Claude genera cada día una foto o un video con la marca, escribe el texto y lo deja programado en Metricool, que lo publica solo en Facebook.
 
 ![Portada de Facebook](media/marca/portada-facebook.png)
 
-| Oferta | Precios al por mayor | Consejo | Receta |
+| Precios por marca | Marca de la semana | Precio | Receta |
 |---|---|---|---|
-| ![](media/muestras/oferta.png) | ![](media/muestras/mayoreo.png) | ![](media/muestras/consejo.png) | ![](media/muestras/receta.png) |
+| ![](media/muestras/mayoreo.png) | ![](media/muestras/marca.png) | ![](media/muestras/oferta.png) | ![](media/muestras/receta.png) |
 
-Ejemplo de reel: [`media/muestras/reel.mp4`](media/muestras/reel.mp4)
+Reels de ejemplo: [`media/muestras/reel.mp4`](media/muestras/reel.mp4) (bienvenida) y [`media/muestras/reel-precios.mp4`](media/muestras/reel-precios.mp4) (precios de cada marca)
 
 ## Pasos para arrancar
 
 1. **Crea la página de Facebook**: [docs/1-crear-pagina-facebook.md](docs/1-crear-pagina-facebook.md). Usa la foto de perfil y la portada de `media/marca/`.
 2. **Completa tus datos** en [`config/negocio.json`](config/negocio.json) o díselos a Claude por chat:
    - número de WhatsApp (**obligatorio**)
-   - precios por presentación (quintal, medio quintal, arroba, funda)
-   - variedades de arroz que vendes
+   - ~~marcas y precios~~ ✅ ya cargados desde tu catálogo (avisa cuando cambien)
    - direcciones en Ambato y en Macas, y horario
    - si haces entregas a domicilio y en qué sectores
 3. **Conecta la página a Metricool**: [docs/2-conectar-metricool.md](docs/2-conectar-metricool.md)
@@ -41,6 +40,7 @@ scripts/generar.mjs        genera imágenes y reels
 scripts/lib/               marca (colores, fuentes, ilustraciones), plantillas y render
 marca/fuentes/             tipografías Pacifico y Montserrat (licencia OFL)
 fotos/                     tus fotos y videos reales
+fotos/catalogo/            foto de cada saco por marca y presentación
 media/marca/               foto de perfil y portada de Facebook
 media/muestras/            ejemplos de cada diseño
 media/AAAA-MM-DD/          publicación de cada día (imagen o reel + publicacion.json)

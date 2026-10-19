@@ -9,10 +9,10 @@ Ciclo de 4 semanas que se repite (`contenido/calendario.json`):
 | Día | Formato | Tema | Para qué sirve |
 |---|---|---|---|
 | Lunes | Reel | Precios o venta | Que te tengan presente al hacer las compras de la semana |
-| Martes | Imagen | Precios al por mayor | Captar tiendas y restaurantes |
-| Miércoles | Imagen | Consejo arrocero | Que la gente comparta y guarde el post |
+| Martes | Imagen | Tabla de precios de todas las marcas, o un consejo | Captar tiendas y restaurantes |
+| Miércoles | Imagen | Consejo arrocero, o foto real | Que la gente comparta y guarde el post |
 | Jueves | Reel | Negocios y entregas | Generar confianza |
-| Viernes | Imagen | Oferta por presentación | Venta directa |
+| Viernes | Imagen | Marca de la semana (Conejo, Gloria, Amazonas y Macareño, por turnos) | Venta directa: la gente busca la marca que ya conoce |
 | Sábado | Imagen | Receta con arroz | Muy compartible |
 | Domingo | Imagen | Pregunta A/B | Comentarios: Facebook le muestra la página a más gente |
 

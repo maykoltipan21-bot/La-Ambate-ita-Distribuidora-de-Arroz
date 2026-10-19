@@ -10,7 +10,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { RAIZ } from './lib/marca.mjs';
-import { PLANTILLAS, telefonoBonito, precioBonito, ciudadesTexto } from './lib/plantillas.mjs';
+import { PLANTILLAS, telefonoBonito, precioBonito, ciudadesTexto, buscarPresentacion, buscarProducto } from './lib/plantillas.mjs';
 import { renderPNG, renderVideo, miniatura, cerrarNavegador, limpiar } from './lib/render.mjs';
 
 const leerJSON = (ruta) => JSON.parse(readFileSync(join(RAIZ, ruta), 'utf8'));
@@ -39,16 +39,28 @@ function enlaceWhatsapp() {
 }
 
 function precioTexto(ref) {
-  const [prod, pres] = ref.includes('/') ? ref.split('/') : [null, ref];
-  const producto = prod ? negocio.productos.find((p) => p.nombre === prod) : negocio.productos[0];
-  const p = producto?.presentaciones.find((x) => x.nombre === pres);
-  return precioBonito(p?.precio) || 'consulta el precio por WhatsApp';
+  const { pres } = buscarPresentacion(negocio, ref);
+  if (!pres) throw new Error(`El calendario pide el precio "${ref}" pero no existe en config/negocio.json`);
+  return precioBonito(pres.precio) || 'consulta el precio por WhatsApp';
+}
+
+function nombrePresentacion(pr) {
+  return /^\d/.test(pr.nombre) ? pr.detalle : `${pr.nombre} (${pr.detalle})`;
+}
+
+function preciosMarca(nombre) {
+  const p = buscarProducto(negocio, nombre);
+  if (!p) throw new Error(`La marca "${nombre}" no está en config/negocio.json`);
+  return p.presentaciones.map((pr) => `▪️ ${nombrePresentacion(pr)}: ${precioBonito(pr.precio) || 'consulta'}`).join('\n');
 }
 
 function listaPrecios() {
-  return negocio.productos
-    .flatMap((p) => p.presentaciones.map((pr) => `▪️ ${negocio.productos.length > 1 ? `${p.nombre} – ` : ''}${pr.nombre} (${pr.detalle}): ${precioBonito(pr.precio) || 'consulta'}`))
-    .join('\n');
+  return negocio.productos.map((p) => `🌾 ARROZ ${p.nombre.toUpperCase()}\n${preciosMarca(p.nombre)}`).join('\n\n');
+}
+
+function marcasTexto() {
+  const m = negocio.productos.map((p) => p.nombre);
+  return m.length > 1 ? `${m.slice(0, -1).join(', ')} y ${m.at(-1)}` : m[0] || '';
 }
 
 function ubicacionTexto() {
@@ -70,8 +82,18 @@ function rellenarTexto(texto) {
     .replaceAll('{{ciudades}}', ciudadesTexto(negocio))
     .replaceAll('{{ubicacion}}', ubicacionTexto())
     .replaceAll('{{lista_precios}}', listaPrecios())
+    .replaceAll('{{marcas}}', marcasTexto())
+    .replace(/\{\{precios_marca:([^}]+)\}\}/g, (_, m) => preciosMarca(m))
     .replaceAll('{{hashtags}}', (negocio.hashtags || []).join(' '))
     .replace(/\{\{precio:([^}]+)\}\}/g, (_, ref) => precioTexto(ref));
+}
+
+// Variables cortas que también pueden ir dentro de las imágenes y diapositivas.
+function rellenarDiseno(valor) {
+  if (typeof valor === 'string') return valor.replaceAll('{{marcas}}', marcasTexto()).replaceAll('{{ciudades}}', ciudadesTexto(negocio));
+  if (Array.isArray(valor)) return valor.map(rellenarDiseno);
+  if (valor && typeof valor === 'object') return Object.fromEntries(Object.entries(valor).map(([k, v]) => [k, rellenarDiseno(v)]));
+  return valor;
 }
 
 // ---------- Reglas de cada día ----------
@@ -106,7 +128,8 @@ function resolverEntrada(entrada) {
 async function generarDia(fecha) {
   const iso = fechaISO(fecha);
   const dir = join(RAIZ, 'media', iso);
-  const { entrada, faltantes } = resolverEntrada(entradaDelDia(fecha));
+  const { entrada: original, faltantes } = resolverEntrada(entradaDelDia(fecha));
+  const entrada = { ...rellenarDiseno(original), texto: original.texto };
   const archivos = [];
   let portadaVideo = null;
 
@@ -162,23 +185,29 @@ async function generarMuestras() {
   const dir = join(RAIZ, 'media', 'muestras');
   const porPlantilla = new Map();
   for (const d of calendario.dias) {
-    const { entrada } = resolverEntrada(d);
+    const entrada = rellenarDiseno(resolverEntrada(d).entrada);
     if (entrada.formato !== 'reel' && !porPlantilla.has(entrada.plantilla)) porPlantilla.set(entrada.plantilla, entrada);
   }
   for (const [nombre, e] of porPlantilla) {
     await renderPNG(PLANTILLAS[nombre](e.datos || {}, negocio), join(dir, `${nombre}.png`));
     console.log(`muestra: ${nombre}`);
   }
-  const reel = calendario.dias.find((d) => d.formato === 'reel');
-  const tmp = join(RAIZ, '.cache', 'muestra-reel');
-  const pngs = [];
-  for (const [i, s] of reel.slides.entries()) {
-    pngs.push(await renderPNG(PLANTILLAS.slide(s, negocio), join(tmp, `slide-${i + 1}.png`)));
+  // Dos reels de ejemplo: el de bienvenida y el de precios por marca.
+  const reels = [
+    ['reel', calendario.dias.find((d) => d.formato === 'reel')],
+    ['reel-precios', calendario.dias.find((d) => d.formato === 'reel' && d.slides.some((s) => s.tipo === 'marca'))],
+  ].filter(([, d]) => d);
+  for (const [nombre, d] of reels) {
+    const tmp = join(RAIZ, '.cache', `muestra-${nombre}`);
+    const pngs = [];
+    for (const [i, s] of rellenarDiseno(d.slides).entries()) {
+      pngs.push(await renderPNG(PLANTILLAS.slide(s, negocio), join(tmp, `slide-${i + 1}.png`)));
+    }
+    for (const [i, p] of pngs.entries()) miniatura(p, join(dir, `${nombre}-diapositiva-${i + 1}.jpg`));
+    renderVideo(pngs, join(dir, `${nombre}.mp4`));
+    limpiar(tmp);
+    console.log(`muestra: ${nombre}.mp4`);
   }
-  for (const [i, p] of pngs.entries()) miniatura(p, join(dir, `reel-diapositiva-${i + 1}.jpg`));
-  renderVideo(pngs, join(dir, 'reel.mp4'));
-  limpiar(tmp);
-  console.log('muestra: reel.mp4');
 }
 
 // ---------- Principal ----------

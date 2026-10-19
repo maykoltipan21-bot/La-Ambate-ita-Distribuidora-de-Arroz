@@ -1,5 +1,5 @@
 {
-  "_instrucciones": "Ciclo de 28 días que se repite. 'inicio' es el lunes en que arranca el día 1. Variables del texto: {{contacto}}, {{whatsapp}}, {{ciudades}}, {{ubicacion}}, {{lista_precios}}, {{precio:Quintal}}, {{hashtags}}. 'requiere' lista datos de config/negocio.json que deben estar confirmados; si una foto real no existe o un dato es false se usa el 'respaldo'.",
+  "_instrucciones": "Ciclo de 28 días que se repite. 'inicio' es el lunes en que arranca el día 1. Variables del texto: {{contacto}}, {{whatsapp}}, {{ciudades}}, {{ubicacion}}, {{lista_precios}}, {{marcas}}, {{precios_marca:Conejo}}, {{precio:Conejo/Quintal}}, {{hashtags}}. 'requiere' lista datos de config/negocio.json que deben estar confirmados; si una foto real no existe o un dato es false se usa el 'respaldo'.",
   "inicio": "2026-10-26",
   "dias": [
     {
@@ -7,21 +7,46 @@
       "pilar": "venta",
       "formato": "reel",
       "slides": [
-        { "tipo": "portada", "etiqueta": "¡BIENVENIDOS!", "titulo": "Arroz para tu casa y tu negocio", "ilustracion": "saco" },
-        { "tipo": "punto", "num": 1, "texto": "Por quintal, arroba o funda", "detalle": "Compra lo que necesitas" },
-        { "tipo": "punto", "num": 2, "texto": "Precios especiales al por mayor", "detalle": "Para tiendas, restaurantes y comedores" },
-        { "tipo": "punto", "num": 3, "texto": "Atendemos en Ambato y Macas" },
-        { "tipo": "cta", "titulo": "Escríbenos y haz tu pedido" }
+        {
+          "tipo": "portada",
+          "etiqueta": "¡BIENVENIDOS!",
+          "titulo": "Arroz para tu casa y tu negocio",
+          "ilustracion": "saco"
+        },
+        {
+          "tipo": "punto",
+          "num": 1,
+          "texto": "{{marcas}}",
+          "detalle": "Las marcas que ya conoces"
+        },
+        {
+          "tipo": "punto",
+          "num": 2,
+          "texto": "Por quintal, arroba o funda",
+          "detalle": "Compra lo que necesitas"
+        },
+        {
+          "tipo": "punto",
+          "num": 3,
+          "texto": "Atendemos en Ambato y Macas"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Escríbenos y haz tu pedido"
+        }
       ],
-      "texto": "¡Hola, {{ciudades}}! 👋🌾\n\nSomos La Ambateñita, tu distribuidora de arroz al por mayor y menor. Vendemos por quintal, medio quintal, arroba y funda, para la casa, la tienda o el restaurante.\n\n✅ Precios especiales por volumen\n✅ Atención directa por WhatsApp\n\n{{contacto}}\n\nSíguenos para ver los precios de cada semana 👆\n\n{{hashtags}}"
+      "texto": "¡Hola, {{ciudades}}! 👋🌾\n\nSomos La Ambateñita, distribuidora de arroz al por mayor y menor. Tenemos las marcas que ya conoces: {{marcas}}.\n\n✅ Quintal (45 kg), arroba (25 lb) y fundas de 10 y 20 lb\n✅ Para la casa, la tienda o el restaurante\n✅ Atención directa por WhatsApp\n\n{{contacto}}\n\nSíguenos para ver los precios de cada semana 👆\n\n{{hashtags}}"
     },
     {
       "dia": 2,
       "pilar": "venta",
       "formato": "imagen",
       "plantilla": "mayoreo",
-      "datos": { "titulo": "Precios al por mayor y menor", "subtitulo": "Precios especiales para tiendas, restaurantes y comedores" },
-      "texto": "📋 Nuestros precios de esta semana:\n\n{{lista_precios}}\n\n🏪 ¿Tienes tienda, restaurante o comedor? Pregúntanos por el precio especial según la cantidad que compres.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+      "datos": {
+        "titulo": "Precios al por mayor y menor",
+        "subtitulo": "Para tu casa, tu tienda o tu restaurante"
+      },
+      "texto": "📋 Precios de esta semana en La Ambateñita:\n\n{{lista_precios}}\n\n🏪 ¿Tienes tienda, restaurante o comedor? Escríbenos y armamos tu pedido.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
     },
     {
       "dia": 3,
@@ -45,34 +70,79 @@
       "dia": 4,
       "pilar": "confianza",
       "formato": "reel",
-      "requiere": ["entrega_a_domicilio"],
+      "requiere": [
+        "entrega_a_domicilio"
+      ],
       "slides": [
-        { "tipo": "portada", "etiqueta": "PARA NEGOCIOS", "titulo": "¿Tienes tienda o restaurante?", "ilustracion": "camion" },
-        { "tipo": "punto", "num": 1, "texto": "Haz tu pedido por WhatsApp" },
-        { "tipo": "punto", "num": 2, "texto": "Te lo llevamos a tu local", "detalle": "En Ambato y Macas" },
-        { "tipo": "punto", "num": 3, "texto": "Precio especial por volumen" },
-        { "tipo": "cta", "titulo": "Pide hoy tu arroz" }
+        {
+          "tipo": "portada",
+          "etiqueta": "PARA NEGOCIOS",
+          "titulo": "¿Tienes tienda o restaurante?",
+          "ilustracion": "camion"
+        },
+        {
+          "tipo": "punto",
+          "num": 1,
+          "texto": "Haz tu pedido por WhatsApp"
+        },
+        {
+          "tipo": "punto",
+          "num": 2,
+          "texto": "Te lo llevamos a tu local",
+          "detalle": "En Ambato y Macas"
+        },
+        {
+          "tipo": "punto",
+          "num": 3,
+          "texto": "Todas las marcas en un solo lugar",
+          "detalle": "{{marcas}}"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Pide hoy tu arroz"
+        }
       ],
       "respaldo": {
         "pilar": "confianza",
         "formato": "reel",
         "slides": [
-          { "tipo": "portada", "etiqueta": "PARA NEGOCIOS", "titulo": "¿Tienes tienda o restaurante?", "ilustracion": "saco" },
-          { "tipo": "punto", "num": 1, "texto": "Haz tu pedido por WhatsApp" },
-          { "tipo": "punto", "num": 2, "texto": "Precio especial por volumen" },
-          { "tipo": "cta", "titulo": "Pide hoy tu arroz" }
+          {
+            "tipo": "portada",
+            "etiqueta": "PARA NEGOCIOS",
+            "titulo": "¿Tienes tienda o restaurante?",
+            "ilustracion": "saco"
+          },
+          {
+            "tipo": "punto",
+            "num": 1,
+            "texto": "Haz tu pedido por WhatsApp"
+          },
+          {
+            "tipo": "punto",
+            "num": 2,
+            "texto": "Todas las marcas en un solo lugar",
+            "detalle": "{{marcas}}"
+          },
+          {
+            "tipo": "cta",
+            "titulo": "Pide hoy tu arroz"
+          }
         ],
-        "texto": "🏪 ¿Tienes tienda, restaurante o comedor en {{ciudades}}?\n\nEn La Ambateñita te damos precio especial por volumen. Escríbenos, dinos cuánto necesitas y te damos tu cotización al instante.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+        "texto": "🏪 ¿Tienes tienda, restaurante o comedor en {{ciudades}}?\n\nEn La Ambateñita encuentras {{marcas}} por quintal, arroba o funda. Escríbenos, dinos cuánto necesitas y te pasamos tu cotización.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
       },
-      "texto": "🚚 ¿Tienes tienda, restaurante o comedor en {{ciudades}}?\n\nNo pierdas tiempo cargando sacos: haz tu pedido por WhatsApp y te llevamos el arroz a tu local. Además, te damos precio especial por volumen.\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "🚚 ¿Tienes tienda, restaurante o comedor en {{ciudades}}?\n\nNo pierdas tiempo cargando sacos: haz tu pedido por WhatsApp y te llevamos el arroz a tu local. Tenemos {{marcas}}.\n\n{{contacto}}\n\n{{hashtags}}"
     },
     {
       "dia": 5,
       "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "oferta",
-      "datos": { "etiqueta": "PRECIO DE LA SEMANA", "titulo": "El quintal que rinde todo el mes", "subtitulo": "Ideal para familias grandes, tiendas y restaurantes", "presentacion": "Quintal" },
-      "texto": "🌾 QUINTAL DE ARROZ (100 lb): {{precio:Quintal}}\n\nUn quintal rinde aproximadamente entre 500 y 600 platos. Ideal para familias grandes, tiendas y restaurantes que no quieren quedarse sin arroz a mitad de mes.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+      "plantilla": "marca",
+      "datos": {
+        "marca": "Conejo",
+        "etiqueta": "MARCA DE LA SEMANA",
+        "subtitulo": "Quintal, arroba y fundas de 20 y 10 libras"
+      },
+      "texto": "🌾 ARROZ CONEJO en La Ambateñita\n\n{{precios_marca:Conejo}}\n\nEl de la funda con el conejito, en todas sus presentaciones: desde la funda de 10 libras hasta el quintal de 45 kg.\n\n{{contacto}}\n{{ubicacion}}\n\n#ArrozConejo {{hashtags}}"
     },
     {
       "dia": 6,
@@ -82,7 +152,15 @@
       "datos": {
         "etiqueta": "RECETA DEL SÁBADO",
         "titulo": "Arroz con menestra",
-        "ingredientes": ["2 tazas de arroz", "2 tazas de lenteja o fréjol", "1 cebolla paiteña", "1 pimiento", "Ajo y comino", "Cilantro", "Sal y aceite"],
+        "ingredientes": [
+          "2 tazas de arroz",
+          "2 tazas de lenteja o fréjol",
+          "1 cebolla paiteña",
+          "1 pimiento",
+          "Ajo y comino",
+          "Cilantro",
+          "Sal y aceite"
+        ],
         "pasos": [
           "Cocina el grano hasta que esté suave",
           "Haz un refrito de cebolla, pimiento, ajo y comino",
@@ -97,7 +175,11 @@
       "pilar": "comunidad",
       "formato": "imagen",
       "plantilla": "pregunta",
-      "datos": { "pregunta": "¿Cómo te gusta el arroz?", "opcionA": "Bien graneadito", "opcionB": "Suavecito y pegadito" },
+      "datos": {
+        "pregunta": "¿Cómo te gusta el arroz?",
+        "opcionA": "Bien graneadito",
+        "opcionB": "Suavecito y pegadito"
+      },
       "texto": "🤔 Pregunta del domingo: ¿cómo te gusta el arroz?\n\n🅰️ Bien graneadito\n🅱️ Suavecito y pegadito\n\nResponde A o B en los comentarios 👇\n\n¡Feliz domingo, {{ciudades}}! 🌾\n\n{{hashtags}}"
     },
     {
@@ -105,12 +187,34 @@
       "pilar": "venta",
       "formato": "reel",
       "slides": [
-        { "tipo": "portada", "etiqueta": "ESTA SEMANA", "titulo": "Precio del quintal", "ilustracion": "saco" },
-        { "tipo": "precio", "titulo": "Quintal de arroz", "presentacion": "Quintal", "detalle": "Al por mayor y menor" },
-        { "tipo": "precio", "titulo": "Arroba de arroz", "presentacion": "Arroba", "detalle": "Ideal para la casa" },
-        { "tipo": "cta", "titulo": "Reserva tu pedido" }
+        {
+          "tipo": "portada",
+          "etiqueta": "ESTA SEMANA",
+          "titulo": "Precios del arroz",
+          "ilustracion": "saco"
+        },
+        {
+          "tipo": "marca",
+          "marca": "Conejo"
+        },
+        {
+          "tipo": "marca",
+          "marca": "Amazonas"
+        },
+        {
+          "tipo": "marca",
+          "marca": "Gloria"
+        },
+        {
+          "tipo": "marca",
+          "marca": "Macareño"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Haz tu pedido"
+        }
       ],
-      "texto": "💰 Precios de esta semana en La Ambateñita:\n\n🌾 Quintal (100 lb): {{precio:Quintal}}\n🌾 Arroba (25 lb): {{precio:Arroba}}\n\n¿Necesitas más cantidad? Pregúntanos por el precio especial al por mayor.\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "💰 Precios de esta semana en La Ambateñita:\n\n{{lista_precios}}\n\n¿Cuál es tu marca favorita? Comenta 👇\n\n{{contacto}}\n\n{{hashtags}}"
     },
     {
       "dia": 9,
@@ -135,13 +239,22 @@
       "pilar": "confianza",
       "formato": "imagen",
       "plantilla": "foto",
-      "datos": { "foto": "fotos/pedido.jpg", "etiqueta": "ASÍ TRABAJAMOS", "titulo": "Preparando los pedidos de hoy" },
+      "datos": {
+        "foto": "fotos/pedido.jpg",
+        "etiqueta": "ASÍ TRABAJAMOS",
+        "titulo": "Preparando los pedidos de hoy"
+      },
       "respaldo": {
         "pilar": "confianza",
         "formato": "imagen",
         "plantilla": "oferta",
-        "datos": { "etiqueta": "PARA LA CASA", "titulo": "La arroba ideal para tu familia", "subtitulo": "25 libras de arroz para todo el mes", "presentacion": "Arroba" },
-        "texto": "🏠 ARROBA DE ARROZ (25 lb): {{precio:Arroba}}\n\nLa medida perfecta para la familia: arroz para todo el mes sin estar comprando cada semana.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+        "datos": {
+          "etiqueta": "PARA LA CASA",
+          "titulo": "La arroba ideal para tu familia",
+          "subtitulo": "25 libras de arroz para todo el mes",
+          "presentacion": "Conejo/Arroba"
+        },
+        "texto": "🏠 ARROBA DE ARROZ (25 lb), la medida perfecta para la familia:\n\n▪️ Conejo: {{precio:Conejo/Arroba}}\n▪️ Amazonas: {{precio:Amazonas/Arroba}}\n▪️ Macareño: {{precio:Macareño/Arroba}}\n▪️ Gloria: {{precio:Gloria/Arroba}}\n\nArroz para todo el mes sin estar comprando cada semana.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
       },
       "texto": "📦 Así preparamos los pedidos de hoy para {{ciudades}}.\n\nGracias por la confianza a cada tienda, restaurante y familia que nos compra 🙏🌾\n\n¿Quieres el tuyo?\n{{contacto}}\n\n{{hashtags}}"
     },
@@ -150,21 +263,48 @@
       "pilar": "educacion",
       "formato": "reel",
       "slides": [
-        { "tipo": "portada", "etiqueta": "¿SABÍAS QUE...?", "titulo": "¿Cuántos platos rinde un quintal?", "ilustracion": "plato" },
-        { "tipo": "punto", "num": "1 lb", "texto": "5 a 6 platos", "detalle": "Aproximadamente" },
-        { "tipo": "punto", "num": "25 lb", "texto": "Una arroba: 125 a 150 platos", "detalle": "Aproximadamente" },
-        { "tipo": "punto", "num": "100", "texto": "Un quintal: 500 a 600 platos", "detalle": "Aproximadamente" },
-        { "tipo": "cta", "titulo": "Calcula y pide tu arroz" }
+        {
+          "tipo": "portada",
+          "etiqueta": "¿SABÍAS QUE...?",
+          "titulo": "¿Cuántos platos rinde un quintal?",
+          "ilustracion": "plato"
+        },
+        {
+          "tipo": "punto",
+          "num": "1 lb",
+          "texto": "5 a 6 platos",
+          "detalle": "Aproximadamente"
+        },
+        {
+          "tipo": "punto",
+          "num": "25 lb",
+          "texto": "Una arroba: 125 a 150 platos",
+          "detalle": "Aproximadamente"
+        },
+        {
+          "tipo": "punto",
+          "num": "45 kg",
+          "texto": "Un quintal: 500 a 600 platos",
+          "detalle": "Aproximadamente"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Calcula y pide tu arroz"
+        }
       ],
-      "texto": "🍽️ ¿Cuántos platos rinde un quintal de arroz?\n\nCon una porción normal (unos 80–90 g de arroz crudo por plato):\n\n• 1 libra ➜ 5 a 6 platos\n• 1 arroba (25 lb) ➜ 125 a 150 platos\n• 1 quintal (100 lb) ➜ 500 a 600 platos\n\n*Valores aproximados: depende del tamaño de tu porción.\n\nSi tienes restaurante, esta cuenta te ayuda a saber cuánto comprar al mes 📊\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "🍽️ ¿Cuántos platos rinde un quintal de arroz?\n\nCon una porción normal (unos 80–90 g de arroz crudo por plato):\n\n• 1 libra ➜ 5 a 6 platos\n• 1 arroba (25 lb) ➜ 125 a 150 platos\n• 1 quintal (45 kg, unas 99 lb) ➜ 500 a 600 platos\n\n*Valores aproximados: depende del tamaño de tu porción.\n\nSi tienes restaurante, esta cuenta te ayuda a saber cuánto comprar al mes 📊\n\n{{contacto}}\n\n{{hashtags}}"
     },
     {
       "dia": 12,
       "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "mayoreo",
-      "datos": { "titulo": "Para tiendas de barrio", "subtitulo": "Mientras más compras, mejor precio. Pregúntanos." },
-      "texto": "🏪 ¡Atención, tiendas de barrio de {{ciudades}}!\n\nSurte tu tienda con arroz de La Ambateñita. Mientras más compras, mejor precio:\n\n{{lista_precios}}\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+      "plantilla": "marca",
+      "datos": {
+        "marca": "Gloria",
+        "etiqueta": "MARCA DE LA SEMANA",
+        "subtitulo": "Quintal, arroba y funda de 10 libras"
+      },
+      "texto": "🌾 ARROZ GLORIA en La Ambateñita\n\n{{precios_marca:Gloria}}\n\nPor quintal para tu negocio o por funda para la casa.\n\n{{contacto}}\n{{ubicacion}}\n\n#ArrozGloria {{hashtags}}"
     },
     {
       "dia": 13,
@@ -174,7 +314,14 @@
       "datos": {
         "etiqueta": "RECETA DEL SÁBADO",
         "titulo": "Chaulafán casero",
-        "ingredientes": ["3 tazas de arroz cocinado (mejor del día anterior)", "1 pechuga de pollo", "2 huevos", "Cebolla blanca", "Salsa de soya", "Zanahoria y arveja"],
+        "ingredientes": [
+          "3 tazas de arroz cocinado (mejor del día anterior)",
+          "1 pechuga de pollo",
+          "2 huevos",
+          "Cebolla blanca",
+          "Salsa de soya",
+          "Zanahoria y arveja"
+        ],
         "pasos": [
           "Saltea el pollo en tiras hasta dorar",
           "Agrega zanahoria, arveja y cebolla blanca",
@@ -189,7 +336,11 @@
       "pilar": "comunidad",
       "formato": "imagen",
       "plantilla": "pregunta",
-      "datos": { "pregunta": "¿Con qué acompañas tu arroz?", "opcionA": "Menestra y carne asada", "opcionB": "Huevito frito y maduro" },
+      "datos": {
+        "pregunta": "¿Con qué acompañas tu arroz?",
+        "opcionA": "Menestra y carne asada",
+        "opcionB": "Huevito frito y maduro"
+      },
       "texto": "🍳 Pregunta del domingo: ¿con qué acompañas tu arroz?\n\n🅰️ Menestra y carne asada\n🅱️ Huevito frito y maduro\n\nComenta A o B 👇 ¡Queremos saber qué se come en {{ciudades}}!\n\n{{hashtags}}"
     },
     {
@@ -197,13 +348,35 @@
       "pilar": "venta",
       "formato": "reel",
       "slides": [
-        { "tipo": "portada", "etiqueta": "AHORRA", "titulo": "3 razones para comprar al por mayor", "ilustracion": "saco" },
-        { "tipo": "punto", "num": 1, "texto": "Pagas menos por cada libra" },
-        { "tipo": "punto", "num": 2, "texto": "No te quedas sin arroz a mitad de mes" },
-        { "tipo": "punto", "num": 3, "texto": "Haces una sola compra y listo" },
-        { "tipo": "cta", "titulo": "Pide tu quintal hoy" }
+        {
+          "tipo": "portada",
+          "etiqueta": "¿POR QUÉ NOSOTROS?",
+          "titulo": "3 razones para comprar en La Ambateñita",
+          "ilustracion": "saco"
+        },
+        {
+          "tipo": "punto",
+          "num": 1,
+          "texto": "Las marcas que ya conoces",
+          "detalle": "{{marcas}}"
+        },
+        {
+          "tipo": "punto",
+          "num": 2,
+          "texto": "Por quintal, arroba o funda",
+          "detalle": "Compra lo que necesitas"
+        },
+        {
+          "tipo": "punto",
+          "num": 3,
+          "texto": "Te atendemos directo por WhatsApp"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Pide tu arroz hoy"
+        }
       ],
-      "texto": "💡 3 razones para comprar tu arroz al por mayor:\n\n1️⃣ Pagas menos por cada libra\n2️⃣ No te quedas sin arroz a mitad de mes\n3️⃣ Haces una sola compra y listo\n\nQuintal (100 lb): {{precio:Quintal}}\nMedio quintal (50 lb): {{precio:Medio quintal}}\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "💡 3 razones para comprar tu arroz en La Ambateñita:\n\n1️⃣ Las marcas que ya conoces: {{marcas}}\n2️⃣ Por quintal, arroba o funda: compras lo que necesitas\n3️⃣ Te atendemos directo por WhatsApp\n\n{{contacto}}\n\n{{hashtags}}"
     },
     {
       "dia": 16,
@@ -227,13 +400,21 @@
       "pilar": "confianza",
       "formato": "imagen",
       "plantilla": "entrega",
-      "requiere": ["entrega_a_domicilio"],
-      "datos": { "etiqueta": "RESTAURANTES Y COMEDORES", "titulo": "Te llevamos el arroz a tu local" },
+      "requiere": [
+        "entrega_a_domicilio"
+      ],
+      "datos": {
+        "etiqueta": "RESTAURANTES Y COMEDORES",
+        "titulo": "Te llevamos el arroz a tu local"
+      },
       "respaldo": {
         "pilar": "venta",
         "formato": "imagen",
         "plantilla": "mayoreo",
-        "datos": { "titulo": "Restaurantes y comedores", "subtitulo": "Cotiza tu pedido mensual por WhatsApp" },
+        "datos": {
+          "titulo": "Restaurantes y comedores",
+          "subtitulo": "Cotiza tu pedido mensual por WhatsApp"
+        },
         "texto": "🍽️ ¿Tienes restaurante o comedor en {{ciudades}}?\n\nCotiza tu pedido mensual de arroz con La Ambateñita:\n\n{{lista_precios}}\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
       },
       "texto": "🍽️ ¿Tienes restaurante o comedor en {{ciudades}}?\n\nHaz tu pedido por WhatsApp y te llevamos el arroz a tu local, para que tú te dediques a cocinar.\n\n{{contacto}}\n\n{{hashtags}}"
@@ -243,12 +424,36 @@
       "pilar": "educacion",
       "formato": "reel",
       "slides": [
-        { "tipo": "portada", "etiqueta": "RECETA RÁPIDA", "titulo": "Arroz amarillo con achiote", "ilustracion": "plato" },
-        { "tipo": "punto", "num": 1, "texto": "Sofríe cebolla y ajo en aceite con achiote" },
-        { "tipo": "punto", "num": 2, "texto": "Agrega el arroz lavado y mezcla bien" },
-        { "tipo": "punto", "num": 3, "texto": "Pon el agua caliente con sal" },
-        { "tipo": "punto", "num": 4, "texto": "Tapa a fuego bajo cuando seque" },
-        { "tipo": "cta", "titulo": "¿Ya tienes tu arroz?" }
+        {
+          "tipo": "portada",
+          "etiqueta": "RECETA RÁPIDA",
+          "titulo": "Arroz amarillo con achiote",
+          "ilustracion": "plato"
+        },
+        {
+          "tipo": "punto",
+          "num": 1,
+          "texto": "Sofríe cebolla y ajo en aceite con achiote"
+        },
+        {
+          "tipo": "punto",
+          "num": 2,
+          "texto": "Agrega el arroz lavado y mezcla bien"
+        },
+        {
+          "tipo": "punto",
+          "num": 3,
+          "texto": "Pon el agua caliente con sal"
+        },
+        {
+          "tipo": "punto",
+          "num": 4,
+          "texto": "Tapa a fuego bajo cuando seque"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "¿Ya tienes tu arroz?"
+        }
       ],
       "texto": "🟡 Arroz amarillo con achiote en 4 pasos:\n\n1. Sofríe cebolla y ajo en aceite con achiote\n2. Agrega el arroz lavado y mezcla bien\n3. Pon el agua caliente con sal\n4. Cuando seque, tapa y deja a fuego bajo\n\n¡Perfecto para acompañar un seco de pollo! 🍗\n\n{{contacto}}\n\n{{hashtags}}"
     },
@@ -256,9 +461,13 @@
       "dia": 19,
       "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "oferta",
-      "datos": { "etiqueta": "PARA LA CASA", "titulo": "La arroba ideal para tu familia", "subtitulo": "25 libras de arroz para todo el mes", "presentacion": "Arroba" },
-      "texto": "🏠 ARROBA DE ARROZ (25 lb): {{precio:Arroba}}\n\nLa medida perfecta para la familia: arroz para todo el mes sin estar comprando cada semana.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+      "plantilla": "marca",
+      "datos": {
+        "marca": "Amazonas",
+        "etiqueta": "MARCA DE LA SEMANA",
+        "subtitulo": "Quintal, arroba y funda de 10 libras"
+      },
+      "texto": "🌾 ARROZ AMAZONAS en La Ambateñita\n\n{{precios_marca:Amazonas}}\n\nGrano extra largo, por quintal, arroba o funda.\n\n{{contacto}}\n{{ubicacion}}\n\n#ArrozAmazonas {{hashtags}}"
     },
     {
       "dia": 20,
@@ -268,7 +477,14 @@
       "datos": {
         "etiqueta": "RECETA DEL SÁBADO",
         "titulo": "Arroz con pollo",
-        "ingredientes": ["2 tazas de arroz", "4 presas de pollo", "1 pimiento", "Zanahoria y arveja", "Cebolla y ajo", "Achiote y comino"],
+        "ingredientes": [
+          "2 tazas de arroz",
+          "4 presas de pollo",
+          "1 pimiento",
+          "Zanahoria y arveja",
+          "Cebolla y ajo",
+          "Achiote y comino"
+        ],
         "pasos": [
           "Dora el pollo y sácalo de la olla",
           "Haz un refrito con cebolla, ajo, pimiento y achiote",
@@ -283,7 +499,12 @@
       "pilar": "comunidad",
       "formato": "imagen",
       "plantilla": "pregunta",
-      "datos": { "etiqueta": "CONFIESA", "pregunta": "¿Eres del equipo concolón?", "opcionA": "¡Sí! Es lo mejor de la olla", "opcionB": "No, solo arroz suelto" },
+      "datos": {
+        "etiqueta": "CONFIESA",
+        "pregunta": "¿Eres del equipo concolón?",
+        "opcionA": "¡Sí! Es lo mejor de la olla",
+        "opcionB": "No, solo arroz suelto"
+      },
       "texto": "🔥 Confiesa: ¿eres del equipo concolón?\n\n🅰️ ¡Sí! Es lo mejor de la olla\n🅱️ No, yo solo arroz suelto\n\nComenta A o B y etiqueta a quien siempre se pelea por el concolón 😂👇\n\n{{hashtags}}"
     },
     {
@@ -291,11 +512,31 @@
       "pilar": "venta",
       "formato": "reel",
       "slides": [
-        { "tipo": "portada", "etiqueta": "ASÍ DE FÁCIL", "titulo": "Haz tu pedido en 3 pasos", "ilustracion": "saco" },
-        { "tipo": "punto", "num": 1, "texto": "Escríbenos por WhatsApp" },
-        { "tipo": "punto", "num": 2, "texto": "Dinos cuánto arroz necesitas" },
-        { "tipo": "punto", "num": 3, "texto": "Coordinamos la entrega o el retiro" },
-        { "tipo": "cta", "titulo": "¡Te esperamos!" }
+        {
+          "tipo": "portada",
+          "etiqueta": "ASÍ DE FÁCIL",
+          "titulo": "Haz tu pedido en 3 pasos",
+          "ilustracion": "saco"
+        },
+        {
+          "tipo": "punto",
+          "num": 1,
+          "texto": "Escríbenos por WhatsApp"
+        },
+        {
+          "tipo": "punto",
+          "num": 2,
+          "texto": "Dinos cuánto arroz necesitas"
+        },
+        {
+          "tipo": "punto",
+          "num": 3,
+          "texto": "Coordinamos la entrega o el retiro"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "¡Te esperamos!"
+        }
       ],
       "texto": "📲 Pedir tu arroz en La Ambateñita es así de fácil:\n\n1️⃣ Escríbenos por WhatsApp\n2️⃣ Dinos cuánto arroz necesitas\n3️⃣ Coordinamos la entrega o el retiro\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
     },
@@ -322,12 +563,19 @@
       "pilar": "confianza",
       "formato": "imagen",
       "plantilla": "foto",
-      "datos": { "foto": "fotos/bodega.jpg", "etiqueta": "NUESTRA BODEGA", "titulo": "Arroz listo para tu negocio" },
+      "datos": {
+        "foto": "fotos/bodega.jpg",
+        "etiqueta": "NUESTRA BODEGA",
+        "titulo": "Arroz listo para tu negocio"
+      },
       "respaldo": {
         "pilar": "venta",
         "formato": "imagen",
         "plantilla": "mayoreo",
-        "datos": { "titulo": "Arroz listo para tu negocio", "subtitulo": "Stock disponible en Ambato y Macas" },
+        "datos": {
+          "titulo": "Arroz listo para tu negocio",
+          "subtitulo": "Para tu casa, tu tienda o tu restaurante"
+        },
         "texto": "🌾 Arroz listo para tu negocio en {{ciudades}}:\n\n{{lista_precios}}\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
       },
       "texto": "🏭 Así luce nuestra bodega: arroz listo para tu casa y tu negocio.\n\n¡Te esperamos!\n{{ubicacion}}\n\n{{contacto}}\n\n{{hashtags}}"
@@ -337,20 +585,49 @@
       "pilar": "venta",
       "formato": "reel",
       "slides": [
-        { "tipo": "portada", "etiqueta": "PARA NEGOCIOS", "titulo": "Arroz al por mayor", "ilustracion": "saco" },
-        { "tipo": "precio", "titulo": "Quintal", "presentacion": "Quintal", "detalle": "Precio especial por volumen" },
-        { "tipo": "precio", "titulo": "Medio quintal", "presentacion": "Medio quintal", "detalle": "Ideal para negocios pequeños" },
-        { "tipo": "cta", "titulo": "Cotiza por WhatsApp" }
+        {
+          "tipo": "portada",
+          "etiqueta": "PARA NEGOCIOS",
+          "titulo": "El quintal de 45 kg",
+          "ilustracion": "saco",
+          "presentacion": "Conejo/Quintal"
+        },
+        {
+          "tipo": "precio",
+          "titulo": "Quintal Conejo",
+          "presentacion": "Conejo/Quintal",
+          "detalle": "45 kg"
+        },
+        {
+          "tipo": "precio",
+          "titulo": "Quintal Amazonas",
+          "presentacion": "Amazonas/Quintal",
+          "detalle": "45 kg"
+        },
+        {
+          "tipo": "precio",
+          "titulo": "Quintal Gloria",
+          "presentacion": "Gloria/Quintal",
+          "detalle": "45 kg"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Cotiza por WhatsApp"
+        }
       ],
-      "texto": "🌾 Arroz al por mayor para tu negocio:\n\n• Quintal (100 lb): {{precio:Quintal}}\n• Medio quintal (50 lb): {{precio:Medio quintal}}\n\n¿Compras varios quintales? Escríbenos y te damos un precio especial.\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "🌾 Quintal de arroz (45 kg) para tu negocio:\n\n▪️ Conejo: {{precio:Conejo/Quintal}}\n▪️ Amazonas: {{precio:Amazonas/Quintal}}\n▪️ Gloria: {{precio:Gloria/Quintal}}\n\n¿Necesitas varios quintales? Escríbenos y armamos tu pedido.\n\n{{contacto}}\n\n{{hashtags}}"
     },
     {
       "dia": 26,
       "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "oferta",
-      "datos": { "etiqueta": "NEGOCIOS PEQUEÑOS", "titulo": "Medio quintal, entero sabor", "subtitulo": "50 libras para tu tienda o comedor", "presentacion": "Medio quintal" },
-      "texto": "🌾 MEDIO QUINTAL (50 lb): {{precio:Medio quintal}}\n\nPerfecto para tiendas pequeñas, comedores y familias grandes.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+      "plantilla": "marca",
+      "datos": {
+        "marca": "Macareño",
+        "etiqueta": "MARCA DE LA SEMANA",
+        "subtitulo": "Arroba y funda de 10 libras"
+      },
+      "texto": "🌾 ARROZ MACAREÑO en La Ambateñita\n\n{{precios_marca:Macareño}}\n\nLlévalo por arroba o en funda de 10 libras.\n\n{{contacto}}\n{{ubicacion}}\n\n#ArrozMacareño {{hashtags}}"
     },
     {
       "dia": 27,
@@ -360,7 +637,14 @@
       "datos": {
         "etiqueta": "POSTRE CON ARROZ",
         "titulo": "Arroz con leche",
-        "ingredientes": ["1 taza de arroz", "1 litro de leche", "1 rama de canela", "Clavo de olor", "Azúcar al gusto", "Pasas (opcional)"],
+        "ingredientes": [
+          "1 taza de arroz",
+          "1 litro de leche",
+          "1 rama de canela",
+          "Clavo de olor",
+          "Azúcar al gusto",
+          "Pasas (opcional)"
+        ],
         "pasos": [
           "Cocina el arroz con agua, canela y clavo",
           "Cuando esté suave, agrega la leche",
@@ -375,7 +659,12 @@
       "pilar": "comunidad",
       "formato": "imagen",
       "plantilla": "pregunta",
-      "datos": { "etiqueta": "QUEREMOS CONOCERTE", "pregunta": "¿Desde qué ciudad nos sigues?", "opcionA": "Ambato", "opcionB": "Macas" },
+      "datos": {
+        "etiqueta": "QUEREMOS CONOCERTE",
+        "pregunta": "¿Desde qué ciudad nos sigues?",
+        "opcionA": "Ambato",
+        "opcionB": "Macas"
+      },
       "texto": "📍 ¡Queremos conocerte! ¿Desde qué ciudad nos sigues?\n\n🅰️ Ambato\n🅱️ Macas\n\n¿De otro lugar? Escríbelo en los comentarios 👇 ¡Gracias por acompañarnos este mes! 🌾\n\n{{hashtags}}"
     }
   ]
