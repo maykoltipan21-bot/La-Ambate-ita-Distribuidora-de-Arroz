@@ -156,7 +156,7 @@
    "letra": "B",
    "lema": "Para la sopa y el seco de todos los días",
    "destacados": [
-    "B06",
+    "B07",
     "B13",
     "B16"
    ],
@@ -201,20 +201,20 @@
        "foto": "fotos/b05-fideo-lazo-mediano-400-g.jpg"
       },
       {
+       "nombre": "Nido Entrefino",
+       "detalle": "1500 g · x5",
+       "precio": 2.53,
+       "codigo": "B06",
+       "foto": "fotos/b06-nido-entrefino-1500-g.jpg"
+      },
+      {
        "nombre": "Fideo Surtido",
        "detalle": "400 g · x25 und",
        "precio": 0.65,
        "sabores": "Lazo, Caracol, Tornillo, Macarrón",
        "sabores_titulo": "Formas",
-       "codigo": "B06",
-       "foto": "fotos/b06-fideo-surtido-400-g.jpg"
-      },
-      {
-       "nombre": "Nido Entrefino",
-       "detalle": "1500 g · x5",
-       "precio": 2.53,
        "codigo": "B07",
-       "foto": "fotos/b07-nido-entrefino-1500-g.jpg"
+       "foto": "fotos/b07-fideo-surtido-400-g.jpg"
       },
       {
        "nombre": "Nido Entrefino",
@@ -344,7 +344,7 @@
    "lema": "Lo básico que nunca puede faltar en tu tienda",
    "destacados": [
     "C01",
-    "C12",
+    "C13",
     "C20"
    ],
    "grupos": [
@@ -434,18 +434,18 @@
        "foto": "fotos/c11-aceite-amalia-bidon.jpg"
       },
       {
-       "nombre": "Aceite Alesol",
-       "detalle": "900 ml · x15 und",
-       "precio": 2.09,
-       "codigo": "C12",
-       "foto": "fotos/c12-aceite-alesol-900-ml.jpg"
-      },
-      {
        "nombre": "Aceite Alesol funda",
        "detalle": "900 ml · x12",
        "precio": 1.75,
+       "codigo": "C12",
+       "foto": "fotos/c12-aceite-alesol-funda-900-ml.jpg"
+      },
+      {
+       "nombre": "Aceite Alesol",
+       "detalle": "900 ml · x15 und",
+       "precio": 2.09,
        "codigo": "C13",
-       "foto": "fotos/c13-aceite-alesol-funda-900-ml.jpg"
+       "foto": "fotos/c13-aceite-alesol-900-ml.jpg"
       },
       {
        "nombre": "Aceite Criollo",

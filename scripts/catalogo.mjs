@@ -101,13 +101,13 @@ function tarjeta(p, sec) {
 
 function cabeceraGrande(sec, i) {
   const marcas = sec.subtitulo.split(' · ').map((m) => `<span>${esc(m)}</span>`).join('');
-  const pila = fotosPila(sec).map((p, k) => `<span style="--r:${[-9, 6, -3][k]}deg;--x:${k * 74}px;--y:${[14, 0, 22][k]}px"><img src="${esc(p.foto)}" alt=""></span>`).join('');
+  const pila = fotosPila(sec).map((p, k) => `<span style="--r:${[-9, 6, -3][k]}deg;--x:${k * 74}px;--y:${[10, 0, 18][k]}px"><img src="${esc(p.foto)}" alt=""></span>`).join('');
   return `<header class="hero" data-id="${esc(sec.id)}" style="${varsColor(sec.color)}">
-    <div class="hero-fondo">${granosBlancos(730, 186, 7 + i)}</div>
+    <div class="hero-fondo">${granosBlancos(730, 156, 7 + i)}</div>
     <div class="hero-num">${num(i)}</div>
     <div class="hero-txt">
       <small>CATEGORÍA</small>
-      <h2 style="font-size:${sec.nombre.length > 16 ? 44 : 52}px">${esc(sec.nombre)}</h2>
+      <h2 style="font-size:${sec.nombre.length > 16 ? 40 : 48}px">${esc(sec.nombre)}</h2>
       <p>${esc(sec.lema)}</p>
       <div class="hero-marcas">${marcas}</div>
     </div>
@@ -230,29 +230,31 @@ function promociones() {
   </section>`;
 }
 
-// ---------- arroz (página destacada) ----------
+// ---------- arroz (dos páginas destacadas, dos marcas por página) ----------
+const cabChica = (sec, i) => `<header class="cab-chica" style="${varsColor(sec.color)}"><span class="cab-chica-num">${num(i)}</span><b>${esc(sec.nombre)}</b><em>continuación</em></header>`;
+
+function bloqueMarca(g, sec) {
+  const marca = negocio.productos.find((m) => m.nombre === g.nombre) || {};
+  const minis = g.productos.map((p) => `
+    <div class="mini">
+      <span class="codigo">${esc(p.codigo)}</span>
+      <div class="mini-foto"><img src="${esc(p.foto)}" alt=""></div>
+      <b>${esc(p.detalle)}</b>
+      <div class="mini-precio">${precio(p.precio)}</div>
+    </div>`).join('');
+  return `<div class="marca-bloque" style="${varsColor(marca.color || sec.color)}">
+    <div class="marca-cab">
+      ${granosBlancos(730, 54, 3 + g.nombre.length)}
+      <small>ARROZ</small><h3>${esc(g.nombre)}</h3>
+      ${marca.etiqueta ? `<span class="marca-tag">${esc(marca.etiqueta)}</span>` : ''}
+      ${marca.descripcion ? `<p>${esc(marca.descripcion)}</p>` : ''}
+    </div>
+    <div class="minis">${minis}</div>
+  </div>`;
+}
+
 function paginaArroz(sec, i) {
-  const filas = sec.grupos.map((g) => {
-    const marca = negocio.productos.find((m) => m.nombre === g.nombre) || {};
-    const color = marca.color || sec.color;
-    const tamNombre = g.nombre.length > 6 ? 40 : 50;
-    const minis = g.productos.map((p) => `
-      <div class="mini">
-        <span class="codigo">${esc(p.codigo)}</span>
-        <div class="mini-foto"><img src="${esc(p.foto)}" alt=""></div>
-        <b>${esc(p.detalle)}</b>
-        <div class="mini-precio">${precio(p.precio)}</div>
-      </div>`).join('');
-    return `<div class="marca-fila" style="${varsColor(color)}">
-      <div class="marca-nombre">
-        ${granosBlancos(170, 184, 3 + g.nombre.length)}
-        <small>ARROZ</small><h3 style="font-size:${tamNombre}px">${esc(g.nombre)}</h3>
-        ${marca.etiqueta ? `<span class="marca-tag">${esc(marca.etiqueta)}</span>` : ''}
-        ${marca.descripcion ? `<p>${esc(marca.descripcion)}</p>` : ''}
-      </div>
-      <div class="minis">${minis}</div>
-    </div>`;
-  }).join('');
+  const [primeras, segundas] = [sec.grupos.slice(0, 2), sec.grupos.slice(2)];
   return `<section class="pagina cat arroz" style="${varsColor(sec.color)}">
     <header class="hero hero-foto" data-id="${esc(sec.id)}" style="${varsColor(sec.color)}">
       <img class="hero-img" src="${AMBIENTE.arroz}" alt="">
@@ -264,7 +266,12 @@ function paginaArroz(sec, i) {
         <div class="hero-marcas">${sec.subtitulo.split(' · ').map((m) => `<span>${esc(m)}</span>`).join('')}</div>
       </div>
     </header>
-    <div class="filas-arroz">${filas}</div>
+    <div class="filas-arroz">${primeras.map((g) => bloqueMarca(g, sec)).join('')}</div>
+    ${pie()}${pestana(sec, i)}
+  </section>
+  <section class="pagina cat arroz" style="${varsColor(sec.color)}">
+    ${cabChica(sec, i)}
+    <div class="filas-arroz">${segundas.map((g) => bloqueMarca(g, sec)).join('')}</div>
     ${pie()}${pestana(sec, i)}
   </section>`;
 }
@@ -379,11 +386,23 @@ function paginar() {
     });
   }
   flujo.remove();
+  estirar();
   const paginas = [...document.querySelectorAll('.pagina')];
   paginas.forEach((p, i) => { const n = p.querySelector('.num-pag'); if (n) n.textContent = i + 1; });
   document.querySelectorAll('[data-pag-de]').forEach((el) => {
     const destino = document.querySelector('[data-id="' + el.dataset.pagDe + '"]');
     if (destino) el.textContent = 'pág. ' + (paginas.indexOf(destino.closest('.pagina')) + 1);
+  });
+}
+// Reparte el espacio que sobra al pie de cada página entre las filas: las fotos crecen y la hoja queda llena.
+function estirar() {
+  document.querySelectorAll('.cuerpo').forEach((c) => {
+    const tarjetas = [...c.querySelectorAll('.tarjeta')];
+    if (!tarjetas.length) return;
+    const filas = new Set(tarjetas.map((t) => Math.round(t.getBoundingClientRect().top))).size;
+    const libre = c.getBoundingClientRect().bottom - c.lastElementChild.getBoundingClientRect().bottom - 4;
+    const extra = Math.min(170, Math.floor(libre / filas));
+    if (extra > 0) tarjetas.forEach((t) => { t.style.height = (t.offsetHeight + extra) + 'px'; });
   });
 }
 document.fonts.ready.then(async () => {
@@ -403,7 +422,7 @@ img { display: block; }
 .granos { position: absolute; inset: 0; }
 
 /* precio estilo etiqueta */
-.pr { font-family: 'League Gothic'; font-weight: 400; font-size: 28px; line-height: 1; display: inline-flex; align-items: flex-start; letter-spacing: .3px; }
+.pr { font-family: 'League Gothic'; font-weight: 400; font-size: 33px; line-height: 1; display: inline-flex; align-items: flex-start; letter-spacing: .3px; }
 .pr i { font-style: normal; font-size: .52em; margin: .1em 1px 0 0; }
 .pr sup { font-size: .52em; line-height: 1; margin: .08em 0 0 1px; vertical-align: baseline; border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
 
@@ -429,13 +448,13 @@ img { display: block; }
   letter-spacing: 1.2px; text-transform: uppercase; white-space: nowrap; }
 
 /* cabecera de categoría */
-.hero { flex: none; height: 186px; border-radius: 24px; position: relative; color: #fff; display: flex; align-items: center;
+.hero { flex: none; height: 156px; border-radius: 24px; position: relative; color: #fff; display: flex; align-items: center;
   padding: 0 0 0 26px; margin-bottom: 6px;
   background: linear-gradient(115deg, var(--c-osc) 0%, var(--c) 45%, color-mix(in srgb, var(--c) 72%, white) 100%); }
 .hero-fondo { position: absolute; inset: 0; border-radius: 24px; overflow: hidden; }
 .hero-fondo::after { content: ''; position: absolute; right: -60px; top: -80px; width: 340px; height: 340px; border-radius: 50%;
   background: rgba(255,255,255,.14); }
-.hero-num { position: relative; font-family: 'League Gothic'; font-size: 112px; line-height: 1; padding-right: 20px; margin-right: 20px;
+.hero-num { position: relative; font-family: 'League Gothic'; font-size: 96px; line-height: 1; padding-right: 20px; margin-right: 20px;
   border-right: 2px solid rgba(255,255,255,.45); }
 .hero-txt { position: relative; flex: 1; min-width: 0; }
 .hero-txt small { font-weight: 800; font-size: 10px; letter-spacing: 3px; opacity: .85; }
@@ -444,12 +463,12 @@ img { display: block; }
 .hero-txt p { font-weight: 700; font-size: 13px; margin-top: 6px; opacity: .96; }
 .hero-marcas { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; max-width: 330px; }
 .hero-marcas span { background: rgba(255,255,255,.94); color: var(--c-osc); font-weight: 800; font-size: 9.5px; padding: 3px 9px; border-radius: 999px; }
-.hero-pila { position: relative; width: 250px; height: 186px; flex: none; }
-.hero-pila span { position: absolute; left: var(--x); top: calc(26px + var(--y)); width: 104px; height: 112px; background: #fff; border-radius: 16px;
+.hero-pila { position: relative; width: 240px; height: 156px; flex: none; }
+.hero-pila span { position: absolute; left: var(--x); top: calc(18px + var(--y)); width: 96px; height: 102px; background: #fff; border-radius: 16px;
   padding: 9px; transform: rotate(var(--r)); box-shadow: 0 12px 26px rgba(0,0,0,.22); display: flex; align-items: center; justify-content: center; }
 .hero-pila img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.hero-foto { background: var(--verde); overflow: hidden; }
+.hero-foto { background: var(--verde); overflow: hidden; height: 176px; }
 .hero-foto::before { z-index: 1; }
 .hero-foto .hero-num, .hero-foto .hero-txt { z-index: 2; }
 .hero-foto .hero-txt { flex: none; max-width: 290px; }
@@ -469,68 +488,68 @@ img { display: block; }
   padding: 5px 12px; border-radius: 8px 8px 8px 2px; box-shadow: 0 3px 8px color-mix(in srgb, var(--c) 30%, transparent); }
 .grupo em { font-style: normal; font-weight: 700; color: #9AA09C; font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; }
 .grupo::after { content: ''; flex: 1; height: 2px; border-radius: 2px; background: color-mix(in srgb, var(--c) 28%, white); }
-.rejilla { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; grid-auto-flow: row dense; }
+.rejilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; grid-auto-flow: row dense; }
 
 /* tarjeta de producto */
-.tarjeta { height: 188px; border: 1px solid #EEE8DC; border-radius: 16px; background: #fff; display: flex; flex-direction: column;
+.tarjeta { height: 252px; border: 1px solid #EEE8DC; border-radius: 16px; background: #fff; display: flex; flex-direction: column;
   overflow: hidden; position: relative; box-shadow: 0 4px 12px rgba(40,50,40,.07); }
-.tarjeta .foto { flex: 1 1 0; min-height: 52px; margin: 6px 6px 0; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+.tarjeta .foto { flex: 1 1 0; min-height: 80px; margin: 6px 6px 0; position: relative; border-radius: 12px; display: flex; align-items: center; justify-content: center;
   padding: 8px 10px; background: radial-gradient(ellipse at 50% 58%, #fff 15%, color-mix(in srgb, var(--c) 14%, white) 100%); }
-.tarjeta .foto img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 3px; box-shadow: 0 5px 6px rgba(0,0,0,.16); }
-.tarjeta .info { padding: 6px 10px 5px; }
-.tarjeta h3 { font-weight: 800; font-size: 11.2px; line-height: 1.18; color: #1F2A24;
+.tarjeta .foto img { position: absolute; inset: 8px; margin: auto; max-width: calc(100% - 16px); max-height: calc(100% - 16px); border-radius: 4px; box-shadow: 0 6px 10px rgba(0,0,0,.16); }
+.tarjeta .info { padding: 7px 11px 6px; }
+.tarjeta h3 { font-weight: 800; font-size: 13px; line-height: 1.18; color: #1F2A24;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.tarjeta .det { font-weight: 700; font-size: 9.3px; color: #747A76; margin-top: 2px; }
-.tarjeta .sab { font-size: 7.8px; font-weight: 500; color: #747A76; line-height: 1.25; margin-top: 2px;
+.tarjeta .det { font-weight: 700; font-size: 10.3px; color: #747A76; margin-top: 2px; }
+.tarjeta .sab { font-size: 8.6px; font-weight: 500; color: #747A76; line-height: 1.25; margin-top: 2px;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .tarjeta .sab b { font-weight: 800; color: var(--c-osc); }
 .extras { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 3px; }
 .extras span { background: color-mix(in srgb, var(--c) 13%, white); color: var(--c-osc); font-size: 8.3px; font-weight: 700;
   padding: 2px 6px; border-radius: 6px; }
 .extras b { font-weight: 900; }
-.etiqueta { flex: none; height: 32px; margin: 0 6px 6px; border-radius: 10px; background: var(--c); color: #fff; display: flex; align-items: center;
+.etiqueta { flex: none; height: 38px; margin: 0 6px 6px; border-radius: 10px; background: var(--c); color: #fff; display: flex; align-items: center;
   gap: 7px; padding: 0 10px 0 9px; box-shadow: inset 0 -3px 0 rgba(0,0,0,.08); }
 .etiqueta::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #fff; flex: none; }
-.etiqueta small { flex: 1; font-size: 7.3px; font-weight: 800; letter-spacing: 1px; opacity: .93; }
-.codigo { position: absolute; top: 11px; left: 11px; font-size: 7.8px; font-weight: 800; color: #fff; background: var(--c);
+.etiqueta small { flex: 1; font-size: 8px; font-weight: 800; letter-spacing: 1px; opacity: .93; }
+.codigo { position: absolute; top: 11px; left: 11px; font-size: 8.8px; font-weight: 800; color: #fff; background: var(--c);
   border-radius: 6px; padding: 2px 6px; z-index: 1; }
 
 /* tarjeta destacada (ocupa dos columnas) */
 .tarjeta.destacada { grid-column: span 2; flex-direction: row; border: 1.5px solid color-mix(in srgb, var(--c) 45%, white);
   background: linear-gradient(135deg, color-mix(in srgb, var(--c) 15%, white) 0%, #fff 62%); }
-.destacada .foto { flex: none; width: 46%; margin: 8px; background: radial-gradient(ellipse at 50% 55%, #fff 30%, color-mix(in srgb, var(--c) 10%, white) 100%); }
+.destacada .foto { flex: none; width: 52%; margin: 8px; background: radial-gradient(ellipse at 50% 55%, #fff 30%, color-mix(in srgb, var(--c) 10%, white) 100%); }
 .destacada .lado { flex: 1; min-width: 0; padding: 12px 12px 10px 4px; display: flex; flex-direction: column; }
 .lado-cab { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.cinta { background: var(--dorado); color: #3A2A06; font-weight: 900; font-size: 8px; letter-spacing: 1px; padding: 3px 7px; border-radius: 6px; }
+.cinta { background: var(--dorado); color: #3A2A06; font-weight: 900; font-size: 9px; letter-spacing: 1px; padding: 3px 7px; border-radius: 6px; }
 .codigo-d { font-size: 8px; font-weight: 800; color: var(--c-osc); }
-.destacada h3 { font-size: 15px; -webkit-line-clamp: 3; }
-.destacada .det { font-size: 10.5px; margin-top: 3px; }
-.destacada .sab { font-size: 8.5px; -webkit-line-clamp: 3; }
-.etiqueta.grande { margin: auto 0 0; height: 46px; border-radius: 12px; }
-.etiqueta.grande .pr { font-size: 40px; }
+.destacada h3 { font-size: 18px; -webkit-line-clamp: 3; }
+.destacada .det { font-size: 12px; margin-top: 3px; }
+.destacada .sab { font-size: 9.5px; -webkit-line-clamp: 3; }
+.etiqueta.grande { margin: auto 0 0; height: 54px; border-radius: 12px; }
+.etiqueta.grande .pr { font-size: 48px; }
 
 /* arroz */
-.filas-arroz { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-.marca-fila { height: 183px; display: flex; gap: 12px; }
-.marca-nombre { position: relative; overflow: hidden; width: 170px; flex: none; border-radius: 16px; color: #fff; padding: 16px; display: flex;
-  flex-direction: column; justify-content: center; background: linear-gradient(140deg, var(--c-osc), var(--c) 60%); }
-.marca-nombre > * { position: relative; }
-.marca-nombre .granos { position: absolute; }
-.marca-nombre small { font-weight: 800; font-size: 10px; letter-spacing: 3px; opacity: .9; }
-.marca-nombre h3 { font-family: 'League Gothic'; font-weight: 400; line-height: 1; text-transform: uppercase; white-space: nowrap; }
-.marca-tag { align-self: flex-start; margin-top: 8px; background: #fff; color: var(--c-osc); font-weight: 900; font-size: 8.5px;
-  letter-spacing: .8px; padding: 3px 7px; border-radius: 6px; white-space: nowrap; }
-.marca-nombre p { font-size: 10px; font-weight: 600; margin-top: 8px; line-height: 1.3; }
-.minis { flex: 1; display: flex; gap: 10px; }
-.mini { flex: 1 1 0; position: relative; border: 1px solid #EEE8DC; border-radius: 16px; display: flex; flex-direction: column; align-items: center;
-  padding: 8px 8px 7px; box-shadow: 0 4px 12px rgba(40,50,40,.07);
-  background: radial-gradient(ellipse at 50% 38%, #fff 25%, color-mix(in srgb, var(--c) 12%, white) 100%); }
-.mini-foto { flex: 1; min-height: 0; width: 100%; display: flex; align-items: center; justify-content: center; }
-.mini-foto img { max-width: 100%; max-height: 104px; object-fit: contain; border-radius: 4px; box-shadow: 0 6px 8px rgba(0,0,0,.2); }
-.mini b { font-size: 10.5px; font-weight: 800; color: #1F2A24; margin-top: 5px; text-align: center; }
-.mini-precio { margin-top: 3px; background: var(--c); color: #fff; border-radius: 10px; padding: 3px 12px 2px; }
-.mini-precio .pr { font-size: 30px; }
-.mini .codigo { top: 8px; left: 8px; }
+.filas-arroz { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 14px; margin: 12px 0 52px; }
+.marca-bloque { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; border-radius: 20px; overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--c) 30%, white); background: color-mix(in srgb, var(--c) 7%, white); }
+.marca-cab { flex: none; height: 54px; position: relative; overflow: hidden; display: flex; align-items: center; gap: 12px; padding: 0 20px; color: #fff;
+  background: linear-gradient(110deg, var(--c-osc), var(--c) 70%); }
+.marca-cab > * { position: relative; }
+.marca-cab .granos { position: absolute; }
+.marca-cab small { font-weight: 800; font-size: 10px; letter-spacing: 3px; opacity: .9; }
+.marca-cab h3 { font-family: 'League Gothic'; font-weight: 400; font-size: 36px; line-height: 1; text-transform: uppercase; }
+.marca-tag { background: #fff; color: var(--c-osc); font-weight: 900; font-size: 9px; letter-spacing: .8px; padding: 3px 8px; border-radius: 6px; white-space: nowrap; }
+.marca-cab p { margin-left: auto; font-size: 11px; font-weight: 700; }
+.minis { flex: 1; min-height: 0; display: flex; gap: 12px; padding: 12px; }
+.mini { flex: 1 1 0; min-width: 0; position: relative; border: 1px solid #EEE8DC; border-radius: 16px; display: flex; flex-direction: column; align-items: center;
+  padding: 12px 10px 10px; box-shadow: 0 4px 12px rgba(40,50,40,.07);
+  background: radial-gradient(ellipse at 50% 40%, #fff 30%, color-mix(in srgb, var(--c) 12%, white) 100%); }
+.mini-foto { flex: 1; min-height: 0; width: 100%; position: relative; }
+.mini-foto img { position: absolute; inset: 0; margin: auto; max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 8px 14px rgba(0,0,0,.2); }
+.mini b { font-size: 13px; font-weight: 800; color: #1F2A24; margin-top: 10px; text-align: center; }
+.mini-precio { margin-top: 5px; background: var(--c); color: #fff; border-radius: 12px; padding: 4px 16px 3px; }
+.mini-precio .pr { font-size: 40px; }
+.mini .codigo { top: 10px; left: 10px; }
 
 /* portada */
 .portada { text-align: center; }
