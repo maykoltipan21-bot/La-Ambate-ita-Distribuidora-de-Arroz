@@ -35,6 +35,26 @@ export async function renderPNG({ ancho, alto, html }, salida) {
   return salida;
 }
 
+// Abre un HTML del disco (para que carguen sus fotos) y lo guarda como PDF tamaño carta.
+// Si se pasa `vistas`, también guarda cada página como JPG para compartir por WhatsApp.
+export async function renderPDF(archivoHtml, salida, { vistas } = {}) {
+  const nav = await abrirNavegador();
+  const pagina = await nav.newPage({ viewport: { width: 816, height: 1056 }, deviceScaleFactor: 2 });
+  await pagina.goto(`file://${archivoHtml}`, { waitUntil: 'load' });
+  await pagina.waitForFunction(() => window.__listo === true, null, { timeout: 60000 });
+  mkdirSync(dirname(salida), { recursive: true });
+  await pagina.pdf({ path: salida, preferCSSPageSize: true, printBackground: true });
+  if (vistas) {
+    mkdirSync(vistas, { recursive: true });
+    const hojas = await pagina.$$('.pagina');
+    for (let i = 0; i < hojas.length; i++) {
+      await hojas[i].screenshot({ path: join(vistas, `pagina-${String(i + 1).padStart(2, '0')}.jpg`), type: 'jpeg', quality: 88 });
+    }
+  }
+  await pagina.close();
+  return salida;
+}
+
 // Une diapositivas PNG en un reel vertical con zoom suave y transiciones.
 export function renderVideo(diapositivas, salida, { segundos = 3.6, transicion = 0.5, fps = 30 } = {}) {
   mkdirSync(dirname(salida), { recursive: true });

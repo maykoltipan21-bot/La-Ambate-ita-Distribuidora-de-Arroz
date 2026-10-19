@@ -10,6 +10,8 @@ Claude genera cada día una foto o un video con la marca, escribe el texto y lo 
 |---|---|---|---|
 | ![](media/muestras/precios-todas-las-marcas.png) | ![](media/muestras/marca.png) | ![](media/muestras/oferta.png) | ![](media/reels/reel-presentacion-portada.jpg) |
 
+**Catálogo de productos para tiendas (PDF):** [`catalogo/Catalogo-La-Ambatenita.pdf`](catalogo/Catalogo-La-Ambatenita.pdf), con 226 productos, precios y códigos para pedir por WhatsApp. Más detalles en [docs/5-catalogo-de-productos.md](docs/5-catalogo-de-productos.md).
+
 Reel de presentación animado: [`media/reels/reel-presentacion.mp4`](media/reels/reel-presentacion.mp4) (proyecto editable en `videos/reel-presentacion/`). Reels automáticos de ejemplo: [`media/muestras/reel-precios.mp4`](media/muestras/reel-precios.mp4).
 
 ## Pasos para arrancar
@@ -30,6 +32,7 @@ Reel de presentación animado: [`media/reels/reel-presentacion.mp4`](media/reels
 - [2. Conectar Metricool](docs/2-conectar-metricool.md)
 - [3. Estrategia para ganar mercado](docs/3-estrategia-para-ganar-mercado.md)
 - [4. Cómo funciona la automatización](docs/4-como-funciona-la-automatizacion.md)
+- [5. Catálogo de productos (PDF)](docs/5-catalogo-de-productos.md)
 
 ## Estructura
 
@@ -44,4 +47,6 @@ fotos/catalogo/            foto de cada saco por marca y presentación
 media/marca/               foto de perfil y portada de Facebook
 media/muestras/            ejemplos de cada diseño
 media/AAAA-MM-DD/          publicación de cada día (imagen o reel + publicacion.json)
+catalogo/                  catálogo de productos: productos.json, fotos, PDF y páginas en JPG
+scripts/catalogo.mjs       genera el PDF del catálogo
 ```

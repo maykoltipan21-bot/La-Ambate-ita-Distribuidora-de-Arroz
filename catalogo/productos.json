@@ -1,0 +1,1997 @@
+{
+ "_instrucciones": "Datos del catálogo de La Ambateñita. Cambia aquí un precio o un producto y vuelve a generar el PDF con: node scripts/catalogo.mjs",
+ "_fuente": "Catálogo original LA AMBATEÑITA (PDF de 20 páginas) enviado el 19/10/2026.",
+ "titulo": "Catálogo de productos",
+ "vigencia": "Octubre 2026",
+ "promociones": [
+  {
+   "titulo": "Café Sí Café Atom",
+   "detalle": "10 g · display x80 und",
+   "precio_normal": 0.36,
+   "etiqueta_normal": "Precio por unidad",
+   "precio_promo": 0.32,
+   "etiqueta_promo": "Comprando por display",
+   "regalo": "10 und de gomitas Crazy Gumming",
+   "foto_regalo": "fotos/promo-regalo-cafe-si-cafe-atom.jpg",
+   "foto": "fotos/promo-cafe-si-cafe-atom.jpg"
+  },
+  {
+   "titulo": "Pipas Nic",
+   "detalle": "Por la compra de 6 tiras de pipas",
+   "precio_normal": 4.0,
+   "etiqueta_normal": "Precio normal",
+   "precio_promo": 3.58,
+   "etiqueta_promo": "Con la promoción",
+   "regalo": "1 tira de gomitas x12 und",
+   "foto_regalo": "fotos/promo-regalo-pipas-nic.jpg",
+   "foto": "fotos/promo-pipas-nic.jpg"
+  }
+ ],
+ "secciones": [
+  {
+   "id": "arroz",
+   "nombre": "Arroz",
+   "subtitulo": "Gloria · Conejo · Amazonas · Macareño",
+   "color": "#1E5B34",
+   "letra": "A",
+   "destacados": [
+    "A02",
+    "A05",
+    "A09"
+   ],
+   "grupos": [
+    {
+     "nombre": "Gloria",
+     "productos": [
+      {
+       "nombre": "Arroz Gloria",
+       "detalle": "Quintal · 45 kg",
+       "precio": 63.0,
+       "codigo": "A01",
+       "foto": "fotos/a01-arroz-gloria-quintal.jpg"
+      },
+      {
+       "nombre": "Arroz Gloria",
+       "detalle": "Arroba · 25 lb",
+       "precio": 15.75,
+       "codigo": "A02",
+       "foto": "fotos/a02-arroz-gloria-arroba.jpg"
+      },
+      {
+       "nombre": "Arroz Gloria",
+       "detalle": "10 lb",
+       "precio": 6.3,
+       "codigo": "A03",
+       "foto": "fotos/a03-arroz-gloria-10-lb.jpg"
+      }
+     ],
+     "subtitulo": "Arroz peruano premium"
+    },
+    {
+     "nombre": "Conejo",
+     "productos": [
+      {
+       "nombre": "Arroz Conejo",
+       "detalle": "Quintal · 45 kg",
+       "precio": 51.0,
+       "codigo": "A04",
+       "foto": "fotos/a04-arroz-conejo-quintal.jpg"
+      },
+      {
+       "nombre": "Arroz Conejo",
+       "detalle": "Arroba · 25 lb",
+       "precio": 12.75,
+       "codigo": "A05",
+       "foto": "fotos/a05-arroz-conejo-arroba.jpg"
+      },
+      {
+       "nombre": "Arroz Conejo",
+       "detalle": "20 lb",
+       "precio": 10.5,
+       "codigo": "A06",
+       "foto": "fotos/a06-arroz-conejo-20-lb.jpg"
+      },
+      {
+       "nombre": "Arroz Conejo",
+       "detalle": "10 lb",
+       "precio": 5.35,
+       "codigo": "A07",
+       "foto": "fotos/a07-arroz-conejo-10-lb.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Amazonas",
+     "productos": [
+      {
+       "nombre": "Arroz Amazonas",
+       "detalle": "Quintal · 45 kg",
+       "precio": 60.0,
+       "codigo": "A08",
+       "foto": "fotos/a08-arroz-amazonas-quintal.jpg"
+      },
+      {
+       "nombre": "Arroz Amazonas",
+       "detalle": "Arroba · 25 lb",
+       "precio": 15.0,
+       "codigo": "A09",
+       "foto": "fotos/a09-arroz-amazonas-arroba.jpg"
+      },
+      {
+       "nombre": "Arroz Amazonas",
+       "detalle": "10 lb",
+       "precio": 6.0,
+       "codigo": "A10",
+       "foto": "fotos/a10-arroz-amazonas-10-lb.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Macareño",
+     "productos": [
+      {
+       "nombre": "Arroz Macareño",
+       "detalle": "Arroba · 25 lb",
+       "precio": 15.0,
+       "codigo": "A11",
+       "foto": "fotos/a11-arroz-macareno-arroba.jpg"
+      },
+      {
+       "nombre": "Arroz Macareño",
+       "detalle": "10 lb",
+       "precio": 6.0,
+       "codigo": "A12",
+       "foto": "fotos/a12-arroz-macareno-10-lb.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fideos",
+   "nombre": "Fideos, harinas y granos",
+   "subtitulo": "Tomebamba · La Delicia · Estrella de Oro",
+   "color": "#E08A00",
+   "letra": "B",
+   "destacados": [
+    "B06",
+    "B13",
+    "B16"
+   ],
+   "grupos": [
+    {
+     "nombre": "Fideos Tomebamba",
+     "productos": [
+      {
+       "nombre": "Fideo Amarillo Mediano",
+       "detalle": "Saco 20 kg",
+       "precio": 19.0,
+       "codigo": "B01",
+       "foto": "fotos/b01-fideo-amarillo-mediano-saco-20-kg.jpg"
+      },
+      {
+       "nombre": "Fideo Amarillo Grande",
+       "detalle": "Saco 20 kg",
+       "precio": 19.0,
+       "codigo": "B02",
+       "foto": "fotos/b02-fideo-amarillo-grande-saco-20-kg.jpg"
+      },
+      {
+       "nombre": "Fideo Amarillo Pequeño",
+       "detalle": "Saco 20 kg",
+       "precio": 19.0,
+       "codigo": "B03",
+       "foto": "fotos/b03-fideo-amarillo-pequeno-saco-20-kg.jpg"
+      },
+      {
+       "nombre": "Fideo en saco",
+       "detalle": "Por libra",
+       "precio": 0.45,
+       "etiqueta": "LIBRA",
+       "codigo": "B04",
+       "foto": "fotos/b04-fideo-en-saco-por-libra.jpg"
+      },
+      {
+       "nombre": "Fideo Lazo Mediano",
+       "detalle": "400 g · x25 und",
+       "precio": 0.65,
+       "codigo": "B05",
+       "foto": "fotos/b05-fideo-lazo-mediano-400-g.jpg"
+      },
+      {
+       "nombre": "Fideo Surtido",
+       "detalle": "400 g · x25 und",
+       "precio": 0.65,
+       "sabores": "Lazo, Caracol, Tornillo, Macarrón",
+       "sabores_titulo": "Formas",
+       "codigo": "B06",
+       "foto": "fotos/b06-fideo-surtido-400-g.jpg"
+      },
+      {
+       "nombre": "Nido Entrefino",
+       "detalle": "1500 g · x5",
+       "precio": 2.53,
+       "codigo": "B07",
+       "foto": "fotos/b07-nido-entrefino-1500-g.jpg"
+      },
+      {
+       "nombre": "Nido Entrefino",
+       "detalle": "400 g · x25",
+       "precio": 0.65,
+       "codigo": "B08",
+       "foto": "fotos/b08-nido-entrefino-400-g.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Fideos La Delicia",
+     "productos": [
+      {
+       "nombre": "Nido Tallarín",
+       "detalle": "Granel 10 kg",
+       "precio": 14.0,
+       "codigo": "B09",
+       "foto": "fotos/b09-nido-tallarin-granel-10-kg.jpg"
+      },
+      {
+       "nombre": "Nido Cabello",
+       "detalle": "Granel 10 kg",
+       "precio": 14.0,
+       "codigo": "B10",
+       "foto": "fotos/b10-nido-cabello-granel-10-kg.jpg"
+      },
+      {
+       "nombre": "Fideo Lazo Amarillo",
+       "detalle": "Saco 20 kg",
+       "precio": 19.0,
+       "sabores": "Grueso, Mediano, Pequeño",
+       "sabores_titulo": "Tamaños",
+       "codigo": "B11",
+       "foto": "fotos/b11-fideo-lazo-amarillo-saco-20-kg.jpg"
+      },
+      {
+       "nombre": "Fideo Lazo Blanco",
+       "detalle": "Saco 20 kg",
+       "precio": 19.0,
+       "codigo": "B12",
+       "foto": "fotos/b12-fideo-lazo-blanco-saco-20-kg.jpg"
+      },
+      {
+       "nombre": "Fideo Catedral",
+       "detalle": "400 g · x25 und",
+       "precio": 0.67,
+       "codigo": "B13",
+       "foto": "fotos/b13-fideo-catedral-400-g.jpg"
+      },
+      {
+       "nombre": "Fideo Lazo",
+       "detalle": "400 g · x25 und",
+       "precio": 0.58,
+       "codigo": "B14",
+       "foto": "fotos/b14-fideo-lazo-400-g.jpg"
+      },
+      {
+       "nombre": "Fideo Surtido",
+       "detalle": "400 g · x25 und",
+       "precio": 0.58,
+       "codigo": "B15",
+       "foto": "fotos/b15-fideo-surtido-400-g.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Harinas y granos",
+     "productos": [
+      {
+       "nombre": "Harina Estrella de Oro",
+       "detalle": "Saco 50 kg (110 lb)",
+       "precio": 40.0,
+       "etiqueta": "SACO",
+       "extras": [
+        [
+         "Arroba",
+         9.75
+        ],
+        [
+         "Libra",
+         0.4
+        ]
+       ],
+       "codigo": "B16",
+       "foto": "fotos/b16-harina-estrella-de-oro-saco-50-kg-110-lb.jpg"
+      },
+      {
+       "nombre": "Canguil",
+       "detalle": "Saco 50 lb",
+       "precio": 19.0,
+       "etiqueta": "SACO",
+       "extras": [
+        [
+         "Libra",
+         0.4
+        ]
+       ],
+       "codigo": "B17",
+       "foto": "fotos/b17-canguil-saco-50-lb.jpg"
+      },
+      {
+       "nombre": "Alverja seca",
+       "detalle": "Por libra",
+       "precio": 0.46,
+       "etiqueta": "LIBRA",
+       "codigo": "B18",
+       "foto": "fotos/b18-alverja-seca-por-libra.jpg"
+      },
+      {
+       "nombre": "Avena en hojuelas",
+       "detalle": "500 g · x25 und",
+       "precio": 0.8,
+       "codigo": "B19",
+       "foto": "fotos/b19-avena-en-hojuelas-500-g.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "abarrotes",
+   "nombre": "Abarrotes",
+   "subtitulo": "Azúcar · Sal · Aceites · Atún · Despensa",
+   "color": "#D9480F",
+   "letra": "C",
+   "destacados": [
+    "C01",
+    "C12",
+    "C20"
+   ],
+   "grupos": [
+    {
+     "nombre": "Azúcar y sal",
+     "productos": [
+      {
+       "nombre": "Azúcar Blanca",
+       "detalle": "1 kg · x15",
+       "precio": 1.1,
+       "codigo": "C01",
+       "foto": "fotos/c01-azucar-blanca-1-kg.jpg"
+      },
+      {
+       "nombre": "Azúcar Blanca",
+       "detalle": "2 kg · x10",
+       "precio": 2.2,
+       "codigo": "C02",
+       "foto": "fotos/c02-azucar-blanca-2-kg.jpg"
+      },
+      {
+       "nombre": "Azúcar San Carlos",
+       "detalle": "5 kg · x6",
+       "precio": 5.4,
+       "codigo": "C03",
+       "foto": "fotos/c03-azucar-san-carlos-5-kg.jpg"
+      },
+      {
+       "nombre": "Azúcar Morena",
+       "detalle": "1 kg · x15",
+       "precio": 1.1,
+       "codigo": "C04",
+       "foto": "fotos/c04-azucar-morena-1-kg.jpg"
+      },
+      {
+       "nombre": "Azúcar Morena",
+       "detalle": "2 kg · x10",
+       "precio": 2.2,
+       "codigo": "C05",
+       "foto": "fotos/c05-azucar-morena-2-kg.jpg"
+      },
+      {
+       "nombre": "Sal Mar y Sal",
+       "detalle": "1 kg · x25 und",
+       "precio": 0.35,
+       "codigo": "C06",
+       "foto": "fotos/c06-sal-mar-y-sal-1-kg.jpg"
+      },
+      {
+       "nombre": "Sal Mar y Sal",
+       "detalle": "2 kg",
+       "precio": 0.69,
+       "codigo": "C07",
+       "foto": "fotos/c07-sal-mar-y-sal-2-kg.jpg"
+      },
+      {
+       "nombre": "Sal Cris-Sal",
+       "detalle": "1 kg · x25 und",
+       "precio": 0.48,
+       "codigo": "C08",
+       "foto": "fotos/c08-sal-cris-sal-1-kg.jpg"
+      },
+      {
+       "nombre": "Sal Cris-Sal",
+       "detalle": "2 kg · x25 und",
+       "precio": 0.78,
+       "codigo": "C09",
+       "foto": "fotos/c09-sal-cris-sal-2-kg.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Aceites y achiote",
+     "productos": [
+      {
+       "nombre": "Aceite Sabrofrito",
+       "detalle": "Bidón",
+       "precio": 38.0,
+       "codigo": "C10",
+       "foto": "fotos/c10-aceite-sabrofrito-bidon.jpg"
+      },
+      {
+       "nombre": "Aceite Amalia",
+       "detalle": "Bidón",
+       "precio": 36.0,
+       "codigo": "C11",
+       "foto": "fotos/c11-aceite-amalia-bidon.jpg"
+      },
+      {
+       "nombre": "Aceite Alesol",
+       "detalle": "900 ml · x15 und",
+       "precio": 2.09,
+       "codigo": "C12",
+       "foto": "fotos/c12-aceite-alesol-900-ml.jpg"
+      },
+      {
+       "nombre": "Aceite Alesol funda",
+       "detalle": "900 ml · x12",
+       "precio": 1.75,
+       "codigo": "C13",
+       "foto": "fotos/c13-aceite-alesol-funda-900-ml.jpg"
+      },
+      {
+       "nombre": "Aceite Criollo",
+       "detalle": "900 ml · x15 und",
+       "precio": 1.98,
+       "codigo": "C14",
+       "foto": "fotos/c14-aceite-criollo-900-ml.jpg"
+      },
+      {
+       "nombre": "Aceite Criollo",
+       "detalle": "400 ml · x24",
+       "precio": 0.88,
+       "codigo": "C15",
+       "foto": "fotos/c15-aceite-criollo-400-ml.jpg"
+      },
+      {
+       "nombre": "Achiote La Favorita",
+       "detalle": "1 litro",
+       "precio": 3.57,
+       "codigo": "C16",
+       "foto": "fotos/c16-achiote-la-favorita-1-litro.jpg"
+      },
+      {
+       "nombre": "Achiote Criollo",
+       "detalle": "500 ml · x15",
+       "precio": 1.7,
+       "codigo": "C17",
+       "foto": "fotos/c17-achiote-criollo-500-ml.jpg"
+      },
+      {
+       "nombre": "Achiote Criollo",
+       "detalle": "200 ml · x30",
+       "precio": 0.78,
+       "codigo": "C18",
+       "foto": "fotos/c18-achiote-criollo-200-ml.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Atún y sardinas",
+     "productos": [
+      {
+       "nombre": "Atún Tripack",
+       "detalle": "80 g · 3 x 20",
+       "precio": 2.37,
+       "codigo": "C19",
+       "foto": "fotos/c19-atun-tripack-80-g.jpg"
+      },
+      {
+       "nombre": "Atún Real",
+       "detalle": "140 g · x48",
+       "precio": 1.21,
+       "codigo": "C20",
+       "foto": "fotos/c20-atun-real-140-g.jpg"
+      },
+      {
+       "nombre": "Atún Real",
+       "detalle": "180 g",
+       "precio": 1.38,
+       "codigo": "C21",
+       "foto": "fotos/c21-atun-real-180-g.jpg"
+      },
+      {
+       "nombre": "Atún D'Gusstoss",
+       "detalle": "140 g · x40",
+       "precio": 0.81,
+       "codigo": "C22",
+       "foto": "fotos/c22-atun-d-gusstoss-140-g.jpg"
+      },
+      {
+       "nombre": "Sardina Oval en tomate",
+       "detalle": "425 g · x48",
+       "precio": 1.74,
+       "codigo": "C23",
+       "foto": "fotos/c23-sardina-oval-en-tomate-425-g.jpg"
+      },
+      {
+       "nombre": "Sardina Tall",
+       "detalle": "425 g · x48",
+       "precio": 1.6,
+       "codigo": "C24",
+       "foto": "fotos/c24-sardina-tall-425-g.jpg"
+      },
+      {
+       "nombre": "Tinapa en tomate",
+       "detalle": "156 g · x100",
+       "precio": 0.9,
+       "codigo": "C25",
+       "foto": "fotos/c25-tinapa-en-tomate-156-g.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Despensa",
+     "productos": [
+      {
+       "nombre": "Margarina La Sabrosa",
+       "detalle": "420 g · x24 und",
+       "precio": 0.92,
+       "codigo": "C26",
+       "foto": "fotos/c26-margarina-la-sabrosa-420-g.jpg"
+      },
+      {
+       "nombre": "Manteca La Sabrosa",
+       "detalle": "420 g · x24 und",
+       "precio": 0.89,
+       "codigo": "C27",
+       "foto": "fotos/c27-manteca-la-sabrosa-420-g.jpg"
+      },
+      {
+       "nombre": "Bonella",
+       "detalle": "190 g",
+       "precio": 0.97,
+       "codigo": "C28",
+       "foto": "fotos/c28-bonella-190-g.jpg"
+      },
+      {
+       "nombre": "Cocoa Universal",
+       "detalle": "115 g · x70 und",
+       "precio": 0.9,
+       "codigo": "C29",
+       "foto": "fotos/c29-cocoa-universal-115-g.jpg"
+      },
+      {
+       "nombre": "Aliño ILE Doypack",
+       "detalle": "430 g",
+       "precio": 0.99,
+       "codigo": "C30",
+       "foto": "fotos/c30-alino-ile-doypack-430-g.jpg"
+      },
+      {
+       "nombre": "Mega Sazón ILE",
+       "detalle": "230 g",
+       "precio": 1.06,
+       "codigo": "C31",
+       "foto": "fotos/c31-mega-sazon-ile-230-g.jpg"
+      },
+      {
+       "nombre": "Salsa de ají ILE Sabora",
+       "detalle": "100 ml",
+       "precio": 0.63,
+       "codigo": "C32",
+       "foto": "fotos/c32-salsa-de-aji-ile-sabora-100-ml.jpg"
+      },
+      {
+       "nombre": "Maní en pasta ILE",
+       "detalle": "200 g",
+       "precio": 1.72,
+       "codigo": "C33",
+       "foto": "fotos/c33-mani-en-pasta-ile-200-g.jpg"
+      },
+      {
+       "nombre": "Salsa de tomate",
+       "detalle": "3.5 kg · x4",
+       "precio": 2.2,
+       "codigo": "C34",
+       "foto": "fotos/c34-salsa-de-tomate-3-5-kg.jpg"
+      },
+      {
+       "nombre": "Rapidito Vaso Pollo",
+       "detalle": "Por unidad",
+       "precio": 0.88,
+       "codigo": "C35",
+       "foto": "fotos/c35-rapidito-vaso-pollo-por-unidad.jpg"
+      },
+      {
+       "nombre": "Rapiditos",
+       "detalle": "500 g · 5 und x 24 pqt (caja)",
+       "precio": 3.66,
+       "sabores": "Carne, Pollo, Flaming, Camarón",
+       "codigo": "C36",
+       "foto": "fotos/c36-rapiditos-500-g.jpg"
+      },
+      {
+       "nombre": "Fideo Oriental Chino",
+       "detalle": "200 g",
+       "precio": 0.98,
+       "codigo": "C37",
+       "foto": "fotos/c37-fideo-oriental-chino-200-g.jpg"
+      },
+      {
+       "nombre": "Duo Pack Marcellos",
+       "detalle": "200 g",
+       "precio": 1.7,
+       "codigo": "C38",
+       "foto": "fotos/c38-duo-pack-marcellos-200-g.jpg"
+      },
+      {
+       "nombre": "Polvo para hornear",
+       "detalle": "100 g",
+       "precio": 1.55,
+       "codigo": "C39",
+       "foto": "fotos/c39-polvo-para-hornear-100-g.jpg"
+      },
+      {
+       "nombre": "Polvo Royal sobre",
+       "detalle": "Caja 20 und",
+       "precio": 5.61,
+       "etiqueta": "CAJA",
+       "extras": [
+        [
+         "Unidad",
+         0.28
+        ]
+       ],
+       "codigo": "C40",
+       "foto": "fotos/c40-polvo-royal-sobre-caja-20-und.jpg"
+      },
+      {
+       "nombre": "Tapioca San Jorge",
+       "detalle": "200 g",
+       "precio": 0.86,
+       "codigo": "C41",
+       "foto": "fotos/c41-tapioca-san-jorge-200-g.jpg"
+      },
+      {
+       "nombre": "Mermelada San Jorge",
+       "detalle": "",
+       "precio": 0.97,
+       "codigo": "C42",
+       "foto": "fotos/c42-mermelada-san-jorge.jpg"
+      },
+      {
+       "nombre": "Gelatina Gelhada",
+       "detalle": "400 g",
+       "precio": 2.16,
+       "sabores": "Manzana, Piña, Cereza, Frambuesa, Fresa, Limón, Maracuyá",
+       "codigo": "C43",
+       "foto": "fotos/c43-gelatina-gelhada-400-g.jpg"
+      },
+      {
+       "nombre": "Gelatina Gelhada",
+       "detalle": "200 g",
+       "precio": 1.22,
+       "sabores": "Manzana, Piña, Cereza, Frambuesa, Fresa, Limón, Maracuyá",
+       "codigo": "C44",
+       "foto": "fotos/c44-gelatina-gelhada-200-g.jpg"
+      },
+      {
+       "nombre": "Durazno Estrella de Oro",
+       "detalle": "820 g",
+       "precio": 2.18,
+       "codigo": "C45",
+       "foto": "fotos/c45-durazno-estrella-de-oro-820-g.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bebidas",
+   "nombre": "Bebidas y lácteos",
+   "subtitulo": "Pulp · Vivant · La Granja · Paraíso",
+   "color": "#1971C2",
+   "letra": "D",
+   "destacados": [
+    "D01",
+    "D04",
+    "D05"
+   ],
+   "grupos": [
+    {
+     "nombre": "Bebidas",
+     "productos": [
+      {
+       "nombre": "Jugo Pulp",
+       "detalle": "1 litro · x6",
+       "precio": 7.5,
+       "codigo": "D01",
+       "foto": "fotos/d01-jugo-pulp-1-litro.jpg"
+      },
+      {
+       "nombre": "Jugo Pulp",
+       "detalle": "250 ml · x24",
+       "precio": 10.45,
+       "codigo": "D02",
+       "foto": "fotos/d02-jugo-pulp-250-ml.jpg"
+      },
+      {
+       "nombre": "Jugo Pulp",
+       "detalle": "145 ml · x24",
+       "precio": 6.5,
+       "codigo": "D03",
+       "foto": "fotos/d03-jugo-pulp-145-ml.jpg"
+      },
+      {
+       "nombre": "Agua Vivant",
+       "detalle": "Paca x20 und",
+       "precio": 5.5,
+       "etiqueta": "PACA",
+       "codigo": "D04",
+       "foto": "fotos/d04-agua-vivant-paca-x20-und.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Leche y yogurt",
+     "productos": [
+      {
+       "nombre": "Leche La Granja",
+       "detalle": "900 ml · x40",
+       "precio": 0.75,
+       "codigo": "D05",
+       "foto": "fotos/d05-leche-la-granja-900-ml.jpg"
+      },
+      {
+       "nombre": "Yogurt Paraíso balde",
+       "detalle": "2 litros",
+       "precio": 2.5,
+       "codigo": "D06",
+       "foto": "fotos/d06-yogurt-paraiso-balde-2-litros.jpg"
+      },
+      {
+       "nombre": "Yogurt Paraíso balde",
+       "detalle": "1 litro",
+       "precio": 1.5,
+       "codigo": "D07",
+       "foto": "fotos/d07-yogurt-paraiso-balde-1-litro.jpg"
+      },
+      {
+       "nombre": "Yogurt Paraíso",
+       "detalle": "500 ml",
+       "precio": 0.75,
+       "codigo": "D08",
+       "foto": "fotos/d08-yogurt-paraiso-500-ml.jpg"
+      },
+      {
+       "nombre": "Yogurt Paraíso",
+       "detalle": "200 ml · x12",
+       "precio": 4.5,
+       "codigo": "D09",
+       "foto": "fotos/d09-yogurt-paraiso-200-ml.jpg"
+      },
+      {
+       "nombre": "Yogurt Conflex Paraíso",
+       "detalle": "Mediano · x12",
+       "precio": 4.5,
+       "codigo": "D10",
+       "foto": "fotos/d10-yogurt-conflex-paraiso-mediano.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "snacks",
+   "nombre": "Snacks",
+   "subtitulo": "Yupi · Nic · Cofica",
+   "color": "#F08C00",
+   "letra": "E",
+   "destacados": [
+    "E01",
+    "E09",
+    "E29"
+   ],
+   "grupos": [
+    {
+     "nombre": "Alimentos Yupi",
+     "productos": [
+      {
+       "nombre": "Tatos Grill",
+       "detalle": "27 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E01",
+       "foto": "fotos/e01-tatos-grill-27-g.jpg"
+      },
+      {
+       "nombre": "Tato Queso",
+       "detalle": "30 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E02",
+       "foto": "fotos/e02-tato-queso-30-g.jpg"
+      },
+      {
+       "nombre": "Tato Limón",
+       "detalle": "30 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E03",
+       "foto": "fotos/e03-tato-limon-30-g.jpg"
+      },
+      {
+       "nombre": "Tatos Grill",
+       "detalle": "60 g · por unidad",
+       "precio": 0.43,
+       "codigo": "E04",
+       "foto": "fotos/e04-tatos-grill-60-g.jpg"
+      },
+      {
+       "nombre": "Tato Queso",
+       "detalle": "60 g · por unidad",
+       "precio": 0.43,
+       "codigo": "E05",
+       "foto": "fotos/e05-tato-queso-60-g.jpg"
+      },
+      {
+       "nombre": "Tato Limón",
+       "detalle": "60 g · por unidad",
+       "precio": 0.43,
+       "codigo": "E06",
+       "foto": "fotos/e06-tato-limon-60-g.jpg"
+      },
+      {
+       "nombre": "Tato Limón",
+       "detalle": "100 g · por unidad",
+       "precio": 0.85,
+       "codigo": "E07",
+       "foto": "fotos/e07-tato-limon-100-g.jpg"
+      },
+      {
+       "nombre": "Golpe Original",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E08",
+       "foto": "fotos/e08-golpe-original-25-g.jpg"
+      },
+      {
+       "nombre": "Golpe Limón",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E09",
+       "foto": "fotos/e09-golpe-limon-25-g.jpg"
+      },
+      {
+       "nombre": "Golpe Queso",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E10",
+       "foto": "fotos/e10-golpe-queso-25-g.jpg"
+      },
+      {
+       "nombre": "Golpe Ranchero",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E11",
+       "foto": "fotos/e11-golpe-ranchero-25-g.jpg"
+      },
+      {
+       "nombre": "Golpe Ranchero",
+       "detalle": "50 g · tira x8 und",
+       "precio": 3.4,
+       "etiqueta": "TIRA",
+       "codigo": "E12",
+       "foto": "fotos/e12-golpe-ranchero-50-g.jpg"
+      },
+      {
+       "nombre": "Golpe Ranchero",
+       "detalle": "100 g",
+       "precio": 0.85,
+       "codigo": "E13",
+       "foto": "fotos/e13-golpe-ranchero-100-g.jpg"
+      },
+      {
+       "nombre": "Golpe Original",
+       "detalle": "100 g",
+       "precio": 0.85,
+       "codigo": "E14",
+       "foto": "fotos/e14-golpe-original-100-g.jpg"
+      },
+      {
+       "nombre": "Rizada Limón",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E15",
+       "foto": "fotos/e15-rizada-limon-25-g.jpg"
+      },
+      {
+       "nombre": "Rizada Mayonesa",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E16",
+       "foto": "fotos/e16-rizada-mayonesa-25-g.jpg"
+      },
+      {
+       "nombre": "Rizada Cebolla",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E17",
+       "foto": "fotos/e17-rizada-cebolla-25-g.jpg"
+      },
+      {
+       "nombre": "Rizada Limón",
+       "detalle": "40 g · tira x8 und",
+       "precio": 3.4,
+       "etiqueta": "TIRA",
+       "codigo": "E18",
+       "foto": "fotos/e18-rizada-limon-40-g.jpg"
+      },
+      {
+       "nombre": "Rizada Mayonesa",
+       "detalle": "40 g · tira x8 und",
+       "precio": 3.4,
+       "etiqueta": "TIRA",
+       "codigo": "E19",
+       "foto": "fotos/e19-rizada-mayonesa-40-g.jpg"
+      },
+      {
+       "nombre": "Rizada Limón",
+       "detalle": "100 g",
+       "precio": 0.85,
+       "codigo": "E20",
+       "foto": "fotos/e20-rizada-limon-100-g.jpg"
+      },
+      {
+       "nombre": "Rizada Mayonesa",
+       "detalle": "100 g",
+       "precio": 0.85,
+       "codigo": "E21",
+       "foto": "fotos/e21-rizada-mayonesa-100-g.jpg"
+      },
+      {
+       "nombre": "Palomita",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E22",
+       "foto": "fotos/e22-palomita-25-g.jpg"
+      },
+      {
+       "nombre": "Palomita",
+       "detalle": "50 g · por unidad",
+       "precio": 0.43,
+       "codigo": "E23",
+       "foto": "fotos/e23-palomita-50-g.jpg"
+      },
+      {
+       "nombre": "Palomita",
+       "detalle": "120 g · por unidad",
+       "precio": 0.85,
+       "codigo": "E24",
+       "foto": "fotos/e24-palomita-120-g.jpg"
+      },
+      {
+       "nombre": "Papisalsa sachet",
+       "detalle": "25 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E25",
+       "foto": "fotos/e25-papisalsa-sachet-25-g.jpg"
+      },
+      {
+       "nombre": "Yupi Chess",
+       "detalle": "32 g · tira x12 und",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "E26",
+       "foto": "fotos/e26-yupi-chess-32-g.jpg"
+      },
+      {
+       "nombre": "Chavitos",
+       "detalle": "45 g · x36 und",
+       "precio": 7.5,
+       "extras": [
+        [
+         "Unidad",
+         0.21
+        ]
+       ],
+       "codigo": "E27",
+       "foto": "fotos/e27-chavitos-45-g.jpg"
+      },
+      {
+       "nombre": "Roskita",
+       "detalle": "45 g · por unidad",
+       "precio": 0.21,
+       "codigo": "E28",
+       "foto": "fotos/e28-roskita-45-g.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Pipas Nic",
+     "productos": [
+      {
+       "nombre": "Pipa Nic Natural",
+       "detalle": "18 g · 20 tiras x 20 und",
+       "precio": 3.75,
+       "codigo": "E29",
+       "foto": "fotos/e29-pipa-nic-natural-18-g.jpg"
+      },
+      {
+       "nombre": "Pipa Nic Limón",
+       "detalle": "18 g · 20 tiras x 20 und",
+       "precio": 3.75,
+       "codigo": "E30",
+       "foto": "fotos/e30-pipa-nic-limon-18-g.jpg"
+      },
+      {
+       "nombre": "Pipa Nic Limón Ácido",
+       "detalle": "18 g · 20 tiras x 20 und",
+       "precio": 3.75,
+       "codigo": "E31",
+       "foto": "fotos/e31-pipa-nic-limon-acido-18-g.jpg"
+      },
+      {
+       "nombre": "Pipa Nic Michelada",
+       "detalle": "18 g · 20 tiras x 20 und",
+       "precio": 3.75,
+       "codigo": "E32",
+       "foto": "fotos/e32-pipa-nic-michelada-18-g.jpg"
+      },
+      {
+       "nombre": "Pipa Nic Maracumango",
+       "detalle": "18 g · 20 tiras x 21 und",
+       "precio": 3.75,
+       "codigo": "E33",
+       "foto": "fotos/e33-pipa-nic-maracumango-18-g.jpg"
+      },
+      {
+       "nombre": "Pipa Nic Limón",
+       "detalle": "120 g · x6 und",
+       "precio": 0.82,
+       "codigo": "E34",
+       "foto": "fotos/e34-pipa-nic-limon-120-g.jpg"
+      },
+      {
+       "nombre": "Pig Nic Natural",
+       "detalle": "10 und x 10 tiras",
+       "precio": 2.0,
+       "codigo": "E35",
+       "foto": "fotos/e35-pig-nic-natural-10-und-x-10-tiras.jpg"
+      },
+      {
+       "nombre": "Polvo Ácido Mega Verde",
+       "detalle": "x40",
+       "precio": 1.25,
+       "codigo": "E36",
+       "foto": "fotos/e36-polvo-acido-mega-verde-x40.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Cofica",
+     "productos": [
+      {
+       "nombre": "Cachuss",
+       "detalle": "Paca x30 und",
+       "precio": 7.5,
+       "etiqueta": "PACA",
+       "extras": [
+        [
+         "Unidad",
+         0.25
+        ]
+       ],
+       "codigo": "E37",
+       "foto": "fotos/e37-cachuss-paca-x30-und.jpg"
+      },
+      {
+       "nombre": "Ducks",
+       "detalle": "Paca x30 und",
+       "precio": 6.25,
+       "etiqueta": "PACA",
+       "extras": [
+        [
+         "Unidad",
+         0.21
+        ]
+       ],
+       "codigo": "E38",
+       "foto": "fotos/e38-ducks-paca-x30-und.jpg"
+      },
+      {
+       "nombre": "Papa Rix sachet",
+       "detalle": "25 g · x12 und",
+       "precio": 2.5,
+       "codigo": "E39",
+       "foto": "fotos/e39-papa-rix-sachet-25-g.jpg"
+      },
+      {
+       "nombre": "Papa Rix Limón",
+       "detalle": "25 g · x12 und",
+       "precio": 2.5,
+       "codigo": "E40",
+       "foto": "fotos/e40-papa-rix-limon-25-g.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "golosinas",
+   "nombre": "Galletas y golosinas",
+   "subtitulo": "Galletas · Caramelos · Chupetes · Chocolates",
+   "color": "#D6336C",
+   "letra": "F",
+   "destacados": [
+    "F01",
+    "F12",
+    "F17"
+   ],
+   "grupos": [
+    {
+     "nombre": "Galletas",
+     "productos": [
+      {
+       "nombre": "Galleta Oreo",
+       "detalle": "108 g · x30",
+       "precio": 0.87,
+       "codigo": "F01",
+       "foto": "fotos/f01-galleta-oreo-108-g.jpg"
+      },
+      {
+       "nombre": "Galletas Ducales",
+       "detalle": "315 g · x24",
+       "precio": 2.0,
+       "codigo": "F02",
+       "foto": "fotos/f02-galletas-ducales-315-g.jpg"
+      },
+      {
+       "nombre": "Galleta Doraditas",
+       "detalle": "455 g · 5 x 24",
+       "precio": 2.59,
+       "codigo": "F03",
+       "foto": "fotos/f03-galleta-doraditas-455-g.jpg"
+      },
+      {
+       "nombre": "Galleta Festival Recreo",
+       "detalle": "12 x 24",
+       "precio": 2.35,
+       "codigo": "F04",
+       "foto": "fotos/f04-galleta-festival-recreo-12-x-24.jpg"
+      },
+      {
+       "nombre": "Galleta Junglitas",
+       "detalle": "7 kg",
+       "precio": 16.5,
+       "codigo": "F05",
+       "foto": "fotos/f05-galleta-junglitas-7-kg.jpg"
+      },
+      {
+       "nombre": "Granuts Arandamix",
+       "detalle": "Ristra 6 x 25 g",
+       "precio": 1.7,
+       "etiqueta": "RISTRA",
+       "codigo": "F06",
+       "foto": "fotos/f06-granuts-arandamix-ristra-6-x-25-g.jpg"
+      },
+      {
+       "nombre": "Galleta María",
+       "detalle": "160 g · x30",
+       "precio": 0.62,
+       "extras": [
+        [
+         "Caja",
+         17.5
+        ]
+       ],
+       "codigo": "F07",
+       "foto": "fotos/f07-galleta-maria-160-g.jpg"
+      },
+      {
+       "nombre": "Galleta Saltica",
+       "detalle": "72 g · x48",
+       "precio": 0.32,
+       "extras": [
+        [
+         "Caja",
+         14.5
+        ]
+       ],
+       "codigo": "F08",
+       "foto": "fotos/f08-galleta-saltica-72-g.jpg"
+      },
+      {
+       "nombre": "Galleta Mía",
+       "detalle": "71 g · x36",
+       "precio": 0.4,
+       "sabores": "Fresa, Chocolate, Vainilla",
+       "codigo": "F09",
+       "foto": "fotos/f09-galleta-mia-71-g.jpg"
+      },
+      {
+       "nombre": "Galleta Mía",
+       "detalle": "157 g · x36",
+       "precio": 0.75,
+       "sabores": "Fresa, Chocolate, Vainilla, Leche",
+       "codigo": "F10",
+       "foto": "fotos/f10-galleta-mia-157-g.jpg"
+      },
+      {
+       "nombre": "Galleta Shock",
+       "detalle": "30 x 12",
+       "precio": 3.15,
+       "codigo": "F11",
+       "foto": "fotos/f11-galleta-shock-30-x-12.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Caramelos, chupetes y chocolates",
+     "productos": [
+      {
+       "nombre": "Caramelo Melo Surtido",
+       "detalle": "395 g · x100 und",
+       "precio": 1.92,
+       "codigo": "F12",
+       "foto": "fotos/f12-caramelo-melo-surtido-395-g.jpg"
+      },
+      {
+       "nombre": "Caramelo Surtido",
+       "detalle": "x100 · x30",
+       "precio": 2.1,
+       "codigo": "F13",
+       "foto": "fotos/f13-caramelo-surtido-x100.jpg"
+      },
+      {
+       "nombre": "Caramelo Leche y Miel",
+       "detalle": "",
+       "precio": 2.7,
+       "codigo": "F14",
+       "foto": "fotos/f14-caramelo-leche-y-miel.jpg"
+      },
+      {
+       "nombre": "Caramelo Menta",
+       "detalle": "",
+       "precio": 2.17,
+       "codigo": "F15",
+       "foto": "fotos/f15-caramelo-menta.jpg"
+      },
+      {
+       "nombre": "Caramelo Fruticas",
+       "detalle": "x100",
+       "precio": 2.31,
+       "codigo": "F16",
+       "foto": "fotos/f16-caramelo-fruticas-x100.jpg"
+      },
+      {
+       "nombre": "Chupete Plop",
+       "detalle": "x24",
+       "precio": 2.1,
+       "sabores": "Chocolate, Surtido, Agridulce, Sandía",
+       "codigo": "F17",
+       "foto": "fotos/f17-chupete-plop-x24.jpg"
+      },
+      {
+       "nombre": "Chupete Ron Pasas",
+       "detalle": "x24 und",
+       "precio": 2.2,
+       "codigo": "F18",
+       "foto": "fotos/f18-chupete-ron-pasas-x24-und.jpg"
+      },
+      {
+       "nombre": "Chupete Kabezón",
+       "detalle": "x16 · x24 und",
+       "precio": 3.28,
+       "codigo": "F19",
+       "foto": "fotos/f19-chupete-kabezon-x16.jpg"
+      },
+      {
+       "nombre": "Paleta de chocolate en vaso",
+       "detalle": "x30 und",
+       "precio": 2.5,
+       "codigo": "F20",
+       "foto": "fotos/f20-paleta-de-chocolate-en-vaso-x30-und.jpg"
+      },
+      {
+       "nombre": "Nucita",
+       "detalle": "x12 und · x24 displays",
+       "precio": 2.14,
+       "codigo": "F21",
+       "foto": "fotos/f21-nucita-x12-und.jpg"
+      },
+      {
+       "nombre": "Kataboom",
+       "detalle": "x120",
+       "precio": 4.25,
+       "codigo": "F22",
+       "foto": "fotos/f22-kataboom-x120.jpg"
+      },
+      {
+       "nombre": "Agogo",
+       "detalle": "x15",
+       "precio": 3.0,
+       "sabores": "Fresa, Menta, Surtido, Negro",
+       "codigo": "F23",
+       "foto": "fotos/f23-agogo-x15.jpg"
+      },
+      {
+       "nombre": "Agogo",
+       "detalle": "x24",
+       "precio": 2.85,
+       "sabores": "Fresa, Surtido, Negro",
+       "codigo": "F24",
+       "foto": "fotos/f24-agogo-x24.jpg"
+      },
+      {
+       "nombre": "Gomitas",
+       "detalle": "Tira x12 und · x25",
+       "precio": 2.5,
+       "etiqueta": "TIRA",
+       "codigo": "F25",
+       "foto": "fotos/f25-gomitas-tira-x12-und.jpg"
+      },
+      {
+       "nombre": "Maní con chicle",
+       "detalle": "",
+       "precio": 3.5,
+       "codigo": "F26",
+       "foto": "fotos/f26-mani-con-chicle.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "balanceados",
+   "nombre": "Balanceados, maíz y trigo",
+   "subtitulo": "Camperito · Maíz · Trigo",
+   "color": "#5C940D",
+   "letra": "G",
+   "destacados": [
+    "G01",
+    "G08",
+    "G09"
+   ],
+   "grupos": [
+    {
+     "nombre": "Balanceado para pollos",
+     "productos": [
+      {
+       "nombre": "Balanceado Inicial Crumble",
+       "detalle": "Saco 40 kg",
+       "precio": 27.0,
+       "codigo": "G01",
+       "foto": "fotos/g01-balanceado-inicial-crumble-saco-40-kg.jpg"
+      },
+      {
+       "nombre": "Balanceado Crecimiento Mini Pellet",
+       "detalle": "Saco 40 kg",
+       "precio": 27.0,
+       "codigo": "G02",
+       "foto": "fotos/g02-balanceado-crecimiento-mini-pellet-saco-40-kg.jpg"
+      },
+      {
+       "nombre": "Balanceado Engorde Pellet",
+       "detalle": "Saco 40 kg",
+       "precio": 27.0,
+       "codigo": "G03",
+       "foto": "fotos/g03-balanceado-engorde-pellet-saco-40-kg.jpg"
+      },
+      {
+       "nombre": "Balanceado Crecimiento Crumble",
+       "detalle": "12 lb",
+       "precio": 4.35,
+       "codigo": "G04",
+       "foto": "fotos/g04-balanceado-crecimiento-crumble-12-lb.jpg"
+      },
+      {
+       "nombre": "Balanceado Mini Pellet",
+       "detalle": "12 lb",
+       "precio": 4.35,
+       "codigo": "G05",
+       "foto": "fotos/g05-balanceado-mini-pellet-12-lb.jpg"
+      },
+      {
+       "nombre": "Balanceado Engorde",
+       "detalle": "12 lb",
+       "precio": 4.35,
+       "codigo": "G06",
+       "foto": "fotos/g06-balanceado-engorde-12-lb.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Balanceado para chanchos",
+     "productos": [
+      {
+       "nombre": "Balanceado Crecimiento Chancho",
+       "detalle": "Saco 40 kg",
+       "precio": 26.0,
+       "codigo": "G07",
+       "foto": "fotos/g07-balanceado-crecimiento-chancho-saco-40-kg.jpg"
+      },
+      {
+       "nombre": "Balanceado Engorde Chancho",
+       "detalle": "Saco 40 kg",
+       "precio": 25.0,
+       "codigo": "G08",
+       "foto": "fotos/g08-balanceado-engorde-chancho-saco-40-kg.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Maíz y trigo",
+     "productos": [
+      {
+       "nombre": "Maíz",
+       "detalle": "Quintal · 98 lb",
+       "precio": 22.5,
+       "codigo": "G09",
+       "foto": "fotos/g09-maiz-quintal.jpg"
+      },
+      {
+       "nombre": "Maíz",
+       "detalle": "15 lb",
+       "precio": 4.5,
+       "codigo": "G10",
+       "foto": "fotos/g10-maiz-15-lb.jpg"
+      },
+      {
+       "nombre": "Trigo",
+       "detalle": "Quintal · 100 lb",
+       "precio": 22.5,
+       "codigo": "G11",
+       "foto": "fotos/g11-trigo-quintal.jpg"
+      },
+      {
+       "nombre": "Trigo",
+       "detalle": "14 lb",
+       "precio": 4.35,
+       "codigo": "G12",
+       "foto": "fotos/g12-trigo-14-lb.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "limpieza",
+   "nombre": "Limpieza y aseo",
+   "subtitulo": "Jabones · Papel · Cloro · Desinfectantes",
+   "color": "#0C8599",
+   "letra": "H",
+   "destacados": [
+    "H01",
+    "H16",
+    "H28"
+   ],
+   "grupos": [
+    {
+     "nombre": "Aseo personal",
+     "productos": [
+      {
+       "nombre": "Jabón Protex",
+       "detalle": "x3",
+       "precio": 2.6,
+       "codigo": "H01",
+       "foto": "fotos/h01-jabon-protex-x3.jpg"
+      },
+      {
+       "nombre": "Jabón Palmolive",
+       "detalle": "x3",
+       "precio": 2.55,
+       "codigo": "H02",
+       "foto": "fotos/h02-jabon-palmolive-x3.jpg"
+      },
+      {
+       "nombre": "Jabón Ales",
+       "detalle": "x3 · x16",
+       "precio": 0.92,
+       "codigo": "H03",
+       "foto": "fotos/h03-jabon-ales-x3.jpg"
+      },
+      {
+       "nombre": "Jabón Lux",
+       "detalle": "Por unidad",
+       "precio": 0.79,
+       "codigo": "H04",
+       "foto": "fotos/h04-jabon-lux-por-unidad.jpg"
+      },
+      {
+       "nombre": "Jabón Rexona",
+       "detalle": "Por unidad",
+       "precio": 0.79,
+       "codigo": "H05",
+       "foto": "fotos/h05-jabon-rexona-por-unidad.jpg"
+      },
+      {
+       "nombre": "Jabón Family Ahorrapack",
+       "detalle": "x24",
+       "precio": 1.15,
+       "codigo": "H06",
+       "foto": "fotos/h06-jabon-family-ahorrapack-x24.jpg"
+      },
+      {
+       "nombre": "Shampoo Family botella",
+       "detalle": "970 ml",
+       "precio": 3.86,
+       "sabores": "Aguacate, Manzanilla, Hena, Sábila, Coco, Control Total, Granada",
+       "sabores_titulo": "Variedades",
+       "codigo": "H07",
+       "foto": "fotos/h07-shampoo-family-botella-970-ml.jpg"
+      },
+      {
+       "nombre": "Shampoo Family doypack",
+       "detalle": "",
+       "precio": 2.85,
+       "sabores": "Aguacate, Coco, Control Caída, Granada",
+       "sabores_titulo": "Variedades",
+       "codigo": "H08",
+       "foto": "fotos/h08-shampoo-family-doypack.jpg"
+      },
+      {
+       "nombre": "Pasta Colgate Triple Acción",
+       "detalle": "60 ml · x12 und",
+       "precio": 13.2,
+       "extras": [
+        [
+         "Unidad",
+         1.1
+        ]
+       ],
+       "codigo": "H09",
+       "foto": "fotos/h09-pasta-colgate-triple-accion-60-ml.jpg"
+      },
+      {
+       "nombre": "Afeitadora Ultragrip",
+       "detalle": "2 hojas",
+       "precio": 16.45,
+       "codigo": "H10",
+       "foto": "fotos/h10-afeitadora-ultragrip-2-hojas.jpg"
+      },
+      {
+       "nombre": "Toalla íntima",
+       "detalle": "Tira x10 · x30",
+       "precio": 0.75,
+       "codigo": "H11",
+       "foto": "fotos/h11-toalla-intima-tira-x10.jpg"
+      },
+      {
+       "nombre": "Toalla Kotex Discreta",
+       "detalle": "Caja x48",
+       "precio": 0.66,
+       "codigo": "H12",
+       "foto": "fotos/h12-toalla-kotex-discreta-caja-x48.jpg"
+      },
+      {
+       "nombre": "Pañitos húmedos",
+       "detalle": "x50 und",
+       "precio": 0.87,
+       "codigo": "H13",
+       "foto": "fotos/h13-panitos-humedos-x50-und.jpg"
+      },
+      {
+       "nombre": "Pañitos húmedos Pompis",
+       "detalle": "x110 und",
+       "precio": 0.83,
+       "codigo": "H14",
+       "foto": "fotos/h14-panitos-humedos-pompis-x110-und.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Papel higiénico",
+     "productos": [
+      {
+       "nombre": "Papel Familia Triple Plus",
+       "detalle": "24 x 3",
+       "precio": 0.9,
+       "etiqueta": "UNIDAD",
+       "extras": [
+        [
+         "Paca x24",
+         21.6
+        ]
+       ],
+       "codigo": "H15",
+       "foto": "fotos/h15-papel-familia-triple-plus-24-x-3.jpg"
+      },
+      {
+       "nombre": "Papel Familia",
+       "detalle": "Por unidad · x12 und",
+       "precio": 0.4,
+       "codigo": "H16",
+       "foto": "fotos/h16-papel-familia-por-unidad.jpg"
+      },
+      {
+       "nombre": "Papel Noble",
+       "detalle": "4 x 12",
+       "precio": 0.68,
+       "codigo": "H17",
+       "foto": "fotos/h17-papel-noble-4-x-12.jpg"
+      },
+      {
+       "nombre": "Papel Institucional Orquits",
+       "detalle": "200 m · x12 und",
+       "precio": 1.61,
+       "codigo": "H18",
+       "foto": "fotos/h18-papel-institucional-orquits-200-m.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Lavar y desinfectar",
+     "productos": [
+      {
+       "nombre": "Jabón Lava Todo",
+       "detalle": "240 g · x48 und",
+       "precio": 0.68,
+       "codigo": "H19",
+       "foto": "fotos/h19-jabon-lava-todo-240-g.jpg"
+      },
+      {
+       "nombre": "Jabón Lava Todo",
+       "detalle": "x2 · 460 g",
+       "precio": 1.12,
+       "codigo": "H20",
+       "foto": "fotos/h20-jabon-lava-todo-x2.jpg"
+      },
+      {
+       "nombre": "Lava Todo Brillex",
+       "detalle": "250 ml",
+       "precio": 0.6,
+       "sabores": "Limón, Maracuyá, Sandía",
+       "sabores_titulo": "Aromas",
+       "codigo": "H21",
+       "foto": "fotos/h21-lava-todo-brillex-250-ml.jpg"
+      },
+      {
+       "nombre": "Detergente Deja Ciclón",
+       "detalle": "320 g · x30",
+       "precio": 0.84,
+       "codigo": "H22",
+       "foto": "fotos/h22-detergente-deja-ciclon-320-g.jpg"
+      },
+      {
+       "nombre": "Suavizante Gol",
+       "detalle": "450 ml",
+       "precio": 0.67,
+       "sabores": "Primaveral, Vainilla",
+       "sabores_titulo": "Aromas",
+       "codigo": "H23",
+       "foto": "fotos/h23-suavizante-gol-450-ml.jpg"
+      },
+      {
+       "nombre": "Perla Soft",
+       "detalle": "340 ml",
+       "precio": 0.92,
+       "codigo": "H24",
+       "foto": "fotos/h24-perla-soft-340-ml.jpg"
+      },
+      {
+       "nombre": "Desinfectante Olimpia",
+       "detalle": "900 ml",
+       "precio": 2.14,
+       "codigo": "H25",
+       "foto": "fotos/h25-desinfectante-olimpia-900-ml.jpg"
+      },
+      {
+       "nombre": "Desinfectante Olimpia",
+       "detalle": "450 ml",
+       "precio": 0.84,
+       "codigo": "H26",
+       "foto": "fotos/h26-desinfectante-olimpia-450-ml.jpg"
+      },
+      {
+       "nombre": "Desinfectante Olimpia",
+       "detalle": "240 ml",
+       "precio": 0.44,
+       "codigo": "H27",
+       "foto": "fotos/h27-desinfectante-olimpia-240-ml.jpg"
+      },
+      {
+       "nombre": "Cloro",
+       "detalle": "1050 ml · x12",
+       "precio": 1.0,
+       "codigo": "H28",
+       "foto": "fotos/h28-cloro-1050-ml.jpg"
+      },
+      {
+       "nombre": "Cloro",
+       "detalle": "525 ml · x24",
+       "precio": 0.58,
+       "codigo": "H29",
+       "foto": "fotos/h29-cloro-525-ml.jpg"
+      },
+      {
+       "nombre": "Cloro sachet",
+       "detalle": "x60",
+       "precio": 0.21,
+       "codigo": "H30",
+       "foto": "fotos/h30-cloro-sachet-x60.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Hogar",
+     "productos": [
+      {
+       "nombre": "Fósforo El Gallo",
+       "detalle": "x20",
+       "precio": 1.2,
+       "codigo": "H31",
+       "foto": "fotos/h31-fosforo-el-gallo-x20.jpg"
+      },
+      {
+       "nombre": "Espiral antimosquitos",
+       "detalle": "",
+       "precio": 0.7,
+       "codigo": "H32",
+       "foto": "fotos/h32-espiral-antimosquitos.jpg"
+      },
+      {
+       "nombre": "Velas",
+       "detalle": "4 x 50",
+       "precio": 0.87,
+       "codigo": "H33",
+       "foto": "fotos/h33-velas-4-x-50.jpg"
+      },
+      {
+       "nombre": "Velas",
+       "detalle": "3 x 50",
+       "precio": 0.87,
+       "codigo": "H34",
+       "foto": "fotos/h34-velas-3-x-50.jpg"
+      },
+      {
+       "nombre": "Pega Duramás",
+       "detalle": "x14",
+       "precio": 2.5,
+       "codigo": "H35",
+       "foto": "fotos/h35-pega-duramas-x14.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "desechables",
+   "nombre": "Desechables y pañales",
+   "subtitulo": "Pañales · Platos · Tarrinas · Fundas",
+   "color": "#7048E8",
+   "letra": "I",
+   "destacados": [
+    "I01",
+    "I07",
+    "I20"
+   ],
+   "grupos": [
+    {
+     "nombre": "Pañales y servilletas",
+     "productos": [
+      {
+       "nombre": "Pañal Panolini Mediano",
+       "detalle": "x100",
+       "precio": 16.0,
+       "codigo": "I01",
+       "foto": "fotos/i01-panal-panolini-mediano-x100.jpg"
+      },
+      {
+       "nombre": "Pañal Panolini Grande",
+       "detalle": "x100",
+       "precio": 19.0,
+       "codigo": "I02",
+       "foto": "fotos/i02-panal-panolini-grande-x100.jpg"
+      },
+      {
+       "nombre": "Pañal Pompis Mediano",
+       "detalle": "x24 und",
+       "precio": 3.1,
+       "codigo": "I03",
+       "foto": "fotos/i03-panal-pompis-mediano-x24-und.jpg"
+      },
+      {
+       "nombre": "Pañal Pompis Grande",
+       "detalle": "x24 und",
+       "precio": 3.41,
+       "codigo": "I04",
+       "foto": "fotos/i04-panal-pompis-grande-x24-und.jpg"
+      },
+      {
+       "nombre": "Servilleta Melopaper",
+       "detalle": "x75 und",
+       "precio": 0.29,
+       "codigo": "I05",
+       "foto": "fotos/i05-servilleta-melopaper-x75-und.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Platos y bandejas",
+     "productos": [
+      {
+       "nombre": "Plato N° 6 torta",
+       "detalle": "40 x 25 und",
+       "precio": 0.53,
+       "codigo": "I06",
+       "foto": "fotos/i06-plato-n-6-torta-40-x-25-und.jpg"
+      },
+      {
+       "nombre": "Plato N° 7 blanco",
+       "detalle": "40 x 25 und",
+       "precio": 0.59,
+       "codigo": "I07",
+       "foto": "fotos/i07-plato-n-7-blanco-40-x-25-und.jpg"
+      },
+      {
+       "nombre": "Plato N° 8 blanco",
+       "detalle": "40 x 25 und",
+       "precio": 0.7,
+       "codigo": "I08",
+       "foto": "fotos/i08-plato-n-8-blanco-40-x-25-und.jpg"
+      },
+      {
+       "nombre": "Plato N° 9 blanco",
+       "detalle": "40 x 25 und",
+       "precio": 0.87,
+       "codigo": "I09",
+       "foto": "fotos/i09-plato-n-9-blanco-40-x-25-und.jpg"
+      },
+      {
+       "nombre": "Plato 10 ¼ normal",
+       "detalle": "40 x 25 und",
+       "precio": 1.4,
+       "codigo": "I10",
+       "foto": "fotos/i10-plato-10-cuarto-normal-40-x-25-und.jpg"
+      },
+      {
+       "nombre": "Plato 10 ¼ compartido",
+       "detalle": "40 x 25 und",
+       "precio": 1.4,
+       "codigo": "I11",
+       "foto": "fotos/i11-plato-10-cuarto-compartido-40-x-25-und.jpg"
+      },
+      {
+       "nombre": "Bandeja P2 blanca",
+       "detalle": "40 x 25 und",
+       "precio": 0.82,
+       "codigo": "I12",
+       "foto": "fotos/i12-bandeja-p2-blanca-40-x-25-und.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Tarrinas, vasos y cucharas",
+     "productos": [
+      {
+       "nombre": "Tarrina grande + tapa",
+       "detalle": "Paquete",
+       "precio": 2.2,
+       "codigo": "I13",
+       "foto": "fotos/i13-tarrina-grande-tapa-paquete.jpg"
+      },
+      {
+       "nombre": "Tarrina ½ gris + tapa",
+       "detalle": "",
+       "precio": 3.0,
+       "codigo": "I14",
+       "foto": "fotos/i14-tarrina-medio-gris-tapa.jpg"
+      },
+      {
+       "nombre": "Vianda amarilla Eco Útil",
+       "detalle": "x8",
+       "precio": 1.92,
+       "codigo": "I15",
+       "foto": "fotos/i15-vianda-amarilla-eco-util-x8.jpg"
+      },
+      {
+       "nombre": "Vaso N° 3 copita",
+       "detalle": "x100 und",
+       "precio": 1.53,
+       "codigo": "I16",
+       "foto": "fotos/i16-vaso-n-3-copita-x100-und.jpg"
+      },
+      {
+       "nombre": "Vaso 5 onzas",
+       "detalle": "120 pqt x 50 und",
+       "precio": 0.48,
+       "codigo": "I17",
+       "foto": "fotos/i17-vaso-5-onzas-120-pqt-x-50-und.jpg"
+      },
+      {
+       "nombre": "Cuchara grande blanca",
+       "detalle": "x50 und",
+       "precio": 0.65,
+       "codigo": "I18",
+       "foto": "fotos/i18-cuchara-grande-blanca-x50-und.jpg"
+      },
+      {
+       "nombre": "Cuchara pequeña",
+       "detalle": "x50 und",
+       "precio": 0.28,
+       "codigo": "I19",
+       "foto": "fotos/i19-cuchara-pequena-x50-und.jpg"
+      }
+     ]
+    },
+    {
+     "nombre": "Fundas",
+     "productos": [
+      {
+       "nombre": "Funda Dina P4 negra",
+       "detalle": "",
+       "precio": 0.65,
+       "codigo": "I20",
+       "foto": "fotos/i20-funda-dina-p4-negra.jpg"
+      },
+      {
+       "nombre": "Funda Dina ½ negra",
+       "detalle": "",
+       "precio": 0.45,
+       "codigo": "I21",
+       "foto": "fotos/i21-funda-dina-medio-negra.jpg"
+      },
+      {
+       "nombre": "Funda rayada bicolor N° 9",
+       "detalle": "",
+       "precio": 2.34,
+       "codigo": "I22",
+       "foto": "fotos/i22-funda-rayada-bicolor-n-9.jpg"
+      },
+      {
+       "nombre": "Funda de rollo Plasticonsumo",
+       "detalle": "9 x 14",
+       "precio": 2.05,
+       "codigo": "I23",
+       "foto": "fotos/i23-funda-de-rollo-plasticonsumo-9-x-14.jpg"
+      },
+      {
+       "nombre": "Funda de rollo",
+       "detalle": "5 x 10",
+       "precio": 1.8,
+       "codigo": "I24",
+       "foto": "fotos/i24-funda-de-rollo-5-x-10.jpg"
+      },
+      {
+       "nombre": "Funda de rollo Tenaz",
+       "detalle": "7 x 10",
+       "precio": 1.93,
+       "codigo": "I25",
+       "foto": "fotos/i25-funda-de-rollo-tenaz-7-x-10.jpg"
+      },
+      {
+       "nombre": "Funda de rollo",
+       "detalle": "8 x 12",
+       "precio": 1.8,
+       "codigo": "I26",
+       "foto": "fotos/i26-funda-de-rollo-8-x-12.jpg"
+      },
+      {
+       "nombre": "Funda de rollo",
+       "detalle": "10 x 16",
+       "precio": 1.8,
+       "codigo": "I27",
+       "foto": "fotos/i27-funda-de-rollo-10-x-16.jpg"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

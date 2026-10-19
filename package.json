@@ -2,12 +2,13 @@
   "name": "la-ambatenita-contenido",
   "version": "1.0.0",
   "private": true,
-  "description": "Generador de fotos y videos para la página de Facebook de La Ambateñita (arroz al por mayor y menor en Ambato y Macas)",
+  "description": "Generador de fotos, videos y catálogo de productos de La Ambateñita (distribuidora en Ambato y Macas)",
   "type": "module",
   "scripts": {
     "marca": "node scripts/generar.mjs --marca",
     "semana": "node scripts/generar.mjs --dias 7",
-    "muestras": "node scripts/generar.mjs --muestras"
+    "muestras": "node scripts/generar.mjs --muestras",
+    "catalogo": "node scripts/catalogo.mjs --vistas"
   },
   "dependencies": {
     "playwright": "1.56.1"
