@@ -145,15 +145,29 @@
     },
     {
       "dia": 6,
-      "pilar": "venta",
+      "pilar": "educacion",
       "formato": "imagen",
-      "plantilla": "precios",
+      "plantilla": "receta",
       "datos": {
-        "titulo": "Funda de 10 libras",
-        "subtitulo": "Todas las marcas · para la casa",
-        "detalle": "10 lb"
+        "etiqueta": "RECETA PARA HACER EN CASA",
+        "titulo": "Arroz con menestra",
+        "ingredientes": [
+          "2 tazas de arroz",
+          "2 tazas de lenteja o fréjol",
+          "1 cebolla paiteña",
+          "1 pimiento",
+          "Ajo y comino",
+          "Cilantro",
+          "Sal y aceite"
+        ],
+        "pasos": [
+          "Cocina el grano hasta que esté suave",
+          "Haz un refrito de cebolla, pimiento, ajo y comino",
+          "Mezcla el refrito con el grano y deja espesar",
+          "Sirve con arroz graneado y cilantro picado"
+        ]
       },
-      "texto": "🛍️ FUNDA DE 10 LIBRAS, para la semana de la casa:\n\n▪️ Gloria (peruano premium): {{precio:Gloria/10 libras}}\n▪️ Conejo: {{precio:Conejo/10 libras}}\n▪️ Amazonas: {{precio:Amazonas/10 libras}}\n▪️ Macareño: {{precio:Macareño/10 libras}}\n\nY si quieres un poco más, Conejo también viene en funda de 20 libras a {{precio:Conejo/20 libras}}.\n\n¿Cuál es tu marca favorita? 👇\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+      "texto": "😋 Sábado de arroz con menestra, ¡el plato que nunca falla!\n\n🛒 Ingredientes:\n• 2 tazas de arroz\n• 2 tazas de lenteja o fréjol\n• 1 cebolla paiteña y 1 pimiento\n• Ajo, comino, cilantro, sal y aceite\n\n👩‍🍳 Preparación:\n1. Cocina el grano hasta que esté suave\n2. Haz un refrito de cebolla, pimiento, ajo y comino\n3. Mezcla el refrito con el grano y deja espesar\n4. Sirve con arroz graneado y cilantro picado\n\nAcompáñalo con carne asada o maduro frito 🔥\n\n¿Lenteja o fréjol? Comenta 👇\n\n🛒 Nosotros te vendemos el arroz por quintal, arroba o funda. La receta la preparas tú en casa 😉\n\n{{contacto}}\n\n{{hashtags}}"
     },
     {
       "dia": 7,
@@ -441,15 +455,28 @@
     },
     {
       "dia": 20,
-      "pilar": "venta",
+      "pilar": "educacion",
       "formato": "imagen",
-      "plantilla": "precios",
+      "plantilla": "receta",
       "datos": {
-        "titulo": "Quintal de 45 kg",
-        "subtitulo": "Para tu tienda, restaurante o comedor",
-        "detalle": "45 kg"
+        "etiqueta": "RECETA PARA HACER EN CASA",
+        "titulo": "Arroz con pollo",
+        "ingredientes": [
+          "2 tazas de arroz",
+          "4 presas de pollo",
+          "1 pimiento",
+          "Zanahoria y arveja",
+          "Cebolla y ajo",
+          "Achiote y comino"
+        ],
+        "pasos": [
+          "Dora el pollo y sácalo de la olla",
+          "Haz un refrito con cebolla, ajo, pimiento y achiote",
+          "Agrega el arroz, las verduras y el pollo",
+          "Cubre con caldo caliente y cocina a fuego bajo"
+        ]
       },
-      "texto": "🏪 QUINTAL DE 45 KG para tu negocio:\n\n▪️ Gloria (peruano premium): {{precio:Gloria/Quintal}}\n▪️ Conejo: {{precio:Conejo/Quintal}}\n▪️ Amazonas: {{precio:Amazonas/Quintal}}\n\n¿Necesitas varios quintales? Escríbenos y armamos tu pedido.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
+      "texto": "🍗 Sábado de arroz con pollo, ¡un clásico que gusta a toda la familia!\n\n🛒 Ingredientes:\n• 2 tazas de arroz\n• 4 presas de pollo\n• 1 pimiento, zanahoria y arveja\n• Cebolla, ajo, achiote y comino\n\n👩‍🍳 Preparación:\n1. Dora el pollo y sácalo de la olla\n2. Haz un refrito con cebolla, ajo, pimiento y achiote\n3. Agrega el arroz, las verduras y el pollo\n4. Cubre con caldo caliente y cocina a fuego bajo\n\n🛒 Nosotros te vendemos el arroz por quintal, arroba o funda. La receta la preparas tú en casa 😉\n\n{{contacto}}\n\n{{hashtags}}"
     },
     {
       "dia": 21,
