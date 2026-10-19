@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>La Ambateñita · Reel de presentación</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Pacifico";
+        src: url("assets/fuentes/pacifico-latin-400-normal.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0b1a10;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Montserrat", sans-serif;
+        color: #fff6e3;
+      }
+      .scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+      }
+      .foto {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        will-change: transform;
+      }
+      .display {
+        font-family: "League Gothic", sans-serif;
+        font-weight: 400;
+        line-height: 0.9;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+      .script {
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+      }
+      .linea {
+        display: block;
+        will-change: transform, opacity;
+      }
+      .granos {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .grano {
+        position: absolute;
+        border-radius: 50%;
+        background: #fff6e3;
+        will-change: transform;
+      }
+
+      /* ---------- Escena 1: el gancho ---------- */
+      #s1 {
+        z-index: 1;
+        background: #0b1a10;
+      }
+      #s1-glow {
+        position: absolute;
+        left: 90px;
+        top: 800px;
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(242, 182, 50, 0.42) 0%, rgba(242, 182, 50, 0) 65%);
+      }
+      #s1-scrim {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 120% 60% at 30% 25%,
+          rgba(6, 16, 9, 0.82) 0%,
+          rgba(6, 16, 9, 0.35) 55%,
+          rgba(6, 16, 9, 0) 80%
+        );
+      }
+      #s1-marca {
+        position: absolute;
+        left: 90px;
+        top: 205px;
+        font-size: 62px;
+        color: #f2b632;
+      }
+      #s1-texto {
+        position: absolute;
+        left: 90px;
+        top: 330px;
+        width: 900px;
+      }
+      #s1-l1,
+      #s1-l3,
+      #s1-l4 {
+        font-size: 176px;
+        color: #fff6e3;
+      }
+      #s1-l2 {
+        font-size: 372px;
+        line-height: 0.82;
+        color: #f2b632;
+      }
+      #s1-l4 {
+        color: #fff6e3;
+      }
+
+      /* ---------- Escena 2: familia ---------- */
+      #s2 {
+        z-index: 2;
+        background: #fff6e3;
+        opacity: 0;
+      }
+      #s2 .foto {
+        bottom: auto;
+        height: 1150px;
+      }
+      #s2-ola {
+        position: absolute;
+        left: 0;
+        top: 1050px;
+        width: 1080px;
+        height: 140px;
+      }
+      #s2-texto {
+        position: absolute;
+        left: 90px;
+        top: 1165px;
+        width: 900px;
+        color: #1e5b34;
+      }
+      #s2-l1 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        font-size: 58px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      #s2-l2 {
+        font-size: 150px;
+        line-height: 1.15;
+        color: #1e5b34;
+      }
+      #s2-l3 {
+        font-size: 150px;
+        color: #1e5b34;
+        margin-top: -6px;
+      }
+      #s2-regla {
+        width: 260px;
+        height: 8px;
+        background: #f2b632;
+        margin: 26px 0 22px;
+        transform-origin: left center;
+      }
+      #s2-sub {
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 1.3;
+        color: #4a2e14;
+        max-width: 860px;
+      }
+      #s2-granos .grano {
+        background: #e9d3a1;
+      }
+
+      /* ---------- Escena 3: marcas y precios ---------- */
+      #s3 {
+        z-index: 3;
+        background: #0f2e1c;
+        opacity: 0;
+      }
+      #s3-glow {
+        position: absolute;
+        left: -110px;
+        top: 360px;
+        width: 1300px;
+        height: 1300px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(242, 182, 50, 0.26) 0%, rgba(242, 182, 50, 0) 62%);
+      }
+      #s3-fantasma {
+        position: absolute;
+        left: 560px;
+        top: 900px;
+        width: 700px;
+        height: 1000px;
+        opacity: 0.55;
+      }
+      #s3-titulo {
+        position: absolute;
+        left: 90px;
+        top: 228px;
+        font-size: 124px;
+        color: #fff6e3;
+        white-space: nowrap;
+      }
+      #s3-regla {
+        position: absolute;
+        left: 90px;
+        top: 352px;
+        width: 360px;
+        height: 8px;
+        background: #f2b632;
+        transform-origin: left center;
+      }
+      .tarjeta {
+        position: absolute;
+        left: 130px;
+        top: 420px;
+        width: 820px;
+        height: 900px;
+        background: #fff6e3;
+        border-radius: 44px;
+        padding: 30px;
+        color: #1e5b34;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+      .tarjeta-foto {
+        width: 760px;
+        height: 500px;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #e9d3a1;
+      }
+      .tarjeta-foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 32%;
+        display: block;
+      }
+      .tarjeta-fila {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 22px;
+        height: 120px;
+      }
+      .tarjeta-nombre {
+        font-size: 136px;
+        color: #1e5b34;
+      }
+      .tarjeta-sello {
+        display: block;
+        background: #f2b632;
+        color: #4a2e14;
+        font-weight: 900;
+        font-size: 30px;
+        letter-spacing: 0.06em;
+        padding: 14px 24px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .tarjeta-precio-fila {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-top: 18px;
+      }
+      .tarjeta-etiqueta {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1.2;
+        color: #4a2e14;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .tarjeta-precio {
+        display: inline-block;
+        font-weight: 900;
+        font-size: 138px;
+        letter-spacing: -0.03em;
+        font-variant-numeric: tabular-nums;
+        color: #1e5b34;
+        transform-origin: right bottom;
+      }
+      #s3-puntos {
+        position: absolute;
+        left: 0;
+        top: 1372px;
+        width: 1080px;
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+      }
+      .punto {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(255, 246, 227, 0.3);
+      }
+      .punto i {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: #f2b632;
+        display: block;
+      }
+
+      /* ---------- Escena 4: negocios ---------- */
+      #s4 {
+        z-index: 4;
+        background: #f2b632;
+        opacity: 0;
+      }
+      #s4 .foto {
+        top: 600px;
+        bottom: auto;
+        height: 800px;
+        clip-path: polygon(0 9%, 100% 0, 100% 91%, 0 100%);
+      }
+      #s4-banda-roja {
+        position: absolute;
+        left: -120px;
+        top: 236px;
+        width: 1320px;
+        height: 210px;
+        background: #c62828;
+        transform-origin: left center;
+        rotate: -5deg;
+        display: flex;
+        align-items: center;
+        padding-left: 210px;
+      }
+      #s4-l1 {
+        font-size: 196px;
+        color: #fff6e3;
+        white-space: nowrap;
+      }
+      #s4-l2 {
+        position: absolute;
+        left: 64px;
+        top: 456px;
+        font-size: 150px;
+        color: #1e5b34;
+        white-space: nowrap;
+        rotate: -5deg;
+        transform-origin: left center;
+      }
+      #s4-banda-verde {
+        position: absolute;
+        left: -120px;
+        top: 1352px;
+        width: 1320px;
+        height: 160px;
+        background: #1e5b34;
+        rotate: -5deg;
+        display: flex;
+        align-items: center;
+        padding-left: 190px;
+      }
+      #s4-cta {
+        font-size: 100px;
+        color: #fff6e3;
+        white-space: nowrap;
+      }
+
+      /* ---------- Escena 5: cierre ---------- */
+      #s5 {
+        z-index: 5;
+        background: #1e5b34;
+        opacity: 0;
+      }
+      #s5-glow {
+        position: absolute;
+        left: 40px;
+        top: 260px;
+        width: 1000px;
+        height: 1000px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(242, 182, 50, 0.3) 0%, rgba(242, 182, 50, 0) 62%);
+      }
+      #s5-espiga {
+        position: absolute;
+        left: 400px;
+        top: 250px;
+        width: 280px;
+        height: 400px;
+      }
+      #s5-nombre {
+        position: absolute;
+        left: 0;
+        top: 640px;
+        width: 1080px;
+        text-align: center;
+        font-size: 158px;
+        line-height: 1.25;
+        color: #f2b632;
+      }
+      #s5-lema {
+        position: absolute;
+        left: 0;
+        top: 905px;
+        width: 1080px;
+        text-align: center;
+        font-weight: 900;
+        font-size: 46px;
+        letter-spacing: 0.12em;
+        color: #fff6e3;
+      }
+      #s5-marcas {
+        position: absolute;
+        left: 0;
+        top: 990px;
+        width: 1080px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 38px;
+        color: #f2d58a;
+      }
+      #s5-whatsapp {
+        position: absolute;
+        left: 150px;
+        top: 1110px;
+        width: 780px;
+        height: 150px;
+        border-radius: 999px;
+        background: #fff6e3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 26px;
+        color: #1e5b34;
+        font-weight: 900;
+        font-size: 50px;
+      }
+      #s5-ciudades {
+        position: absolute;
+        left: 0;
+        top: 1310px;
+        width: 1080px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        font-weight: 900;
+        font-size: 64px;
+        color: #f2b632;
+      }
+      #s5-chispas {
+        position: absolute;
+        left: 540px;
+        top: 760px;
+        width: 0;
+        height: 0;
+        z-index: 1;
+      }
+      .chispa {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        background: #fff6e3;
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+      #s5-nombre,
+      #s5-lema,
+      #s5-marcas,
+      #s5-whatsapp,
+      #s5-ciudades {
+        z-index: 2;
+      }
+
+      /* ---------- Capas de transición ---------- */
+      #flash {
+        position: absolute;
+        inset: 0;
+        z-index: 40;
+        background: radial-gradient(circle at 50% 60%, #fffaf0 0%, #fff1c9 45%, #f2b632 100%);
+        opacity: 0;
+      }
+      .cortina {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1080px;
+        height: 1920px;
+        z-index: 45;
+        opacity: 0;
+      }
+      #cortina-a {
+        background: #1e5b34;
+      }
+      #cortina-b {
+        background: #f2b632;
+      }
+      #final-negro {
+        position: absolute;
+        inset: 0;
+        z-index: 50;
+        background: #071009;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="18.6"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Escena 1 · gancho sobre el tazón premium -->
+      <div id="s1" class="scene">
+        <div class="foto" id="s1-foto"><img src="assets/fotos/tazon-premium.jpg" alt="" /></div>
+        <div id="s1-glow"></div>
+        <div id="s1-scrim"></div>
+        <div id="s1-marca" class="script">La Ambateñita</div>
+        <div id="s1-texto">
+          <div id="s1-l1" class="display linea">¿Ya tienes</div>
+          <div id="s1-l2" class="display linea">arroz</div>
+          <div id="s1-l3" class="display linea">para esta</div>
+          <div id="s1-l4" class="display linea">semana?</div>
+        </div>
+      </div>
+
+      <!-- Escena 2 · almuerzo en familia -->
+      <div id="s2" class="scene">
+        <div class="foto" id="s2-foto"><img src="assets/fotos/almuerzo-familia.jpg" alt="" /></div>
+        <svg id="s2-ola" viewBox="0 0 1080 140" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 70 C 240 10, 420 120, 660 66 C 840 26, 960 40, 1080 70 L1080 140 L0 140 Z" fill="#fff6e3" />
+        </svg>
+        <div class="granos" id="s2-granos" data-cantidad="18" data-semilla="7" data-zona="60,1180,960,700"></div>
+        <div id="s2-texto">
+          <div id="s2-l1" class="linea">El arroz de los</div>
+          <div id="s2-l2" class="script linea">almuerzos</div>
+          <div id="s2-l3" class="display linea">en familia</div>
+          <div id="s2-regla"></div>
+          <div id="s2-sub">Desde Ambato hasta Macas, en la mesa de tu casa.</div>
+        </div>
+      </div>
+
+      <!-- Escena 3 · marcas y precios -->
+      <div id="s3" class="scene">
+        <div id="s3-glow" data-layout-allow-overflow></div>
+        <svg id="s3-fantasma" viewBox="0 0 280 400" aria-hidden="true" data-layout-allow-overflow>
+          <path d="M150 392 C 146 300, 150 190, 184 52" fill="none" stroke="#1e5b34" stroke-width="11" stroke-linecap="round" />
+          <g fill="#1e5b34">
+            <ellipse cx="166" cy="78" rx="27" ry="13" transform="rotate(-62 166 78)" />
+            <ellipse cx="206" cy="98" rx="27" ry="13" transform="rotate(-20 206 98)" />
+            <ellipse cx="156" cy="128" rx="27" ry="13" transform="rotate(-70 156 128)" />
+            <ellipse cx="198" cy="148" rx="27" ry="13" transform="rotate(-24 198 148)" />
+            <ellipse cx="148" cy="180" rx="27" ry="13" transform="rotate(-74 148 180)" />
+            <ellipse cx="190" cy="198" rx="27" ry="13" transform="rotate(-28 190 198)" />
+            <ellipse cx="144" cy="232" rx="27" ry="13" transform="rotate(-78 144 232)" />
+            <ellipse cx="184" cy="250" rx="27" ry="13" transform="rotate(-32 184 250)" />
+          </g>
+        </svg>
+        <div class="granos" id="s3-granos" data-cantidad="26" data-semilla="31" data-zona="0,380,1080,1300"></div>
+        <div id="s3-titulo" class="display">Precios de la semana</div>
+        <div id="s3-regla"></div>
+
+        <div class="tarjeta" data-layout-allow-overlap id="tarjeta-0">
+          <div class="tarjeta-foto"><img data-layout-allow-overflow src="assets/fotos/gloria-25lb.jpg" alt="" /></div>
+          <div class="tarjeta-fila">
+            <div class="tarjeta-nombre display">Gloria</div>
+            <div class="tarjeta-sello" id="sello-0">PERUANO · PREMIUM</div>
+          </div>
+          <div class="tarjeta-precio-fila">
+            <div class="tarjeta-etiqueta">Quintal 45 kg</div>
+            <div class="tarjeta-precio" id="precio-0">$65.00</div>
+          </div>
+        </div>
+        <div class="tarjeta" data-layout-allow-overlap id="tarjeta-1">
+          <div class="tarjeta-foto"><img data-layout-allow-overflow src="assets/fotos/conejo-20lb.jpg" alt="" /></div>
+          <div class="tarjeta-fila">
+            <div class="tarjeta-nombre display">Conejo</div>
+          </div>
+          <div class="tarjeta-precio-fila">
+            <div class="tarjeta-etiqueta">Quintal 45 kg</div>
+            <div class="tarjeta-precio" id="precio-1">$55.00</div>
+          </div>
+        </div>
+        <div class="tarjeta" data-layout-allow-overlap id="tarjeta-2">
+          <div class="tarjeta-foto"><img data-layout-allow-overflow src="assets/fotos/amazonas-25lb.jpg" alt="" /></div>
+          <div class="tarjeta-fila">
+            <div class="tarjeta-nombre display">Amazonas</div>
+          </div>
+          <div class="tarjeta-precio-fila">
+            <div class="tarjeta-etiqueta">Quintal 45 kg</div>
+            <div class="tarjeta-precio" id="precio-2">$60.00</div>
+          </div>
+        </div>
+        <div class="tarjeta" data-layout-allow-overlap id="tarjeta-3">
+          <div class="tarjeta-foto"><img data-layout-allow-overflow src="assets/fotos/macareno-25lb.jpg" alt="" /></div>
+          <div class="tarjeta-fila">
+            <div class="tarjeta-nombre display">Macareño</div>
+          </div>
+          <div class="tarjeta-precio-fila">
+            <div class="tarjeta-etiqueta">Arroba 25 lb</div>
+            <div class="tarjeta-precio" id="precio-3">$15.00</div>
+          </div>
+        </div>
+
+        <div id="s3-puntos">
+          <div class="punto"><i id="punto-0"></i></div>
+          <div class="punto"><i id="punto-1"></i></div>
+          <div class="punto"><i id="punto-2"></i></div>
+          <div class="punto"><i id="punto-3"></i></div>
+        </div>
+      </div>
+
+      <!-- Escena 4 · negocios -->
+      <div id="s4" class="scene">
+        <div class="foto" id="s4-foto"><img src="assets/fotos/olla-restaurante.jpg" alt="" /></div>
+        <div id="s4-banda-roja" data-layout-allow-overflow><div id="s4-l1" class="display">¿Tu negocio</div></div>
+        <div id="s4-l2" class="display">vive del arroz?</div>
+        <div id="s4-banda-verde" data-layout-allow-overflow><div id="s4-cta" class="display">Pide tu quintal por WhatsApp</div></div>
+      </div>
+
+      <!-- Escena 5 · cierre de marca -->
+      <div id="s5" class="scene">
+        <div id="s5-glow"></div>
+        <svg id="s5-espiga" viewBox="0 0 280 400" aria-hidden="true">
+          <path
+            id="espiga-tallo"
+            d="M150 392 C 146 300, 150 190, 184 52"
+            fill="none"
+            stroke="#f2b632"
+            stroke-width="11"
+            stroke-linecap="round"
+            pathLength="1"
+          />
+          <path
+            id="espiga-hoja"
+            d="M148 336 C 104 312, 80 268, 76 226 C 112 250, 138 288, 148 322"
+            fill="none"
+            stroke="#fff6e3"
+            stroke-width="9"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            pathLength="1"
+          />
+          <g id="espiga-granos" fill="#f2b632">
+            <ellipse class="eg" cx="166" cy="78" rx="27" ry="13" transform="rotate(-62 166 78)" />
+            <ellipse class="eg" cx="206" cy="98" rx="27" ry="13" transform="rotate(-20 206 98)" />
+            <ellipse class="eg" cx="156" cy="128" rx="27" ry="13" transform="rotate(-70 156 128)" />
+            <ellipse class="eg" cx="198" cy="148" rx="27" ry="13" transform="rotate(-24 198 148)" />
+            <ellipse class="eg" cx="148" cy="180" rx="27" ry="13" transform="rotate(-74 148 180)" />
+            <ellipse class="eg" cx="190" cy="198" rx="27" ry="13" transform="rotate(-28 190 198)" />
+            <ellipse class="eg" cx="144" cy="232" rx="27" ry="13" transform="rotate(-78 144 232)" />
+            <ellipse class="eg" cx="184" cy="250" rx="27" ry="13" transform="rotate(-32 184 250)" />
+            <ellipse class="eg" cx="190" cy="34" rx="25" ry="12" transform="rotate(-40 190 34)" />
+          </g>
+        </svg>
+        <div id="s5-chispas"></div>
+        <div id="s5-nombre" class="script">La Ambateñita</div>
+        <div id="s5-lema">ARROZ AL POR MAYOR Y MENOR</div>
+        <div id="s5-marcas">Gloria · Conejo · Amazonas · Macareño</div>
+        <div id="s5-whatsapp">
+          <svg width="86" height="86" viewBox="0 0 64 64" aria-hidden="true">
+            <path
+              d="M32 4C16.5 4 4 15.6 4 30c0 6.2 2.3 11.9 6.2 16.4L7 60l14.4-5.6c3.3 1.1 6.9 1.6 10.6 1.6 15.5 0 28-11.6 28-26S47.5 4 32 4z"
+              fill="#2f8a4f"
+            />
+            <path
+              d="M24.6 18.5c-.8-1.8-1.6-1.8-2.4-1.8h-2c-.7 0-1.8.3-2.8 1.3-1 1-3.6 3.5-3.6 8.6s3.7 10 4.2 10.7c.5.7 7.2 11.5 17.8 15.6 8.8 3.5 10.6 2.8 12.5 2.6 1.9-.2 6.2-2.5 7.1-5 .9-2.5.9-4.6.6-5-.3-.4-1-.7-2-1.2s-6.2-3-7.1-3.4c-1-.3-1.6-.5-2.3.5-.7 1-2.7 3.4-3.3 4-.6.7-1.2.8-2.2.3-1-.5-4.4-1.6-8.3-5.1-3.1-2.7-5.1-6.1-5.7-7.1-.6-1-.1-1.6.4-2.1.5-.4 1-1.2 1.5-1.8.5-.6.7-1 1-1.7.3-.7.2-1.3-.1-1.8-.2-.5-2.2-5.5-3.1-7.6z"
+              fill="#fff6e3"
+              transform="translate(4 2) scale(0.86)"
+            />
+          </svg>
+          <span>Pedidos por WhatsApp</span>
+        </div>
+        <div id="s5-ciudades">
+          <svg width="58" height="58" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 3C15.7 3 9 9.6 9 17.8 9 29 24 45 24 45s15-16 15-27.2C39 9.6 32.3 3 24 3z" fill="#f2b632" />
+            <circle cx="24" cy="18" r="6" fill="#1e5b34" />
+          </svg>
+          <span>Ambato · Macas</span>
+        </div>
+      </div>
+
+      <div id="flash"></div>
+      <div id="cortina-a" class="cortina"></div>
+      <div id="cortina-b" class="cortina"></div>
+      <div id="final-negro"></div>
+
+      <!-- Música: "Fiesta Latina" de Luigi Talluto (Jamendo, CC BY 3.0). El drop del tema (16,935 s) cae en t=3,035 s. -->
+      <audio
+        id="musica"
+        src="assets/audio/fiesta-latina.mp3"
+        data-timeline-role="music"
+        data-start="0"
+        data-duration="18.6"
+        data-media-start="13.9"
+        data-track-index="5"
+        data-volume="0.9"
+        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":0.25,"v":1},{"t":17.3,"v":1},{"t":18.6,"v":0}]}]}'
+      ></audio>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Pulso del tema: 128 BPM. Todos los golpes salen de esta rejilla.
+      const PULSO = 0.4695;
+      const DROP = 3.035; // primer golpe fuerte después del redoble
+      const pulso = (n) => DROP + n * PULSO;
+      const T1 = DROP; // gancho → familia
+      const T2 = pulso(8); // familia → marcas (6.791)
+      const T3 = pulso(20); // marcas → negocios (12.425)
+      const T4 = pulso(26); // negocios → cierre (15.242)
+      const FIN = 18.6;
+
+      // Azar con semilla: mismas posiciones en cada render.
+      const azar = (n) => {
+        const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+        return x - Math.floor(x);
+      };
+
+      // Granos de arroz flotando de fondo (deriva lenta y finita).
+      document.querySelectorAll(".granos").forEach((cont, ci) => {
+        const n = Number(cont.dataset.cantidad);
+        const semilla = Number(cont.dataset.semilla);
+        const [zx, zy, zw, zh] = cont.dataset.zona.split(",").map(Number);
+        for (let i = 0; i < n; i++) {
+          const g = document.createElement("div");
+          g.className = "grano";
+          const w = 16 + azar(semilla + i * 3) * 14;
+          g.style.width = w + "px";
+          g.style.height = w * 0.42 + "px";
+          g.style.left = zx + azar(semilla + i * 5 + 1) * zw + "px";
+          g.style.top = zy + azar(semilla + i * 7 + 2) * zh + "px";
+          g.style.opacity = String(0.18 + azar(semilla + i * 11 + 3) * 0.3);
+          cont.appendChild(g);
+          const rot = azar(semilla + i * 13 + 4) * 180;
+          tl.fromTo(
+            g,
+            { rotation: rot, y: 0, x: 0 },
+            {
+              rotation: rot + 40 + azar(i) * 60,
+              y: -60 - azar(semilla + i) * 80,
+              x: (azar(semilla + i * 17) - 0.5) * 80,
+              duration: 8,
+              ease: "sine.inOut",
+            },
+            ci === 0 ? T1 : T2,
+          );
+        }
+      });
+
+      // ================= Escena 1 · gancho (0 → T1) =================
+      tl.fromTo("#s1-foto img", { scale: 1.02 }, { scale: 1.16, duration: T1 + 0.4, ease: "power1.in" }, 0);
+      tl.fromTo("#s1-glow", { scale: 0.85, opacity: 0.4 }, { scale: 1.1, opacity: 1, duration: T1, ease: "sine.inOut" }, 0);
+      tl.fromTo("#s1-marca", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+      // Cuatro golpes, cuatro entradas distintas sobre el redoble.
+      tl.fromTo(
+        "#s1-l1",
+        { scale: 1.5, filter: "blur(16px)", opacity: 0, transformOrigin: "left center" },
+        { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.42, ease: "power4.out" },
+        0.12,
+      );
+      tl.fromTo(
+        "#s1-l2",
+        { x: -420, opacity: 0, skewX: -12 },
+        { x: 0, opacity: 1, skewX: 0, duration: 0.45, ease: "expo.out" },
+        DROP - 4 * PULSO,
+      );
+      tl.fromTo(
+        "#s1-l3",
+        { y: 120, rotation: 5, opacity: 0, transformOrigin: "left bottom" },
+        { y: 0, rotation: 0, opacity: 1, duration: 0.42, ease: "circ.out" },
+        DROP - 3 * PULSO,
+      );
+      tl.fromTo(
+        "#s1-l4",
+        { scale: 0.4, opacity: 0, transformOrigin: "left center" },
+        { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.2)" },
+        DROP - 2 * PULSO,
+      );
+      // Anticipación: "ARROZ" late con el redoble justo antes del drop.
+      tl.fromTo("#s1-l2", { scale: 1 }, { scale: 1.06, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "left center", immediateRender: false }, DROP - PULSO);
+
+      // Transición 1 (clímax, en el drop): zoom a través + destello dorado.
+      tl.fromTo("#s1", { scale: 1, opacity: 1, filter: "blur(0px)" }, { scale: 2.2, opacity: 0, filter: "blur(8px)", duration: 0.32, ease: "power3.in", immediateRender: false }, T1 - 0.12);
+      tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.92, duration: 0.12, ease: "power2.out" }, T1 - 0.1);
+      tl.fromTo("#flash", { opacity: 0.92 }, { opacity: 0, duration: 0.42, ease: "power2.in", immediateRender: false }, T1 + 0.04);
+      tl.fromTo(
+        "#s2",
+        { opacity: 0, scale: 0.7, filter: "blur(8px)" },
+        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" },
+        T1 + 0.02,
+      );
+
+      // ================= Escena 2 · familia (T1 → T2) =================
+      tl.fromTo("#s2-foto img", { scale: 1.14, x: -40 }, { scale: 1.0, x: 30, duration: T2 - T1 + 0.4, ease: "sine.out" }, T1);
+      tl.fromTo("#s2-l1", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, T1 + 0.3);
+      tl.fromTo(
+        "#s2-l2",
+        { y: 90, opacity: 0, rotation: -4, transformOrigin: "left bottom" },
+        { y: 0, opacity: 1, rotation: 0, duration: 0.55, ease: "back.out(1.6)" },
+        T1 + 0.42,
+      );
+      tl.fromTo("#s2-l3", { y: 110, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, T1 + 0.56);
+      tl.fromTo("#s2-regla", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power4.out" }, pulso(2));
+      tl.fromTo("#s2-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, pulso(2) + 0.12);
+      tl.fromTo("#s2-l2", { scale: 1 }, { scale: 1.04, duration: PULSO, ease: "sine.inOut", yoyo: true, repeat: 3, transformOrigin: "left center", immediateRender: false }, pulso(4));
+
+      // Transición 2 (cambio de tema): cortinas verde y dorada.
+      tl.fromTo("#cortina-a", { x: -1080, opacity: 1 }, { x: 0, duration: 0.25, ease: "power3.inOut", immediateRender: false }, T2);
+      tl.fromTo("#cortina-b", { x: -1080, opacity: 1 }, { x: 0, duration: 0.25, ease: "power3.inOut", immediateRender: false }, T2 + 0.06);
+      tl.set("#s2", { opacity: 0 }, T2 + 0.22);
+      tl.set("#s3", { opacity: 1 }, T2 + 0.22);
+      tl.fromTo("#cortina-a", { x: 0 }, { x: 1080, duration: 0.25, ease: "power3.inOut", immediateRender: false }, T2 + 0.3);
+      tl.fromTo("#cortina-b", { x: 0 }, { x: 1080, duration: 0.25, ease: "power3.inOut", immediateRender: false }, T2 + 0.36);
+
+      // ================= Escena 3 · marcas y precios (T2 → T3) =================
+      tl.fromTo("#s3-glow", { scale: 0.8, opacity: 0.5 }, { scale: 1.1, opacity: 1, duration: T3 - T2, ease: "sine.inOut" }, T2);
+      tl.fromTo("#s3-fantasma", { rotation: -8, y: 40 }, { rotation: 6, y: -40, duration: T3 - T2 + 0.4, ease: "sine.inOut" }, T2);
+      tl.fromTo("#s3-titulo", { x: -160, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, T2 + 0.4);
+      tl.fromTo("#s3-regla", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power4.out" }, T2 + 0.55);
+
+      const PRECIOS = [65, 55, 60, 15];
+      const LLEGADA = [pulso(9), pulso(12), pulso(15), pulso(18)];
+      PRECIOS.forEach((valor, i) => {
+        const t = LLEGADA[i];
+        const tarjeta = "#tarjeta-" + i;
+        tl.fromTo(
+          tarjeta,
+          { opacity: 0, x: 620, rotation: 10, scale: 0.86 },
+          { opacity: 1, x: 0, rotation: 0, scale: 1, duration: 0.5, ease: "expo.out", immediateRender: i === 0 },
+          t,
+        );
+        tl.fromTo(
+          tarjeta + " .tarjeta-foto img",
+          { scale: 1.25 },
+          { scale: 1.04, duration: 1.5, ease: "power2.out", immediateRender: i === 0 },
+          t,
+        );
+        // Conteo del precio: el número crece con la escala.
+        const precio = document.getElementById("precio-" + i);
+        const estado = { v: 0 };
+        tl.fromTo(
+          estado,
+          { v: 0 },
+          {
+            v: valor,
+            duration: 0.6,
+            ease: "power3.out",
+            immediateRender: false,
+            onUpdate: () => {
+              precio.textContent = "$" + estado.v.toFixed(2);
+            },
+          },
+          t + 0.18,
+        );
+        tl.fromTo(precio, { scale: 0.55 }, { scale: 1, duration: 0.6, ease: "power3.out", immediateRender: i === 0 }, t + 0.18);
+        tl.fromTo("#punto-" + i, { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.5)", immediateRender: true }, t + 0.1);
+        if (i > 0) {
+          tl.fromTo("#punto-" + (i - 1), { scale: 1 }, { scale: 0.45, duration: 0.25, ease: "power2.out", immediateRender: false }, t + 0.1);
+          tl.fromTo(
+            "#tarjeta-" + (i - 1),
+            { opacity: 1, x: 0, rotation: 0, scale: 1 },
+            { opacity: 0, x: -640, rotation: -12, scale: 0.86, duration: 0.36, ease: "power3.in", immediateRender: false },
+            t - 0.06,
+          );
+        }
+      });
+      tl.fromTo("#sello-0", { scale: 0, rotation: -14 }, { scale: 1, rotation: -4, duration: 0.45, ease: "back.out(2.6)" }, LLEGADA[0] + 0.42);
+
+      // Transición 3: empujón vertical (siguiente idea).
+      tl.fromTo("#s3", { yPercent: 0 }, { yPercent: -100, duration: 0.45, ease: "power3.inOut", immediateRender: false }, T3);
+      tl.set("#s4", { opacity: 1 }, T3);
+      tl.set("#s3", { opacity: 0 }, T3 + 0.46);
+      tl.fromTo("#s4", { yPercent: 100 }, { yPercent: 0, duration: 0.45, ease: "power3.inOut", immediateRender: false }, T3);
+
+      // ================= Escena 4 · negocios (T3 → T4) =================
+      tl.fromTo("#s4-foto", { clipPath: "polygon(0 9%, 0 9%, 0 100%, 0 100%)" }, { clipPath: "polygon(0 9%, 100% 0, 100% 91%, 0 100%)", duration: 0.6, ease: "power3.out" }, T3 + 0.2);
+      tl.fromTo("#s4-foto img", { scale: 1.2 }, { scale: 1.02, duration: T4 - T3, ease: "power1.out" }, T3 + 0.2);
+      tl.fromTo("#s4-banda-roja", { x: -1300 }, { x: 0, duration: 0.42, ease: "expo.out" }, T3 + 0.3);
+      tl.fromTo("#s4-l1", { x: -260, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, T3 + 0.42);
+      tl.fromTo(
+        "#s4-l2",
+        { scale: 1.6, opacity: 0, filter: "blur(14px)" },
+        { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.42, ease: "power4.out" },
+        pulso(22),
+      );
+      tl.fromTo("#s4-banda-verde", { x: 1400 }, { x: 0, duration: 0.45, ease: "expo.out" }, pulso(24) - 0.05);
+      tl.fromTo("#s4-cta", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, pulso(24) + 0.12);
+      tl.fromTo("#s4-l2", { rotation: 0 }, { rotation: -1.5, duration: PULSO, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, pulso(23));
+
+      // Transición 4: iris circular hacia el cierre.
+      tl.set("#s5", { opacity: 1 }, T4);
+      tl.set("#s4", { opacity: 0 }, T4 + 0.56);
+      tl.fromTo("#s5", { clipPath: "circle(0% at 50% 45%)" }, { clipPath: "circle(80% at 50% 45%)", duration: 0.55, ease: "power3.inOut", immediateRender: false }, T4);
+
+      // ================= Escena 5 · cierre (T4 → FIN) =================
+      tl.fromTo("#s5-glow", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4, ease: "sine.out" }, T4 + 0.2);
+      tl.fromTo("#espiga-tallo", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, T4 + 0.25);
+      tl.fromTo("#espiga-hoja", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, T4 + 0.55);
+      tl.fromTo(
+        "#espiga-granos .eg",
+        { scale: 0, transformOrigin: "50% 50%" },
+        { scale: 1, duration: 0.35, ease: "back.out(3)", stagger: { each: 0.05, from: "end" } },
+        T4 + 0.7,
+      );
+      tl.fromTo("#s5-nombre", { scale: 0.3, opacity: 0, rotation: -6 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: "back.out(1.8)" }, pulso(28) - 0.05);
+      tl.fromTo("#s5-lema", { y: 40, opacity: 0, scale: 1.12 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, pulso(29));
+      tl.fromTo("#s5-marcas", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, pulso(29) + 0.25);
+      tl.fromTo("#s5-whatsapp", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2)" }, pulso(30) + 0.1);
+      tl.fromTo("#s5-ciudades", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, pulso(31));
+      tl.fromTo("#s5-whatsapp", { scale: 1 }, { scale: 1.04, duration: PULSO, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, pulso(32));
+
+      // Explosión de granos de arroz detrás del nombre (física fija, sin azar en el render).
+      const chispas = document.getElementById("s5-chispas");
+      const parts = [];
+      for (let i = 0; i < 46; i++) {
+        const el = document.createElement("div");
+        el.className = "chispa";
+        const w = 14 + azar(i * 3 + 1) * 14;
+        el.style.width = w + "px";
+        el.style.height = w * 0.42 + "px";
+        el.style.background = i % 4 === 0 ? "#f2b632" : "#fff6e3";
+        chispas.appendChild(el);
+        const ang = -Math.PI / 2 + (azar(i * 5 + 2) * 2 - 1) * 1.35;
+        const vel = 900 + azar(i * 7 + 3) * 900;
+        parts.push({ el, vx: Math.cos(ang) * vel, vy: Math.sin(ang) * vel, giro: (azar(i * 11 + 4) * 2 - 1) * 540 });
+      }
+      const VUELO = 1.6;
+      const motor = { T: 0 };
+      tl.fromTo(
+        motor,
+        { T: 0 },
+        {
+          T: 1,
+          duration: VUELO,
+          ease: "none",
+          immediateRender: false,
+          onUpdate: () => {
+            const t = motor.T * VUELO;
+            const desvanecer = Math.min(1, (1 - motor.T) / 0.35);
+            parts.forEach((p) => {
+              const x = p.vx * t;
+              const y = p.vy * t + 0.5 * 1500 * t * t;
+              p.el.style.transform = "translate(" + x + "px, " + y + "px) rotate(" + p.giro * t + "deg)";
+              p.el.style.opacity = String(motor.T === 0 ? 0 : desvanecer);
+            });
+          },
+        },
+        pulso(28) + 0.05,
+      );
+
+      // Final: fundido suave a negro con la música.
+      tl.fromTo("#final-negro", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.in" }, FIN - 0.45);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
