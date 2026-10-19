@@ -136,7 +136,7 @@ function pie(negocio, ancho, alto, altoPie = 150) {
     <div style="display:flex;align-items:center;gap:20px">
       ${iconoChat({ tam: 74 })}
       <div>
-        <div style="font-weight:700;font-size:24px;color:var(--dorado);letter-spacing:1px">PIDE POR WHATSAPP</div>
+        <div style="font-weight:700;font-size:24px;color:var(--dorado);letter-spacing:1px">PIDE TU ARROZ POR WHATSAPP</div>
         <div style="font-weight:900;font-size:46px;letter-spacing:1px">${esc(lineaWhatsapp(negocio))}</div>
       </div>
     </div>
