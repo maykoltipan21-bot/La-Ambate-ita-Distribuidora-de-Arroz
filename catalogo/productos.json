@@ -34,6 +34,7 @@
    "subtitulo": "Gloria · Conejo · Amazonas · Macareño",
    "color": "#1E5B34",
    "letra": "A",
+   "lema": "El grano que no puede faltar en ninguna mesa",
    "destacados": [
     "A02",
     "A05",
@@ -153,6 +154,7 @@
    "subtitulo": "Tomebamba · La Delicia · Estrella de Oro",
    "color": "#E08A00",
    "letra": "B",
+   "lema": "Para la sopa y el seco de todos los días",
    "destacados": [
     "B06",
     "B13",
@@ -339,6 +341,7 @@
    "subtitulo": "Azúcar · Sal · Aceites · Atún · Despensa",
    "color": "#D9480F",
    "letra": "C",
+   "lema": "Lo básico que nunca puede faltar en tu tienda",
    "destacados": [
     "C01",
     "C12",
@@ -698,6 +701,7 @@
    "subtitulo": "Pulp · Vivant · La Granja · Paraíso",
    "color": "#1971C2",
    "letra": "D",
+   "lema": "Frescura que tus clientes buscan",
    "destacados": [
     "D01",
     "D04",
@@ -793,6 +797,7 @@
    "subtitulo": "Yupi · Nic · Cofica",
    "color": "#F08C00",
    "letra": "E",
+   "lema": "Los antojos favoritos de grandes y chicos",
    "destacados": [
     "E01",
     "E09",
@@ -1138,6 +1143,7 @@
    "subtitulo": "Galletas · Caramelos · Chupetes · Chocolates",
    "color": "#D6336C",
    "letra": "F",
+   "lema": "Dulces momentos para tus clientes",
    "destacados": [
     "F01",
     "F12",
@@ -1363,10 +1369,10 @@
    "subtitulo": "Camperito · Maíz · Trigo",
    "color": "#5C940D",
    "letra": "G",
+   "lema": "Buen alimento para tus animales",
    "destacados": [
     "G01",
-    "G08",
-    "G09"
+    "G08"
    ],
    "grupos": [
     {
@@ -1476,6 +1482,7 @@
    "subtitulo": "Jabones · Papel · Cloro · Desinfectantes",
    "color": "#0C8599",
    "letra": "H",
+   "lema": "Todo para un hogar limpio y cuidado",
    "destacados": [
     "H01",
     "H16",
@@ -1776,6 +1783,7 @@
    "subtitulo": "Pañales · Platos · Tarrinas · Fundas",
    "color": "#7048E8",
    "letra": "I",
+   "lema": "Prácticos para tu negocio y tus eventos",
    "destacados": [
     "I01",
     "I07",
