@@ -1,0 +1,55 @@
+{
+  "_instrucciones": "Llena los campos vacíos (\"\") y los precios (null). Mientras falte el WhatsApp, el generador marca las publicaciones como NO LISTAS y no se programan. Un precio en null se muestra como 'Consulta el precio'.",
+
+  "nombre": "La Ambateñita",
+  "eslogan": "Arroz de calidad al por mayor y menor",
+  "ciudades": ["Ambato", "Macas"],
+
+  "whatsapp": "",
+  "whatsapp_codigo_pais": "593",
+  "telefono_llamadas": "",
+
+  "direccion_ambato": "",
+  "direccion_macas": "",
+  "horario": "",
+
+  "entrega_a_domicilio": null,
+  "zonas_entrega": {
+    "Ambato": [],
+    "Macas": []
+  },
+  "pedido_minimo_mayoreo": "",
+  "formas_de_pago": ["Efectivo", "Transferencia"],
+
+  "productos": [
+    {
+      "nombre": "Arroz Flor",
+      "descripcion": "",
+      "presentaciones": [
+        { "nombre": "Quintal", "detalle": "100 lb", "precio": null },
+        { "nombre": "Medio quintal", "detalle": "50 lb", "precio": null },
+        { "nombre": "Arroba", "detalle": "25 lb", "precio": null },
+        { "nombre": "Funda", "detalle": "5 lb", "precio": null }
+      ]
+    }
+  ],
+
+  "hashtags": [
+    "#LaAmbateñita",
+    "#Arroz",
+    "#ArrozAlPorMayor",
+    "#Ambato",
+    "#Macas",
+    "#Tungurahua",
+    "#MoronaSantiago",
+    "#Ecuador"
+  ],
+
+  "publicacion": {
+    "zona_horaria": "America/Guayaquil",
+    "hora_imagen": "12:15",
+    "hora_reel": "19:10",
+    "repo_raw_base": "https://raw.githubusercontent.com/maykoltipan21-bot/La-Ambate-ita-Distribuidora-de-Arroz/refs/heads/claude/facebook-arroz-ambatenita-mx1sna",
+    "metricool_blog_id": ""
+  }
+}
