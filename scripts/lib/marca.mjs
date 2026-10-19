@@ -26,6 +26,7 @@ let cssFuentes;
 export function estilosBase() {
   cssFuentes ??= `
     @font-face { font-family: 'Pacifico'; src: ${fuente('pacifico-latin-400-normal.woff2')}; }
+    @font-face { font-family: 'League Gothic'; src: ${fuente('league-gothic-latin-400-normal.woff2')}; }
     @font-face { font-family: 'Montserrat'; font-weight: 500; src: ${fuente('montserrat-latin-500-normal.woff2')}; }
     @font-face { font-family: 'Montserrat'; font-weight: 700; src: ${fuente('montserrat-latin-700-normal.woff2')}; }
     @font-face { font-family: 'Montserrat'; font-weight: 800; src: ${fuente('montserrat-latin-800-normal.woff2')}; }

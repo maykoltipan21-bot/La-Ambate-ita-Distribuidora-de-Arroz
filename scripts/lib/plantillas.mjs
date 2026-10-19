@@ -183,6 +183,62 @@ function oferta(d, negocio) {
   return { ancho, alto, html: pagina(ancho, alto, '', cuerpo, 31) };
 }
 
+// Todos los precios en fondo blanco: una tarjeta por marca con su foto y todas sus
+// presentaciones. Con d.detalle ("25 lb", "45 kg"...) muestra solo esa presentación.
+function precios(d, negocio) {
+  const { ancho, alto } = FEED;
+  const productos = negocio.productos
+    .map((p) => ({ ...p, presentaciones: d.detalle ? p.presentaciones.filter((pr) => pr.detalle === d.detalle) : p.presentaciones }))
+    .filter((p) => p.presentaciones.length);
+  const filasGrid = Math.ceil(productos.length / 2);
+  const maxFilas = Math.max(...productos.map((p) => p.presentaciones.length));
+  const altoGrid = alto - 130 - 22 - 350;
+  const altoTarjeta = Math.floor((altoGrid - (filasGrid - 1) * 28) / filasGrid);
+  const ALTO_CABEZA = 170;
+  const unaSola = maxFilas === 1;
+  const altoFila = unaSola ? 96 : Math.min(62, Math.floor((altoTarjeta - ALTO_CABEZA - 50) / Math.max(maxFilas, 1)));
+  const altoReal = unaSola ? ALTO_CABEZA + 60 + altoFila : altoTarjeta;
+  const topGrid = 350 + Math.max(0, Math.floor((altoGrid - filasGrid * altoReal - (filasGrid - 1) * 28) / 2));
+  const tarjetas = productos.map((p, idx) => {
+    const sola = productos.length % 2 === 1 && idx === productos.length - 1;
+    const filas = p.presentaciones.map((pr, i) => `
+      <div style="display:flex;align-items:center;justify-content:space-between;height:${altoFila}px;${i ? 'border-top:2px dashed #EADFC8;' : ''}">
+        <span style="font-weight:700;font-size:25px;color:#5B4630">${esc(pr.nombre)}${/^\d/.test(pr.nombre) ? '' : ` <span style="font-weight:500;color:#8C7A62">${esc(pr.detalle)}</span>`}</span>
+        <span style="font-weight:900;font-size:${unaSola ? 62 : 36}px;color:#1E5B34;font-variant-numeric:tabular-nums">${precioBonito(pr.precio) || 'Consulta'}</span>
+      </div>`).join('');
+    return `
+    <div style="position:relative;${sola ? 'grid-column:1 / -1;justify-self:center;width:calc(50% - 14px);' : ''}background:#FFFFFF;border-radius:30px;box-shadow:0 14px 34px rgba(74,46,20,.13);height:${altoReal}px;padding:22px 26px 16px;overflow:hidden">
+      <div style="position:absolute;left:0;top:0;width:100%;height:12px;background:${p.color || '#1E5B34'}"></div>
+      <div style="display:flex;gap:20px;align-items:center;height:${ALTO_CABEZA}px;margin-bottom:10px">
+        ${tieneFoto(p) ? `<img src="${imagenDataUrl(fotoDe(p))}" style="width:122px;height:160px;object-fit:cover;object-position:50% 30%;border-radius:18px;flex:0 0 122px;box-shadow:0 6px 14px rgba(0,0,0,.12)">` : ''}
+        <div style="flex:1;min-width:0">
+          <div style="font-family:'League Gothic';font-size:88px;line-height:.95;color:#1E5B34;text-transform:uppercase">${esc(p.nombre)}</div>
+          ${p.etiqueta ? `<div style="display:inline-block;margin-top:8px;background:${p.color || '#F2B632'};color:#FFFFFF;font-weight:900;font-size:19px;letter-spacing:1px;padding:7px 14px;border-radius:999px;white-space:nowrap">${esc(p.etiqueta)}</div>` : ''}
+          ${p.presentaciones.some((pr) => pr.nota) ? `<div style="font-weight:700;font-size:20px;color:#8C7A62;margin-top:6px">${esc(p.presentaciones.find((pr) => pr.nota).nota.replace(/\s*\(.*\)/, ''))}</div>` : ''}
+        </div>
+      </div>
+      ${filas}
+    </div>`;
+  }).join('');
+  const titulo = d.titulo || 'Precios de la semana';
+  const cuerpo = `
+    <div class="capa" style="inset:0;background:#FFFFFF;opacity:.82"></div>
+    <div class="capa" style="left:0;top:44px;width:${ancho}px;display:flex;justify-content:center">${encabezado({ tam: 0.95 })}</div>
+    <div class="capa" style="left:0;top:172px;width:${ancho}px;text-align:center">
+      <div style="font-family:'League Gothic';font-size:112px;line-height:1;color:#1E5B34;text-transform:uppercase">${esc(titulo)}</div>
+      <div style="font-weight:700;font-size:30px;color:#5B4630;margin-top:6px">${esc(d.subtitulo || 'Arroz al por mayor y menor · ' + (negocio.ciudades || []).join(' · '))}</div>
+    </div>
+    <div class="capa" style="left:44px;top:${topGrid}px;width:${ancho - 88}px;display:grid;grid-template-columns:1fr 1fr;gap:28px">${tarjetas}</div>
+    <div class="capa" style="left:0;top:${alto - 122}px;width:${ancho}px;display:flex;justify-content:center">
+      <div style="display:flex;align-items:center;gap:16px;background:#1E5B34;color:#FFFFFF;border-radius:999px;padding:14px 40px 14px 18px">
+        ${iconoChat({ tam: 62 })}
+        <span style="font-weight:900;font-size:36px">${negocio.whatsapp ? 'WhatsApp ' + esc(telefonoBonito(negocio.whatsapp)) : 'Pedidos por WhatsApp'}</span>
+        <span style="font-weight:700;font-size:28px;color:#F2D58A;margin-left:10px">${esc((negocio.ciudades || []).join(' · '))}</span>
+      </div>
+    </div>`;
+  return { ancho, alto, html: pagina(ancho, alto, 'body{background:#FFFFFF}', cuerpo, 47) };
+}
+
 // Tabla de precios: una fila por marca, una columna por presentación.
 function mayoreo(d, negocio) {
   const { ancho, alto } = FEED;
@@ -438,4 +494,4 @@ function portada(d, negocio) {
   return { ancho, alto, html: pagina(ancho, alto, '', cuerpo, 5) };
 }
 
-export const PLANTILLAS = { oferta, mayoreo, marca, consejo, receta, pregunta, entrega, foto, slide, perfil, portada };
+export const PLANTILLAS = { oferta, mayoreo, precios, marca, consejo, receta, pregunta, entrega, foto, slide, perfil, portada };

@@ -12,7 +12,7 @@ fotos/ (tus fotos reales) ─┘        imagen.png o reel.mp4                   
 ```
 
 1. **`config/negocio.json`**: tus datos (WhatsApp, direcciones, horario) y las **marcas con sus precios** (Macareño, Conejo, Amazonas y Gloria, cada una por presentación). Si cambias un precio aquí, todas las imágenes nuevas salen con el precio nuevo. También puedes simplemente decírselo a Claude por chat, o enviarle la foto del catálogo actualizado.
-2. **`contenido/calendario.json`**: 28 días de contenido (textos, recetas, consejos y reels) que se repiten en ciclo.
+2. **`contenido/calendario.json`**: 28 días de contenido (precios, marcas, consejos sobre el arroz y reels; sin recetas: La Ambateñita vende solo arroz) que se repiten en ciclo.
 3. **`scripts/generar.mjs`**: crea las imágenes (1080×1350) y los reels (1080×1920, unos 16 segundos) con la marca de La Ambateñita.
 4. **`media/`**: aquí quedan las fotos y videos. Como el repositorio es público, Metricool las descarga desde GitHub.
 5. **Metricool**: Claude programa cada publicación con su texto y su hora, y Metricool la publica sola.

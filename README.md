@@ -6,11 +6,11 @@ Claude genera cada día una foto o un video con la marca, escribe el texto y lo 
 
 ![Portada de Facebook](media/marca/portada-facebook.png)
 
-| Precios por marca | Marca de la semana | Precio | Receta |
+| Todos los precios | Marca de la semana | Precio | Reel animado |
 |---|---|---|---|
-| ![](media/muestras/mayoreo.png) | ![](media/muestras/marca.png) | ![](media/muestras/oferta.png) | ![](media/muestras/receta.png) |
+| ![](media/muestras/precios-todas-las-marcas.png) | ![](media/muestras/marca.png) | ![](media/muestras/oferta.png) | ![](media/reels/reel-presentacion-portada.jpg) |
 
-Reels de ejemplo: [`media/muestras/reel.mp4`](media/muestras/reel.mp4) (bienvenida) y [`media/muestras/reel-precios.mp4`](media/muestras/reel-precios.mp4) (precios de cada marca)
+Reel de presentación animado: [`media/reels/reel-presentacion.mp4`](media/reels/reel-presentacion.mp4) (proyecto editable en `videos/reel-presentacion/`). Reels automáticos de ejemplo: [`media/muestras/reel-precios.mp4`](media/muestras/reel-precios.mp4).
 
 ## Pasos para arrancar
 

@@ -20,6 +20,7 @@
   "productos": [
     {
       "nombre": "Gloria",
+      "color": "#E3A600",
       "etiqueta": "PERUANO · PREMIUM",
       "descripcion": "Arroz peruano de excelente calidad",
       "foto": "fotos/catalogo/gloria-25lb.jpg",
@@ -30,15 +31,8 @@
       ]
     },
     {
-      "nombre": "Macareño",
-      "foto": "fotos/catalogo/macareno-25lb.jpg",
-      "presentaciones": [
-        { "nombre": "Arroba", "detalle": "25 lb", "precio": 15.0, "foto": "fotos/catalogo/macareno-25lb.jpg", "nota": "Marca Cuchara Brava (Macareño original)" },
-        { "nombre": "10 libras", "detalle": "10 lb", "precio": 6.0, "foto": "fotos/catalogo/macareno-10lb.jpg" }
-      ]
-    },
-    {
       "nombre": "Conejo",
+      "color": "#D62828",
       "foto": "fotos/catalogo/conejo-20lb.jpg",
       "presentaciones": [
         { "nombre": "Quintal", "detalle": "45 kg", "precio": 55.0, "foto": "fotos/catalogo/conejo-45kg.jpg" },
@@ -49,11 +43,21 @@
     },
     {
       "nombre": "Amazonas",
+      "color": "#2E8B3E",
       "foto": "fotos/catalogo/amazonas-25lb.jpg",
       "presentaciones": [
         { "nombre": "Quintal", "detalle": "45 kg", "precio": 60.0, "foto": "fotos/catalogo/amazonas-45kg.jpg" },
         { "nombre": "Arroba", "detalle": "25 lb", "precio": 15.0, "foto": "fotos/catalogo/amazonas-25lb.jpg" },
         { "nombre": "10 libras", "detalle": "10 lb", "precio": 6.0, "foto": "fotos/catalogo/amazonas-10lb.jpg" }
+      ]
+    },
+    {
+      "nombre": "Macareño",
+      "color": "#E8552B",
+      "foto": "fotos/catalogo/macareno-25lb.jpg",
+      "presentaciones": [
+        { "nombre": "Arroba", "detalle": "25 lb", "precio": 15.0, "foto": "fotos/catalogo/macareno-25lb.jpg", "nota": "Marca Cuchara Brava (Macareño original)" },
+        { "nombre": "10 libras", "detalle": "10 lb", "precio": 6.0, "foto": "fotos/catalogo/macareno-10lb.jpg" }
       ]
     }
   ],

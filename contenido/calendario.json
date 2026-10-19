@@ -41,10 +41,9 @@
       "dia": 2,
       "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "mayoreo",
+      "plantilla": "precios",
       "datos": {
-        "titulo": "Precios al por mayor y menor",
-        "subtitulo": "Para tu casa, tu tienda o tu restaurante"
+        "titulo": "Precios de la semana"
       },
       "texto": "📋 Precios de esta semana en La Ambateñita:\n\n{{lista_precios}}\n\n🏪 ¿Tienes tienda, restaurante o comedor? Escríbenos y armamos tu pedido.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
     },
@@ -146,29 +145,15 @@
     },
     {
       "dia": 6,
-      "pilar": "educacion",
+      "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "receta",
+      "plantilla": "precios",
       "datos": {
-        "etiqueta": "RECETA DEL SÁBADO",
-        "titulo": "Arroz con menestra",
-        "ingredientes": [
-          "2 tazas de arroz",
-          "2 tazas de lenteja o fréjol",
-          "1 cebolla paiteña",
-          "1 pimiento",
-          "Ajo y comino",
-          "Cilantro",
-          "Sal y aceite"
-        ],
-        "pasos": [
-          "Cocina el grano hasta que esté suave",
-          "Haz un refrito de cebolla, pimiento, ajo y comino",
-          "Mezcla el refrito con el grano y deja espesar",
-          "Sirve con arroz graneado y cilantro picado"
-        ]
+        "titulo": "Funda de 10 libras",
+        "subtitulo": "Todas las marcas · para la casa",
+        "detalle": "10 lb"
       },
-      "texto": "😋 Sábado de arroz con menestra, ¡el plato que nunca falla!\n\n🛒 Ingredientes:\n• 2 tazas de arroz\n• 2 tazas de lenteja o fréjol\n• 1 cebolla paiteña y 1 pimiento\n• Ajo, comino, cilantro, sal y aceite\n\n👩‍🍳 Preparación:\n1. Cocina el grano hasta que esté suave\n2. Haz un refrito de cebolla, pimiento, ajo y comino\n3. Mezcla el refrito con el grano y deja espesar\n4. Sirve con arroz graneado y cilantro picado\n\nAcompáñalo con carne asada o maduro frito 🔥\n\n¿Lenteja o fréjol? Comenta 👇\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "🛍️ FUNDA DE 10 LIBRAS, para la semana de la casa:\n\n▪️ Gloria (peruano premium): {{precio:Gloria/10 libras}}\n▪️ Conejo: {{precio:Conejo/10 libras}}\n▪️ Amazonas: {{precio:Amazonas/10 libras}}\n▪️ Macareño: {{precio:Macareño/10 libras}}\n\nY si quieres un poco más, Conejo también viene en funda de 20 libras a {{precio:Conejo/20 libras}}.\n\n¿Cuál es tu marca favorita? 👇\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
     },
     {
       "dia": 7,
@@ -308,28 +293,15 @@
     },
     {
       "dia": 13,
-      "pilar": "educacion",
+      "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "receta",
+      "plantilla": "precios",
       "datos": {
-        "etiqueta": "RECETA DEL SÁBADO",
-        "titulo": "Chaulafán casero",
-        "ingredientes": [
-          "3 tazas de arroz cocinado (mejor del día anterior)",
-          "1 pechuga de pollo",
-          "2 huevos",
-          "Cebolla blanca",
-          "Salsa de soya",
-          "Zanahoria y arveja"
-        ],
-        "pasos": [
-          "Saltea el pollo en tiras hasta dorar",
-          "Agrega zanahoria, arveja y cebolla blanca",
-          "Revuelve los huevos aparte y júntalos",
-          "Añade el arroz y la soya, y saltea a fuego alto"
-        ]
+        "titulo": "Arroba de 25 libras",
+        "subtitulo": "Todas las marcas · para la familia",
+        "detalle": "25 lb"
       },
-      "texto": "🥢 Sábado de chaulafán casero, ¡como el de la esquina pero en tu casa!\n\n🛒 Ingredientes:\n• 3 tazas de arroz cocinado (mejor si es del día anterior)\n• 1 pechuga de pollo\n• 2 huevos\n• Cebolla blanca, zanahoria y arveja\n• Salsa de soya\n\n👩‍🍳 Preparación:\n1. Saltea el pollo en tiras hasta dorar\n2. Agrega zanahoria, arveja y cebolla blanca\n3. Revuelve los huevos aparte y júntalos\n4. Añade el arroz y la soya, y saltea a fuego alto\n\n💡 Tip: el arroz frío queda más suelto en el chaulafán.\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "👨‍👩‍👧‍👦 ARROBA DE 25 LIBRAS en todas las marcas:\n\n▪️ Gloria (peruano premium): {{precio:Gloria/Arroba}}\n▪️ Conejo: {{precio:Conejo/Arroba}}\n▪️ Amazonas: {{precio:Amazonas/Arroba}}\n▪️ Macareño (Cuchara Brava): {{precio:Macareño/Arroba}}\n\nArroz para todo el mes sin estar comprando cada semana.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
     },
     {
       "dia": 14,
@@ -410,7 +382,7 @@
       "respaldo": {
         "pilar": "venta",
         "formato": "imagen",
-        "plantilla": "mayoreo",
+        "plantilla": "precios",
         "datos": {
           "titulo": "Restaurantes y comedores",
           "subtitulo": "Cotiza tu pedido mensual por WhatsApp"
@@ -421,41 +393,39 @@
     },
     {
       "dia": 18,
-      "pilar": "educacion",
+      "pilar": "venta",
       "formato": "reel",
       "slides": [
         {
           "tipo": "portada",
-          "etiqueta": "RECETA RÁPIDA",
-          "titulo": "Arroz amarillo con achiote",
-          "ilustracion": "plato"
+          "etiqueta": "TENEMOS DE TODO",
+          "titulo": "De la funda al quintal",
+          "ilustracion": "saco"
         },
         {
           "tipo": "punto",
-          "num": 1,
-          "texto": "Sofríe cebolla y ajo en aceite con achiote"
+          "num": "10 lb",
+          "texto": "Funda de 10 libras",
+          "detalle": "Para la casa"
         },
         {
           "tipo": "punto",
-          "num": 2,
-          "texto": "Agrega el arroz lavado y mezcla bien"
+          "num": "25 lb",
+          "texto": "Arroba de 25 libras",
+          "detalle": "Para la familia grande"
         },
         {
           "tipo": "punto",
-          "num": 3,
-          "texto": "Pon el agua caliente con sal"
-        },
-        {
-          "tipo": "punto",
-          "num": 4,
-          "texto": "Tapa a fuego bajo cuando seque"
+          "num": "45 kg",
+          "texto": "Quintal",
+          "detalle": "Para tu tienda o restaurante"
         },
         {
           "tipo": "cta",
-          "titulo": "¿Ya tienes tu arroz?"
+          "titulo": "Pide la que necesitas"
         }
       ],
-      "texto": "🟡 Arroz amarillo con achiote en 4 pasos:\n\n1. Sofríe cebolla y ajo en aceite con achiote\n2. Agrega el arroz lavado y mezcla bien\n3. Pon el agua caliente con sal\n4. Cuando seque, tapa y deja a fuego bajo\n\n¡Perfecto para acompañar un seco de pollo! 🍗\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "🌾 En La Ambateñita tenemos arroz en todas las presentaciones:\n\n▪️ Funda de 10 libras, para la casa\n▪️ Arroba de 25 libras, para la familia grande\n▪️ Quintal de 45 kg, para tu tienda o restaurante\n\nMarcas: {{marcas}}.\n\n{{contacto}}\n\n{{hashtags}}"
     },
     {
       "dia": 19,
@@ -471,28 +441,15 @@
     },
     {
       "dia": 20,
-      "pilar": "educacion",
+      "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "receta",
+      "plantilla": "precios",
       "datos": {
-        "etiqueta": "RECETA DEL SÁBADO",
-        "titulo": "Arroz con pollo",
-        "ingredientes": [
-          "2 tazas de arroz",
-          "4 presas de pollo",
-          "1 pimiento",
-          "Zanahoria y arveja",
-          "Cebolla y ajo",
-          "Achiote y comino"
-        ],
-        "pasos": [
-          "Dora el pollo y sácalo de la olla",
-          "Haz un refrito con cebolla, ajo, pimiento y achiote",
-          "Agrega el arroz, las verduras y el pollo",
-          "Cubre con caldo caliente y cocina a fuego bajo"
-        ]
+        "titulo": "Quintal de 45 kg",
+        "subtitulo": "Para tu tienda, restaurante o comedor",
+        "detalle": "45 kg"
       },
-      "texto": "🍗 Sábado de arroz con pollo, ¡un clásico que gusta a toda la familia!\n\n🛒 Ingredientes:\n• 2 tazas de arroz\n• 4 presas de pollo\n• 1 pimiento, zanahoria y arveja\n• Cebolla, ajo, achiote y comino\n\n👩‍🍳 Preparación:\n1. Dora el pollo y sácalo de la olla\n2. Haz un refrito con cebolla, ajo, pimiento y achiote\n3. Agrega el arroz, las verduras y el pollo\n4. Cubre con caldo caliente y cocina a fuego bajo\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "🏪 QUINTAL DE 45 KG para tu negocio:\n\n▪️ Gloria (peruano premium): {{precio:Gloria/Quintal}}\n▪️ Conejo: {{precio:Conejo/Quintal}}\n▪️ Amazonas: {{precio:Amazonas/Quintal}}\n\n¿Necesitas varios quintales? Escríbenos y armamos tu pedido.\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
     },
     {
       "dia": 21,
@@ -571,7 +528,7 @@
       "respaldo": {
         "pilar": "venta",
         "formato": "imagen",
-        "plantilla": "mayoreo",
+        "plantilla": "precios",
         "datos": {
           "titulo": "Arroz listo para tu negocio",
           "subtitulo": "Para tu casa, tu tienda o tu restaurante"
@@ -622,28 +579,14 @@
     },
     {
       "dia": 27,
-      "pilar": "educacion",
+      "pilar": "venta",
       "formato": "imagen",
-      "plantilla": "receta",
+      "plantilla": "precios",
       "datos": {
-        "etiqueta": "POSTRE CON ARROZ",
-        "titulo": "Arroz con leche",
-        "ingredientes": [
-          "1 taza de arroz",
-          "1 litro de leche",
-          "1 rama de canela",
-          "Clavo de olor",
-          "Azúcar al gusto",
-          "Pasas (opcional)"
-        ],
-        "pasos": [
-          "Cocina el arroz con agua, canela y clavo",
-          "Cuando esté suave, agrega la leche",
-          "Añade el azúcar y mueve a fuego bajo",
-          "Deja espesar y sirve con canela en polvo"
-        ]
+        "titulo": "Precios de la semana",
+        "subtitulo": "Arroz al por mayor y menor · Ambato · Macas"
       },
-      "texto": "🍮 Sábado dulce: ¡arroz con leche casero!\n\n🛒 Ingredientes:\n• 1 taza de arroz\n• 1 litro de leche\n• 1 rama de canela y clavo de olor\n• Azúcar al gusto\n• Pasas (opcional)\n\n👩‍🍳 Preparación:\n1. Cocina el arroz con agua, canela y clavo\n2. Cuando esté suave, agrega la leche\n3. Añade el azúcar y mueve a fuego bajo\n4. Deja espesar y sirve con canela en polvo\n\n¿Frío o calientito? 👇\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "📋 Todos nuestros precios, todas las marcas y todas las presentaciones:\n\n{{lista_precios}}\n\n{{contacto}}\n{{ubicacion}}\n\n{{hashtags}}"
     },
     {
       "dia": 28,

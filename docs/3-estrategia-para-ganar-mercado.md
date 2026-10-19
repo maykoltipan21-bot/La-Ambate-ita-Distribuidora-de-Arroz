@@ -13,7 +13,7 @@ Ciclo de 4 semanas que se repite (`contenido/calendario.json`):
 | Miércoles | Imagen | Consejo arrocero, o foto real | Que la gente comparta y guarde el post |
 | Jueves | Reel | Negocios y entregas | Generar confianza |
 | Viernes | Imagen | Marca de la semana (Conejo, Gloria, Amazonas y Macareño, por turnos) | Venta directa: la gente busca la marca que ya conoce |
-| Sábado | Imagen | Receta con arroz | Muy compartible |
+| Sábado | Imagen | Precios por presentación: funda de 10 lb, arroba, quintal y tabla completa | Que cada cliente encuentre su medida |
 | Domingo | Imagen | Pregunta A/B | Comentarios: Facebook le muestra la página a más gente |
 
 Horarios iniciales (hora de Ecuador): **imágenes 12:15** (hora de almuerzo) y **reels 19:10** (noche). Con el tiempo Metricool muestra a qué hora te ve más tu público y se ajustan.
