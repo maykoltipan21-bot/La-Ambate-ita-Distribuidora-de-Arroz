@@ -301,10 +301,10 @@
       "plantilla": "marca",
       "datos": {
         "marca": "Gloria",
-        "etiqueta": "MARCA DE LA SEMANA",
-        "subtitulo": "Quintal, arroba y funda de 10 libras"
+        "etiqueta": "PERUANO · PREMIUM",
+        "subtitulo": "Arroz peruano de excelente calidad"
       },
-      "texto": "🌾 ARROZ GLORIA en La Ambateñita\n\n{{precios_marca:Gloria}}\n\nPor quintal para tu negocio o por funda para la casa.\n\n{{contacto}}\n{{ubicacion}}\n\n#ArrozGloria {{hashtags}}"
+      "texto": "🇵🇪 ARROZ GLORIA: arroz peruano de excelente calidad\n\nEs el más caro de nuestra lista, y tiene sus razones: es arroz peruano y su calidad se nota en el plato. Para nosotros, no hay arroz que se le compare.\n\n{{precios_marca:Gloria}}\n\nPara el almuerzo especial de la familia o para el restaurante que quiere lo mejor.\n\n{{contacto}}\n{{ubicacion}}\n\n#ArrozGloria #ArrozPeruano {{hashtags}}"
     },
     {
       "dia": 13,
@@ -587,35 +587,26 @@
       "slides": [
         {
           "tipo": "portada",
-          "etiqueta": "PARA NEGOCIOS",
-          "titulo": "El quintal de 45 kg",
-          "ilustracion": "saco",
-          "presentacion": "Conejo/Quintal"
+          "etiqueta": "PREMIUM",
+          "titulo": "Arroz peruano de excelente calidad",
+          "ilustracion": "plato"
         },
         {
-          "tipo": "precio",
-          "titulo": "Quintal Conejo",
-          "presentacion": "Conejo/Quintal",
-          "detalle": "45 kg"
+          "tipo": "marca",
+          "marca": "Gloria"
         },
         {
-          "tipo": "precio",
-          "titulo": "Quintal Amazonas",
-          "presentacion": "Amazonas/Quintal",
-          "detalle": "45 kg"
-        },
-        {
-          "tipo": "precio",
-          "titulo": "Quintal Gloria",
-          "presentacion": "Gloria/Quintal",
-          "detalle": "45 kg"
+          "tipo": "punto",
+          "num": "★",
+          "texto": "Para nosotros, no hay arroz que se le compare",
+          "detalle": "Arroz Gloria · Perú"
         },
         {
           "tipo": "cta",
-          "titulo": "Cotiza por WhatsApp"
+          "titulo": "Pide tu arroz Gloria"
         }
       ],
-      "texto": "🌾 Quintal de arroz (45 kg) para tu negocio:\n\n▪️ Conejo: {{precio:Conejo/Quintal}}\n▪️ Amazonas: {{precio:Amazonas/Quintal}}\n▪️ Gloria: {{precio:Gloria/Quintal}}\n\n¿Necesitas varios quintales? Escríbenos y armamos tu pedido.\n\n{{contacto}}\n\n{{hashtags}}"
+      "texto": "⭐ ¿Por qué el arroz Gloria cuesta más?\n\nPorque es arroz peruano de excelente calidad. Para nosotros, no hay arroz que se le compare.\n\n{{precios_marca:Gloria}}\n\nPruébalo y nos cuentas 👇\n\n{{contacto}}\n\n#ArrozGloria #ArrozPeruano {{hashtags}}"
     },
     {
       "dia": 26,

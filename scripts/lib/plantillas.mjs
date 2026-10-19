@@ -201,7 +201,10 @@ function mayoreo(d, negocio) {
     <div style="display:flex;align-items:center;height:${altoFila}px;background:${i % 2 ? 'transparent' : 'rgba(242,182,50,.12)'}">
       <div style="width:${anchoMarca}px;display:flex;align-items:center;gap:14px;padding-left:20px">
         ${tieneFoto(p) ? `<div style="flex:0 0 96px;height:${altoFila - 24}px;display:flex;align-items:center;justify-content:center"><img src="${imagenDataUrl(fotoDe(p))}" style="max-width:96px;max-height:100%;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.15)"></div>` : ''}
-        <div data-ajustar="24" style="font-weight:900;font-size:35px;color:var(--verde);line-height:1.05;flex:1;overflow:hidden">${esc(p.nombre)}</div>
+        <div style="flex:1;overflow:hidden">
+          <div data-ajustar="24" style="font-weight:900;font-size:35px;color:var(--verde);line-height:1.05;overflow:hidden">${esc(p.nombre)}</div>
+          ${p.etiqueta ? `<div style="display:inline-block;margin-top:6px;background:var(--dorado);color:var(--cafe);font-weight:900;font-size:13px;letter-spacing:1px;padding:4px 9px;border-radius:999px;white-space:nowrap">${esc(p.etiqueta)}</div>` : ''}
+        </div>
       </div>
       ${cols.map((c) => {
         const pr = p.presentaciones.find((x) => x.detalle === c.detalle);
@@ -230,7 +233,7 @@ function marca(d, negocio) {
     : saco({ ancho: 360, detalle: esc(producto.presentaciones[0]?.detalle || '') });
   const cuerpo = `
     <div class="capa" style="left:60px;top:50px">${encabezado()}</div>
-    <div class="capa" style="left:60px;top:220px">${etiqueta(d.etiqueta || 'MARCA DE LA SEMANA', 'var(--rojo)')}</div>
+    <div class="capa" style="left:60px;top:220px">${etiqueta(d.etiqueta || producto.etiqueta || 'MARCA DE LA SEMANA', 'var(--rojo)')}</div>
     <div class="capa" data-ajustar="54" style="left:60px;top:300px;width:560px;height:250px;font-weight:900;font-size:110px;line-height:1;color:var(--verde);text-transform:uppercase">Arroz ${esc(producto.nombre)}</div>
     <div class="capa" data-ajustar="24" style="left:60px;top:570px;width:540px;height:150px;font-weight:700;font-size:38px;line-height:1.25">${esc(d.subtitulo || 'Al por mayor y menor en ' + ciudadesTexto(negocio))}</div>
     <div class="capa" style="left:${tieneFoto(producto) ? 680 : 640}px;top:215px">${imagen}</div>
@@ -368,6 +371,7 @@ function slide(d, negocio) {
       <div class="capa" style="left:70px;top:250px">${encabezado({ tam: 0.8 })}</div>
       ${zona(`
         <div data-ajustar="56" data-max="230" style="width:940px;font-weight:900;font-size:112px;line-height:1;color:var(--verde);text-transform:uppercase">Arroz ${esc(producto.nombre)}</div>
+        ${producto.etiqueta ? etiqueta(producto.etiqueta, 'var(--dorado-osc)', 1.2) : ''}
         ${tieneFoto(producto) ? tarjetaFoto(producto, { alto: 400, giro: -3 }) : saco({ ancho: 380, detalle: '' })}
         <div style="width:900px">${filasPrecios(producto, { altoFila: 92, tamNombre: 44, tamPrecio: 58 })}</div>`, 40, 380)}`;
   } else if (d.tipo === 'precio') {

@@ -19,6 +19,17 @@
   "_precios_fuente": "Catálogo LA AMBATEÑITA (página de arroz) enviado por el dueño el 19/10/2026. Avisar a Claude cuando cambien.",
   "productos": [
     {
+      "nombre": "Gloria",
+      "etiqueta": "PERUANO · PREMIUM",
+      "descripcion": "Arroz peruano de excelente calidad",
+      "foto": "fotos/catalogo/gloria-25lb.jpg",
+      "presentaciones": [
+        { "nombre": "Quintal", "detalle": "45 kg", "precio": 65.0, "foto": "fotos/catalogo/gloria-45kg.jpg" },
+        { "nombre": "Arroba", "detalle": "25 lb", "precio": 16.25, "foto": "fotos/catalogo/gloria-25lb.jpg" },
+        { "nombre": "10 libras", "detalle": "10 lb", "precio": 6.5, "foto": "fotos/catalogo/gloria-10lb.jpg" }
+      ]
+    },
+    {
       "nombre": "Macareño",
       "foto": "fotos/catalogo/macareno-25lb.jpg",
       "presentaciones": [
@@ -43,15 +54,6 @@
         { "nombre": "Quintal", "detalle": "45 kg", "precio": 60.0, "foto": "fotos/catalogo/amazonas-45kg.jpg" },
         { "nombre": "Arroba", "detalle": "25 lb", "precio": 15.0, "foto": "fotos/catalogo/amazonas-25lb.jpg" },
         { "nombre": "10 libras", "detalle": "10 lb", "precio": 6.0, "foto": "fotos/catalogo/amazonas-10lb.jpg" }
-      ]
-    },
-    {
-      "nombre": "Gloria",
-      "foto": "fotos/catalogo/gloria-25lb.jpg",
-      "presentaciones": [
-        { "nombre": "Quintal", "detalle": "45 kg", "precio": 65.0, "foto": "fotos/catalogo/gloria-45kg.jpg" },
-        { "nombre": "Arroba", "detalle": "25 lb", "precio": 16.25, "foto": "fotos/catalogo/gloria-25lb.jpg" },
-        { "nombre": "10 libras", "detalle": "10 lb", "precio": 6.5, "foto": "fotos/catalogo/gloria-10lb.jpg" }
       ]
     }
   ],
